@@ -1,40 +1,52 @@
-# SLP SimuCase Generator (Modular Architecture)
+---
+title: SLP SimuCase Generator
+emoji: 🗣️
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "4.44.0"
+app_file: main.py
+pinned: false
+license: mit
+---
 
-Professional AI-powered Speech-Language Pathology case file generator with modular architecture.
+# SLP SimuCase Generator 🗣️
 
-## 🌟 Features
+AI-powered Speech-Language Pathology case file generator with modular architecture.
 
-- Modular architecture for easy maintenance
-- Support for multiple LLM providers (OpenAI, Google, Anthropic, Ollama)
-- Single case, multiple cases, and group session generation
-- RAG-powered context-aware generation
-- Built-in feedback system
+## ✨ Features
 
-## 🚀 Quick Start
+- 🎯 **Single Case Generation** - Create individual student case files
+- 📦 **Batch Generation** - Generate multiple cases with natural language
+- 👥 **Group Sessions** - Plan therapy groups following clinical strategies  
+- 🤖 **Multi-Model** - GPT-4o, Gemini, Claude, or local Ollama
+- 📚 **RAG-Powered** - Context-aware with vector database
+- 💬 **Feedback System** - Built-in evaluation
 
-1. Clone this repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Create `.env` file with your API keys
-4. Set up vector database in `data/slp_vector_db/`
-5. Run: `python main.py`
+## 🚀 Usage
 
-## 📁 Project Structure
-SLP_SIMUCASE/
-├── main.py              # Entry point
-├── app/                 # Application modules
-│   ├── config.py
-│   ├── models.py
-│   ├── utils.py
-│   ├── generation.py
-│   ├── feedback.py
-│   └── ui_*.py
-└── prompts/             # Prompt templates
-## 🔧 Configuration
+1. Select generation mode (Single/Multiple/Group)
+2. Choose grade level and disorders
+3. Select AI model
+4. Generate!
 
-Create a `.env` file:
+## ⚙️ Setup for Full Functionality
 
-OPENAI_API_KEY=your_key_here
-GOOGLE_API_KEY=your_key_here
-ANTHROPIC_API_KEY=your_key_here
+This Space requires API keys. Add them in **Settings → Repository secrets**:
 
-## 📝 License
+- `OPENAI_API_KEY` - Required for embeddings and GPT-4o
+- `ANTHROPIC_API_KEY` - Optional for Claude models
+- `GOOGLE_API_KEY` - Optional for Gemini models
+
+## 📝 Note
+
+This demo shows the UI and architecture. Full knowledge base not included due to size limits.
+
+## 🔗 Links
+
+- [GitHub Repository](https://github.com/Yilanliu917/SLP_SIMUCASE)
+- [Documentation](https://github.com/Yilanliu917/SLP_SIMUCASE#readme)
+
+## 📄 License
+
+MIT License
