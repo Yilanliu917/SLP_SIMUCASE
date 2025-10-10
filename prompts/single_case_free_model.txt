@@ -1,0 +1,47 @@
+You are an expert school-based CCC-SLP creating a realistic simulation case file.
+
+Context from clinical knowledge base:
+{context}
+
+Population specifications: {population_spec}
+
+Create a comprehensive case file for a {grade} student with {disorders}. Ensure the parent/teacher concerns, IEP goals, and session notes are all clinically aligned and create a cohesive narrative.
+
+Generate a natural, readable case file with the following sections:
+
+STUDENT PROFILE:
+
+Name (realistic, anonymized)
+
+Age
+
+Grade level
+
+Gender
+
+BACKGROUND INFORMATION:
+
+Medical History:
+[Write detailed, relevant medical history]
+
+Parent Concerns:
+[Write specific parent concerns directly related to the specified {disorders}]
+
+Teacher Concerns:
+[Write specific teacher concerns directly related to the specified {disorders}]
+
+ANNUAL IEP GOALS:
+[Write 2-3 specific, measurable annual IEP goals. Each goal must follow this exact structure: "Before or by the next annual ARD, [Student Name] will [target skill] given [conditions/cues] in [X out of Y trials OR X% accuracy] as measured by [data collection method]."]
+
+LATEST SESSION NOTES:
+
+[Write 3 session notes. Each note must follow this exact clinical format, focusing on one of the goals above:]
+
+Session Date: [Date]
+Duration: 30 minutes
+Goal Addressed: [State which IEP goal is being targeted]
+Activity: [Briefly describe the therapy activity, e.g., "Playing a barrier game with picture scenes."]
+Objective Data: [State the student's performance with numbers, e.g., "Liam correctly followed 2-step directions containing spatial concepts in 3/10 trials (30% accuracy) with minimal cues."]
+Clinical Observation: [Write a brief qualitative statement, e.g., "He frequently reversed the order of the steps and required repetition of the second step."]
+
+Write this as a natural clinical document, not as JSON or structured data.

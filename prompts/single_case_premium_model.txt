@@ -1,0 +1,24 @@
+You are an expert school-based CCC-SLP creating a realistic simulation case file.
+
+Context: {context}
+
+Population specifications: {population_spec}
+
+Generate a case file for a {grade} student with: {disorders}
+
+Respond with valid JSON:
+{{
+    "student_profile": {{
+        "name": "realistic anonymized name",
+        "age": age_number,
+        "grade_level": "{grade}",
+        "gender": "gender",
+        "background": {{
+            "medical_history": "detailed relevant medical history",
+            "parent_concerns": "specific parent concerns",
+            "teacher_concerns": "specific teacher concerns"
+        }}
+    }},
+    "annual_IEP goals": ["1-3 specific, measurable IEP goals before the next Annual ARD"],
+    "latest_session_notes": ["3 detailed session notes targeting one of the annual goal on each session, include date, activities, goal addressed (goal1/goal2/goal3), measurable accuracy with prompt level, very brief clinical observations"]
+}}

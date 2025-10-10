@@ -1,0 +1,13 @@
+Analyze this SLP case feedback and create a descriptive category name.
+
+Existing categories: {existing_categories}
+
+Feedback: {feedback_text}
+
+Requirements:
+- If fits existing category, return that exact name
+- If new issue, create a SHORT, SPECIFIC category (3-5 words)
+- Focus on the clinical issue, not general terms
+- Examples: "Age-Inappropriate Goal Complexity", "Missing Medical Onset Details", "Session Note Formatting Issues", "Session notes Not Addressing Goals"
+
+Return ONLY the category name, nothing else:

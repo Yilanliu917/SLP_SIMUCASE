@@ -1,0 +1,27 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+
+# SECRETS - NEVER COMMIT
+.env
+.env.*
+*.env
+.env.backup
+
+# Generated files
+generated_case_files/
+feedback_log.json
+feedback_categories.json
+cases_database.json
+
+# Large data
+data/
+*.pdf
+
+# IDE & OS
+.vscode/
+.DS_Store
+*.log
+temp_*.md
