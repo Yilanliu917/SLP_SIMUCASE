@@ -2,8 +2,11 @@
 Case generation functions for single, multiple, and group sessions
 """
 from datetime import datetime
-from typing import List, Dict
+from typing import List, Dict, Tuple, Optional
 import gradio as gr
+import pandas as pd
+import re
+import os
 
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
@@ -14,6 +17,7 @@ from langchain_ollama import ChatOllama
 from .config import *
 from .models import current_case_data, multiple_cases_batch, group_session_data, generation_control
 from .utils import *
+from .name_utils import generate_unique_names
 
 # --- SINGLE CASE GENERATION ---
 def generate_single_case(grade: str, disorders: List[str], model: str, 
@@ -148,8 +152,11 @@ def generate_multiple_cases(tasks: List[Dict], save_path: str, use_custom_id: bo
         count = task.get("count", 1)
         for _ in range(count):
             expanded_tasks.append(task.copy())
-    
+
     total_tasks = len(expanded_tasks)
+
+    # Precompute unique anonymous names for all cases
+    anon_names = generate_unique_names(total_tasks, seed=None)
     
     yield (f"🔄 Starting batch generation: {total_tasks} cases", 
            None, 
@@ -165,12 +172,15 @@ def generate_multiple_cases(tasks: List[Dict], save_path: str, use_custom_id: bo
     for idx, task in enumerate(expanded_tasks):
         if generation_control["should_stop"]:
             combined_output += f"\n\n⛔ **Generation stopped by user after {idx} cases**"
-            yield (combined_output, 
-                   None, 
+            yield (combined_output,
+                   None,
                    ["Whole Batch"] + [c['display_id'] for c in all_cases],
                    gr.update(interactive=True, variant="primary"))
             return
-        
+
+        # Get the anonymous name for this case
+        anon_name = anon_names[idx]
+
         if use_custom_id:
             case_display_id = f"{id_prefix}{case_counter:03d}"
             case_counter += 1
@@ -209,7 +219,8 @@ def generate_multiple_cases(tasks: List[Dict], save_path: str, use_custom_id: bo
             "population_spec": lambda x: "",
             "disorders": lambda x: disorder_string,
             "grade": lambda x: task['grade'],
-            "characteristics": lambda x: task.get('characteristics', '')
+            "characteristics": lambda x: task.get('characteristics', ''),
+            "exclude_names_prompt": lambda x: ""
         } | prompt | llm
         
         response = rag_chain.invoke(question_text)
@@ -219,7 +230,7 @@ def generate_multiple_cases(tasks: List[Dict], save_path: str, use_custom_id: bo
             case_output = f"""
 ---
 
-## {case_display_id}
+## {case_display_id}: {anon_name}
 
 **Grade:** {task['grade']}
 **Disorders:** {disorder_string}
@@ -235,7 +246,7 @@ def generate_multiple_cases(tasks: List[Dict], save_path: str, use_custom_id: bo
             case_output = f"""
 ---
 
-## {case_display_id}: {profile.name}
+## {case_display_id}: {anon_name}
 
 **Grade:** {profile.grade_level} | **Age:** {profile.age} | **Gender:** {profile.gender}
 **Disorders:** {disorder_string}
@@ -253,11 +264,16 @@ def generate_multiple_cases(tasks: List[Dict], save_path: str, use_custom_id: bo
             case_output += "\n"
         
         case_id = f"{batch_id}_{case_display_id.replace(' ', '_')}"
+
+        # Add anonymous name to metadata
+        metadata = task.copy()
+        metadata["anonymous_name"] = anon_name
+
         all_cases.append({
             "id": case_id,
             "display_id": case_display_id,
             "content": case_output,
-            "metadata": task
+            "metadata": metadata
         })
         
         combined_output += case_output
@@ -502,3 +518,224 @@ Now parse the request above:"""
     except Exception as e:
         print(f"Parse error: {e}")
         return [], "❌ Error parsing request. Please use manual configuration below."
+
+# --- TABLE PARSING ---
+def parse_table_request(file_path: Optional[str]) -> Tuple[List[Dict], str, Optional[str], Optional[int]]:
+    """
+    Parse CSV or Excel file containing student case information.
+
+    Expected columns:
+    - Student ID (e.g., S-001, PT-012)
+    - Grade Level (e.g., Pre-K, 1st Grade)
+    - Communication Disorder(s) (e.g., "1. Speech sound disorder & 6. expressive language disorders")
+
+    Args:
+        file_path: Path to the uploaded CSV or Excel file
+
+    Returns:
+        tuple: (list of task dicts, confirmation markdown string, id_prefix, id_start_number)
+    """
+    if not file_path or not os.path.exists(file_path):
+        return [], "❌ No file uploaded or file not found.", None, None
+
+    try:
+        # Determine file type and read accordingly
+        file_ext = os.path.splitext(file_path)[1].lower()
+
+        if file_ext == '.csv':
+            df = pd.read_csv(file_path)
+        elif file_ext in ['.xlsx', '.xls']:
+            df = pd.read_excel(file_path)
+        else:
+            return [], f"❌ Unsupported file type: {file_ext}. Please upload CSV or Excel file.", None, None
+
+        # Normalize column headers (case-insensitive, strip whitespace)
+        df.columns = df.columns.str.strip().str.lower()
+
+        # Map common variations to standard column names
+        column_mapping = {
+            'student id': 'student_id',
+            'studentid': 'student_id',
+            'id': 'student_id',
+            'grade level': 'grade',
+            'gradelevel': 'grade',
+            'grade': 'grade',
+            'communication disorder(s)': 'disorders',
+            'communication disorders': 'disorders',
+            'disorder(s)': 'disorders',
+            'disorders': 'disorders',
+            'disorder': 'disorders'
+        }
+
+        # Rename columns based on mapping
+        for old_name, new_name in column_mapping.items():
+            if old_name in df.columns:
+                df.rename(columns={old_name: new_name}, inplace=True)
+
+        # Verify required columns exist
+        required_cols = ['student_id', 'grade', 'disorders']
+        missing_cols = [col for col in required_cols if col not in df.columns]
+
+        if missing_cols:
+            return [], f"❌ Missing required columns: {', '.join(missing_cols)}. Expected: Student ID, Grade Level, Communication Disorder(s)", None, None
+
+        # Parse each row into a task
+        tasks = []
+
+        # Variables to track ID prefix and start number
+        detected_prefix = None
+        detected_start_number = None
+
+        for idx, row in df.iterrows():
+            try:
+                # Extract Student ID and parse prefix/number
+                student_id = str(row['student_id']).strip()
+
+                # Parse Student ID (e.g., "S-001" -> prefix="S", number=1)
+                # Handle formats: S-001, S001, PT-012, etc.
+                id_match = re.match(r'^([A-Za-z]+)[-_]?(\d+)$', student_id)
+                if id_match:
+                    id_prefix = id_match.group(1)
+                    id_number = int(id_match.group(2))
+
+                    # Capture the first row's prefix and number for the UI fields
+                    if detected_prefix is None:
+                        detected_prefix = id_prefix
+                        detected_start_number = id_number
+                else:
+                    # If format doesn't match, use as-is
+                    id_prefix = "S"
+                    id_number = idx + 1
+
+                # Extract Grade Level
+                grade = str(row['grade']).strip()
+
+                # Normalize grade format
+                if grade.lower() == 'pre-k' or grade.lower() == 'prek':
+                    grade = 'Pre-K'
+                elif grade.lower() == 'kindergarten' or grade.lower() == 'k':
+                    grade = 'Kindergarten'
+                elif re.match(r'^\d+$', grade):
+                    # Just a number like "1" -> "1st Grade"
+                    num = int(grade)
+                    suffix = 'th' if 11 <= num <= 13 else {1: 'st', 2: 'nd', 3: 'rd'}.get(num % 10, 'th')
+                    grade = f"{num}{suffix} Grade"
+
+                # Verify grade is in allowed list
+                if grade not in ALL_GRADES:
+                    # Try to find closest match
+                    grade = "1st Grade"  # Default fallback
+
+                # Extract and parse disorders
+                disorders_text = str(row['disorders']).strip()
+
+                # Step 1: Extract characteristics from parentheses
+                characteristics_list = []
+                parentheses_matches = re.findall(r'\(([^)]+)\)', disorders_text)
+                for match in parentheses_matches:
+                    # Split by commas and clean up
+                    chars = [c.strip() for c in match.split(',')]
+                    characteristics_list.extend(chars)
+
+                # Remove parentheses and their contents from disorders text
+                disorders_text_clean = re.sub(r'\s*\([^)]+\)\s*', ' ', disorders_text)
+
+                # Step 2: Split by common separators: &, and
+                # Don't split by commas as they might be within disorder names
+                disorder_parts = re.split(r'\s*&\s*|\s+and\s+', disorders_text_clean)
+
+                # Step 3: Remove index numbers from each part
+                disorder_parts = [re.sub(r'^\s*\d+\.?\s*', '', part).strip() for part in disorder_parts]
+
+                # Step 4: Match disorders - prefer longer/more specific matches
+                parsed_disorders = []
+
+                # Sort DISORDER_TYPES by length (longest first) to match more specific terms first
+                sorted_disorder_types = sorted(DISORDER_TYPES, key=len, reverse=True)
+
+                for disorder_text in disorder_parts:
+                    disorder_lower = disorder_text.strip().lower()
+
+                    if not disorder_lower:
+                        continue
+
+                    # Try to match to known disorder types (bidirectional and fuzzy)
+                    matched = False
+                    for known_disorder in sorted_disorder_types:
+                        known_lower = known_disorder.lower()
+
+                        # Check both directions: disorder text in known, or known in disorder text
+                        if known_lower in disorder_lower or disorder_lower in known_lower:
+                            parsed_disorders.append(known_disorder)
+                            matched = True
+                            break
+
+                        # Also check for key word matches for common variations
+                        # e.g., "child apraxia" matches "childhood apraxia of speech"
+                        disorder_words = set(disorder_lower.split())
+                        known_words = set(known_lower.split())
+
+                        # For Apraxia: check if both contain "apraxia"
+                        if "apraxia" in disorder_words and "apraxia" in known_words:
+                            parsed_disorders.append(known_disorder)
+                            matched = True
+                            break
+
+                    # If no match, capitalize properly and add anyway
+                    if not matched and len(disorder_lower) > 3:
+                        disorder_title = ' '.join(word.capitalize() for word in disorder_text.split())
+                        parsed_disorders.append(disorder_title)
+
+                # Remove duplicates while preserving order
+                parsed_disorders = list(dict.fromkeys(parsed_disorders))
+
+                # If no disorders parsed, skip this row
+                if not parsed_disorders:
+                    print(f"Warning: Row {idx+1} has no valid disorders, skipping")
+                    continue
+
+                # Step 5: Combine characteristics into a single string
+                characteristics = ', '.join(characteristics_list) if characteristics_list else ""
+
+                # Determine default model from config
+                default_model = FREE_MODELS[0] if FREE_MODELS else "Llama3.2"
+
+                # Create task dict
+                task = {
+                    "id": student_id,
+                    "grade": grade,
+                    "disorders": parsed_disorders,
+                    "model": default_model,
+                    "count": 1,  # Each row is one student
+                    "characteristics": characteristics
+                }
+
+                tasks.append(task)
+
+            except Exception as row_error:
+                print(f"Error parsing row {idx+1}: {row_error}")
+                continue
+
+        # Generate confirmation message
+        if tasks:
+            confirmation = f"### 📊 Parsed Table: {len(tasks)} Student(s)\n\n"
+            confirmation += f"**File:** `{os.path.basename(file_path)}`\n\n"
+
+            for i, task in enumerate(tasks, 1):
+                confirmation += f"**Student {i} ({task['id']}):**\n"
+                confirmation += f"- Grade: {task['grade']}\n"
+                confirmation += f"- Disorders: {', '.join(task['disorders'])}\n"
+                confirmation += f"- Model: {task['model']}\n"
+                if task.get('characteristics'):
+                    confirmation += f"- Characteristics: {task['characteristics']}\n"
+                confirmation += "\n"
+
+            confirmation += "✓ Review above. Adjust manually in rows below if needed, then click Generate."
+
+            return tasks, confirmation, detected_prefix, detected_start_number
+        else:
+            return [], "❌ No valid student data found in table. Please check the file format.", None, None
+
+    except Exception as e:
+        print(f"Table parse error: {e}")
+        return [], f"❌ Error parsing table: {str(e)}", None, None

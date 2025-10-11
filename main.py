@@ -100,13 +100,20 @@ def create_app():
             outputs=[cover_page, single_case_components["page"],
                     multiple_cases_components["page"], group_session_components["page"]]
         )
-        
+
         multiple_cases_components["back_btn"].click(
             show_cover,
             outputs=[cover_page, single_case_components["page"],
                     multiple_cases_components["page"], group_session_components["page"]]
         )
-        
+
+        # Home button handler for multiple cases page
+        multiple_cases_components["home_btn"].click(
+            show_cover,
+            outputs=[cover_page, single_case_components["page"],
+                    multiple_cases_components["page"], group_session_components["page"]]
+        )
+
         group_session_components["back_btn"].click(
             show_cover,
             outputs=[cover_page, single_case_components["page"],

@@ -64,9 +64,10 @@ def create_single_case_ui(back_btn_handler):
                 model = gr.Dropdown(choices=FREE_MODELS + PREMIUM_MODELS, label="AI Model", value=DEFAULT_MODEL if 'DEFAULT_MODEL' in dir() else "Llama3.2")
                 disorders = gr.Dropdown(choices=DISORDER_TYPES, label="Disorders", multiselect=True, value=["Articulation Disorders"])
                 population_spec = gr.Textbox(label="Population Characteristics", placeholder="e.g., second language learner", lines=2)
-                
-                generate_btn = gr.Button("Generate", size="sm", variant="primary")
-                stop_btn = gr.Button("⛔ Stop", size="sm", variant="stop", visible=False)
+
+                with gr.Row():
+                    generate_btn = gr.Button("Generate", variant="primary", scale=3)
+                    stop_btn = gr.Button("⛔ Stop", variant="stop", visible=False, scale=1)
             
             with gr.Column(scale=1, elem_classes="right-panel"):
                 gr.Markdown("### Advanced Options")
@@ -320,5 +321,103 @@ def setup_single_case_events(components, generated_filename):
             components["grade"]
         ]
     )
-    
-    # ... rest of existing event handlers ...
+
+    # Generate single case
+    components["generate_btn"].click(
+        fn=lambda: (gr.update(visible=True), gr.update(interactive=False)),
+        outputs=[components["stop_btn"], components["generate_btn"]]
+    ).then(
+        fn=generate_single_case,
+        inputs=[components["grade"], components["disorders"], components["model"],
+                components["population_spec"], components["reference_files"]],
+        outputs=[components["output"], generated_filename, components["generate_btn"],
+                components["save_path_display"], components["stop_btn"], components["save_section"]]
+    ).then(
+        fn=lambda: gr.update(visible=False),
+        outputs=components["stop_btn"]
+    )
+
+    # Stop button
+    def stop_generation():
+        generation_control["should_stop"] = True
+        return gr.update(visible=False), gr.update(interactive=True, variant="primary"), "⛔ Stopping generation..."
+
+    components["stop_btn"].click(
+        fn=stop_generation,
+        outputs=[components["stop_btn"], components["generate_btn"], components["output"]]
+    )
+
+    # Save functionality
+    def handle_save_single(filepath):
+        if not current_case_data["content"]:
+            return "❌ No case to save"
+        try:
+            save_case_file(current_case_data["content"], filepath)
+            save_case_to_db(current_case_data["metadata"])
+            return f"✅ Case saved successfully!\n**Path:** `{filepath}`"
+        except Exception as e:
+            return f"❌ Error: {str(e)}"
+
+    components["save_btn"].click(
+        fn=handle_save_single,
+        inputs=components["save_path_display"],
+        outputs=components["save_status"]
+    )
+
+    # Download button
+    def prepare_download_single():
+        if current_case_data["content"]:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            temp_file = f"temp_case_{timestamp}.md"
+            save_case_file(current_case_data["content"], temp_file)
+            return temp_file
+        return None
+
+    components["save_as_btn"].click(
+        fn=prepare_download_single,
+        outputs=components["save_as_btn"]
+    )
+
+    # Feedback
+    def toggle_feedback_single(category):
+        is_other = (category == "Other")
+        return gr.update(visible=is_other), gr.update(visible=is_other)
+
+    components["feedback_cat"].change(
+        fn=toggle_feedback_single,
+        inputs=components["feedback_cat"],
+        outputs=[components["detailed_feedback"], components["grammar_check_btn"]]
+    )
+
+    components["grammar_check_btn"].click(
+        fn=ai_grammar_check,
+        inputs=components["detailed_feedback"],
+        outputs=components["detailed_feedback"]
+    )
+
+    # Submit feedback
+    def handle_feedback_single(r1, r2, r3, r4, r5, cat, detailed):
+        if not current_case_data["metadata"]:
+            return "❌ Generate a case first", gr.update(), gr.update(value=3), gr.update(value=3), gr.update(value=3), gr.update(value=3), gr.update(value=3), gr.update(value=""), gr.update(value="General")
+
+        ratings = {
+            "clinical_accuracy": r1,
+            "age_appropriateness": r2,
+            "goal_quality": r3,
+            "session_notes": r4,
+            "background": r5
+        }
+
+        case_id = current_case_data["metadata"].get("timestamp", "unknown")
+        return submit_feedback(case_id, ratings, cat, detailed)
+
+    components["submit_feedback_btn"].click(
+        fn=handle_feedback_single,
+        inputs=[components["rating_clinical"], components["rating_age"], components["rating_goals"],
+                components["rating_notes"], components["rating_background"],
+                components["feedback_cat"], components["detailed_feedback"]],
+        outputs=[components["feedback_status"], components["feedback_cat"],
+                components["rating_clinical"], components["rating_age"], components["rating_goals"],
+                components["rating_notes"], components["rating_background"],
+                components["detailed_feedback"], components["feedback_cat"]]
+    )

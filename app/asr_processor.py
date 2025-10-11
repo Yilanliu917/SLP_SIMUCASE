@@ -474,10 +474,10 @@ class SpeechAnalyzer:
 
 Based on this comprehensive analysis, provide:
 
-1. **Primary Disorder(s)**: Most likely speech/language disorder(s) with justification
+1. **Primary Disorder(s)**: speech (articulation, phonological, or fluency), language (receptive, expressive, pragmatic), or other
 2. **Severity Rating**: Mild, Moderate, or Severe with clinical reasoning
 3. **Estimated Age Range**: Based on language complexity and speech patterns
-4. **Recommended IEP Goals**: 3-4 specific, measurable goals
+4. **Recommended IEP Goals**: 1-3 specific, measurable goals
 5. **Clinical Observations**: Key observations for documentation
 6. **Therapy Recommendations**: Suggested intervention approaches
 

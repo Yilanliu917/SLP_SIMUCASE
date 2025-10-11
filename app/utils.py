@@ -5,6 +5,7 @@ import os
 import json
 from typing import Optional, List, Dict, Tuple
 from datetime import datetime
+from dotenv import load_dotenv
 
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -13,6 +14,9 @@ from langchain_ollama import ChatOllama
 
 from .config import *
 from .models import BackgroundInfo, StudentProfile, SimuCaseFile
+
+# Ensure .env is loaded when this module is imported
+load_dotenv()
 
 # --- FILE I/O ---
 def load_json(filepath: str, default) -> any:
@@ -52,16 +56,26 @@ def save_case_to_db(case_data: dict):
 
 # --- LLM INITIALIZATION ---
 def get_llm(model_name: str):
+    """Initialize LLM with proper API key configuration."""
     model_id = MODEL_MAP.get(model_name, "llama3.2:latest")
-    
+
     if model_name in FREE_MODELS:
         return ChatOllama(model=model_id, temperature=0.7)
     elif model_name == "GPT-4o":
-        return ChatOpenAI(model=model_id, temperature=0.7).with_structured_output(SimuCaseFile)
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY not found in environment. Please check your .env file.")
+        return ChatOpenAI(model=model_id, temperature=0.7, api_key=api_key).with_structured_output(SimuCaseFile)
     elif model_name == "Gemini 2.5 Pro":
-        return ChatGoogleGenerativeAI(model=model_id, temperature=0.7).with_structured_output(SimuCaseFile)
+        api_key = os.getenv("GOOGLE_API_KEY")
+        if not api_key:
+            raise ValueError("GOOGLE_API_KEY not found in environment. Please check your .env file.")
+        return ChatGoogleGenerativeAI(model=model_id, temperature=0.7, google_api_key=api_key).with_structured_output(SimuCaseFile)
     elif model_name in ["Claude 3 Opus", "Claude 3.5 Sonnet"]:
-        return ChatAnthropic(model=model_id, temperature=0.7).with_structured_output(SimuCaseFile)
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            raise ValueError("ANTHROPIC_API_KEY not found in environment. Please check your .env file.")
+        return ChatAnthropic(model=model_id, temperature=0.7, api_key=api_key).with_structured_output(SimuCaseFile)
     else:
         return ChatOllama(model="llama3.2:latest", temperature=0.7)
 

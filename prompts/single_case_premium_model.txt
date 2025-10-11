@@ -9,7 +9,7 @@ Generate a case file for a {grade} student with: {disorders}
 Respond with valid JSON:
 {{
     "student_profile": {{
-        "name": "realistic anonymized name",
+        "name": "realistic anonymized name{exclude_names_prompt}",
         "age": age_number,
         "grade_level": "{grade}",
         "gender": "gender",

@@ -6,7 +6,7 @@ import gradio as gr
 
 from .config import *
 from .models import multiple_cases_batch, generation_control
-from .generation import generate_multiple_cases, parse_complex_request
+from .generation import generate_multiple_cases, parse_complex_request, parse_table_request
 from .feedback import submit_feedback
 from .utils import ai_grammar_check, load_json, save_case_file, save_case_to_db
 
@@ -16,20 +16,58 @@ def create_multiple_cases_ui():
     with gr.Column(visible=False) as page:
         with gr.Row():
             gr.Markdown("# Generate Multiple Cases")
-            back_btn = gr.Button("← Back", size="sm")
+            with gr.Column(scale=1):
+                with gr.Row():
+                    back_btn = gr.Button("← Back", size="sm")
+                    home_btn = gr.Button("🏠 Home", size="sm", variant="secondary")
         
         # CHAT BOX
         with gr.Group(elem_classes="left-panel"):
-            gr.Markdown("### 💬 Natural Language Request")
-            chat_request = gr.Textbox(
-                label="Describe what you want to generate",
-                placeholder='Example: "generate 20 students with articulation disorders, using GPT-4o, 5 are pre-k, rest kindergarten"',
-                lines=4
-            )
-            with gr.Row():
-                parse_btn = gr.Button("🔍 Parse Request", size="sm", variant="secondary")
-                clear_chat_btn = gr.Button("Clear", size="sm")
-            
+            gr.Markdown("### 💬 Natural Language Request or Upload Table")
+
+            with gr.Tabs():
+                with gr.Tab("Text Request"):
+                    gr.Markdown("""
+                    **Tip:** You can combine a table upload with text input!
+                    - Upload a CSV/Excel in the "Upload CSV/Excel" tab
+                    - Then specify model preference here (e.g., "Use Gemini", "Use GPT-4o")
+                    - Click Parse Request to combine both
+                    """)
+                    chat_request = gr.Textbox(
+                        label="Describe what you want to generate (or specify model for uploaded table)",
+                        placeholder='Example: "Use Gemini 2.5 Pro" or "generate 20 students with articulation disorders, using GPT-4o"',
+                        lines=4
+                    )
+                    with gr.Row():
+                        parse_btn = gr.Button("🔍 Parse Request", size="sm", variant="secondary")
+                        clear_chat_btn = gr.Button("Clear", size="sm")
+
+                with gr.Tab("Upload CSV/Excel"):
+                    table_upload = gr.File(
+                        label="Upload Student Table (CSV or Excel)",
+                        file_types=['.csv', '.xlsx', '.xls'],
+                        type="filepath"
+                    )
+                    gr.Markdown("""
+                    **Expected columns:**
+                    - Student ID (e.g., S-001, PT-012)
+                    - Grade Level (e.g., Pre-K, 1st Grade)
+                    - Communication Disorder(s) (e.g., "1. Speech sound disorder & 6. expressive language disorders")
+
+                    Note: Numbers before disorders are ignored as index markers.
+                    """)
+
+                    model_override = gr.Dropdown(
+                        choices=["Use default (from table)"] + FREE_MODELS + PREMIUM_MODELS,
+                        label="Model to Use (optional override)",
+                        value="Use default (from table)",
+                        interactive=True
+                    )
+
+                    with gr.Row():
+                        parse_table_btn = gr.Button("📊 Parse Table", size="sm", variant="secondary")
+                        clear_table_btn = gr.Button("Clear", size="sm")
+
             parsed_output = gr.Markdown(label="Parsed Tasks", visible=False)
         
         # MANUAL CONFIGURATION
@@ -148,9 +186,14 @@ def create_multiple_cases_ui():
     components = {
         "page": page,
         "back_btn": back_btn,
+        "home_btn": home_btn,
         "chat_request": chat_request,
         "parse_btn": parse_btn,
         "clear_chat_btn": clear_chat_btn,
+        "table_upload": table_upload,
+        "model_override": model_override,
+        "parse_table_btn": parse_table_btn,
+        "clear_table_btn": clear_table_btn,
         "parsed_output": parsed_output,
         "use_custom_ids": use_custom_ids,
         "custom_id_prefix": custom_id_prefix,
@@ -217,13 +260,99 @@ def setup_multiple_cases_events(components):
         outputs=components["condition_row_components"]
     )
     
-    # Parse natural language
-    def handle_parse_request(request):
-        if not request.strip():
-            return gr.update(visible=False, value="")
-        
-        tasks, breakdown = parse_complex_request(request)
-        
+    # Parse natural language (with optional table file)
+    def handle_parse_request(request, table_file):
+        tasks = []
+        breakdown = ""
+
+        # First, check if there's a table file uploaded
+        if table_file:
+            table_tasks, table_breakdown, _, _ = parse_table_request(table_file)
+            if table_tasks:
+                tasks.extend(table_tasks)
+                breakdown += table_breakdown + "\n\n"
+
+        # Then, parse text request if provided (for model specification or additional parameters)
+        if request.strip():
+            # Extract model preference from text
+            model_to_use = None
+            request_lower = request.lower()
+
+            all_models = FREE_MODELS + PREMIUM_MODELS
+            for model in all_models:
+                if model.lower() in request_lower:
+                    model_to_use = model
+                    break
+
+            # If we have tasks from table and a model specified, update all tasks with that model
+            if tasks and model_to_use:
+                for task in tasks:
+                    task['model'] = model_to_use
+                breakdown += f"**Model Override:** All cases will use **{model_to_use}**\n\n"
+
+            # If no table file, parse the text request normally
+            if not table_file:
+                text_tasks, text_breakdown = parse_complex_request(request)
+                if text_tasks:
+                    tasks.extend(text_tasks)
+                    breakdown += text_breakdown
+
+        # If no tasks from either source
+        if not tasks:
+            if not request.strip() and not table_file:
+                return [gr.update(visible=False, value="")] + [gr.update()] + [gr.update() for _ in range(MAX_CONDITION_ROWS * 5)]
+            else:
+                return [gr.update(visible=True, value=breakdown or "❌ No tasks could be parsed")] + [gr.update()] + [gr.update() for _ in range(MAX_CONDITION_ROWS * 5)]
+
+        # Populate the condition rows with parsed tasks
+        updates = []
+        for i in range(MAX_CONDITION_ROWS):
+            if i < len(tasks):
+                task = tasks[i]
+                updates.extend([
+                    gr.update(value=task.get('grade', '1st Grade')),
+                    gr.update(value=task.get('disorders', [])),
+                    gr.update(value=task.get('count', 1)),
+                    gr.update(value=task.get('model', 'Llama3.2')),
+                    gr.update(value=task.get('characteristics', ''))
+                ])
+            else:
+                updates.extend([gr.update() for _ in range(5)])
+
+        visible_count = min(len(tasks), MAX_CONDITION_ROWS)
+
+        return [gr.update(visible=True, value=breakdown), visible_count] + updates
+    
+    all_row_inputs = [item for sublist in components["condition_rows"] for item in sublist]
+    
+    components["parse_btn"].click(
+        fn=handle_parse_request,
+        inputs=[components["chat_request"], components["table_upload"]],
+        outputs=[components["parsed_output"], components["visible_row_count"]] + all_row_inputs
+    ).then(
+        fn=update_row_visibility,
+        inputs=components["visible_row_count"],
+        outputs=components["condition_row_components"]
+    )
+    
+    components["clear_chat_btn"].click(
+        fn=lambda: ("", gr.update(visible=False)),
+        outputs=[components["chat_request"], components["parsed_output"]]
+    )
+
+    # Parse table upload
+    def handle_parse_table(file_path, model_choice):
+        if not file_path:
+            return [gr.update(visible=False, value=""), gr.update(), gr.update(), gr.update(), gr.update()] + [gr.update() for _ in range(MAX_CONDITION_ROWS * 5)]
+
+        tasks, breakdown, id_prefix, id_start = parse_table_request(file_path)
+
+        # Apply model override if selected
+        if tasks and model_choice and model_choice != "Use default (from table)":
+            for task in tasks:
+                task['model'] = model_choice
+            breakdown += f"\n**Model Override:** All cases will use **{model_choice}**\n"
+
         if tasks:
             updates = []
             for i in range(MAX_CONDITION_ROWS):
@@ -238,24 +367,45 @@ def setup_multiple_cases_events(components):
                     ])
                 else:
                     updates.extend([gr.update() for _ in range(5)])
-            
+
             visible_count = min(len(tasks), MAX_CONDITION_ROWS)
-            
-            return [gr.update(visible=True, value=breakdown), visible_count] + updates
+
+            # Prepare outputs: parsed_output, visible_row_count, use_custom_ids, id_prefix, id_start, all_row_inputs
+            return [
+                gr.update(visible=True, value=breakdown),
+                visible_count,
+                gr.update(value=True if id_prefix else False),  # Enable custom IDs if we detected a prefix
+                gr.update(value=id_prefix if id_prefix else "S", visible=True if id_prefix else False),
+                gr.update(value=id_start if id_start else 1, visible=True if id_prefix else False)
+            ] + updates
         else:
-            return [gr.update(visible=True, value=breakdown), gr.update()] + [gr.update() for _ in range(MAX_CONDITION_ROWS * 5)]
-    
-    all_row_inputs = [item for sublist in components["condition_rows"] for item in sublist]
-    
-    components["parse_btn"].click(
-        fn=handle_parse_request,
-        inputs=components["chat_request"],
-        outputs=[components["parsed_output"], components["visible_row_count"]] + all_row_inputs
+            return [
+                gr.update(visible=True, value=breakdown),
+                gr.update(),
+                gr.update(),
+                gr.update(),
+                gr.update()
+            ] + [gr.update() for _ in range(MAX_CONDITION_ROWS * 5)]
+
+    components["parse_table_btn"].click(
+        fn=handle_parse_table,
+        inputs=[components["table_upload"], components["model_override"]],
+        outputs=[
+            components["parsed_output"],
+            components["visible_row_count"],
+            components["use_custom_ids"],
+            components["custom_id_prefix"],
+            components["custom_id_start"]
+        ] + all_row_inputs
+    ).then(
+        fn=update_row_visibility,
+        inputs=components["visible_row_count"],
+        outputs=components["condition_row_components"]
     )
-    
-    components["clear_chat_btn"].click(
-        fn=lambda: ("", gr.update(visible=False)),
-        outputs=[components["chat_request"], components["parsed_output"]]
+
+    components["clear_table_btn"].click(
+        fn=lambda: (None, "Use default (from table)", gr.update(visible=False)),
+        outputs=[components["table_upload"], components["model_override"], components["parsed_output"]]
     )
     
     # Toggle custom IDs
@@ -268,17 +418,32 @@ def setup_multiple_cases_events(components):
         outputs=[components["custom_id_prefix"], components["custom_id_start"]]
     )
     
+    # Reset condition rows to defaults
+    def reset_condition_rows():
+        """Reset all condition rows to default values and show only first row."""
+        updates = []
+        default_model = DEFAULT_MODEL if DEFAULT_MODEL in (FREE_MODELS + PREMIUM_MODELS) else (FREE_MODELS[0] if FREE_MODELS else PREMIUM_MODELS[0])
+        for i in range(MAX_CONDITION_ROWS):
+            updates.extend([
+                gr.update(value="1st Grade"),
+                gr.update(value=["Articulation Disorders"]),
+                gr.update(value=1),
+                gr.update(value=default_model),
+                gr.update(value="")
+            ])
+        return [1] + updates  # Return visible_row_count = 1, plus all field updates
+
     # Generate multiple cases
     def handle_multiple_generation(row_count, use_custom, id_prefix, id_start, *row_inputs):
         tasks = []
-        
+
         for i in range(row_count):
             grade = row_inputs[i * 5]
             disorders = row_inputs[i * 5 + 1]
             num = row_inputs[i * 5 + 2]
             model = row_inputs[i * 5 + 3]
             characteristics = row_inputs[i * 5 + 4]
-            
+
             if disorders:
                 tasks.append({
                     "grade": grade,
@@ -287,14 +452,14 @@ def setup_multiple_cases_events(components):
                     "model": model,
                     "characteristics": characteristics
                 })
-        
+
         if not tasks:
             yield ("⚠️ Please configure at least one condition row",
                    gr.update(visible=False),
                    gr.update(choices=["Whole Batch"]),
                    gr.update(interactive=True))
             return
-        
+
         save_path = DEFAULT_OUTPUT_PATH
         for output, filename, case_choices, btn_state in generate_multiple_cases(
             tasks, save_path, use_custom, id_prefix, id_start
@@ -307,13 +472,23 @@ def setup_multiple_cases_events(components):
                    btn_state)
     
     components["generate_btn"].click(
+        fn=lambda: (gr.update(visible=True), gr.update(interactive=False)),
+        outputs=[components["stop_btn"], components["generate_btn"]]
+    ).then(
         fn=handle_multiple_generation,
         inputs=[components["visible_row_count"], components["use_custom_ids"],
                 components["custom_id_prefix"], components["custom_id_start"]] + all_row_inputs,
         outputs=[components["output"], components["save_path"], components["case_selector"], components["generate_btn"]]
     ).then(
-        fn=lambda: gr.update(visible=True),
-        outputs=components["save_section"]
+        fn=lambda: (gr.update(visible=True), gr.update(visible=False)),
+        outputs=[components["save_section"], components["stop_btn"]]
+    ).then(
+        fn=reset_condition_rows,
+        outputs=[components["visible_row_count"]] + all_row_inputs
+    ).then(
+        fn=update_row_visibility,
+        inputs=components["visible_row_count"],
+        outputs=components["condition_row_components"]
     )
     
     # Stop button
