@@ -17,9 +17,7 @@ def create_multiple_cases_ui():
         with gr.Row():
             gr.Markdown("# Generate Multiple Cases")
             with gr.Column(scale=1):
-                with gr.Row():
-                    back_btn = gr.Button("← Back", size="sm")
-                    home_btn = gr.Button("🏠 Home", size="sm", variant="secondary")
+                home_btn = gr.Button("🏠 Home", size="sm", variant="secondary")
         
         # CHAT BOX
         with gr.Group(elem_classes="left-panel"):
@@ -180,13 +178,17 @@ def create_multiple_cases_ui():
             with gr.Row():
                 submit_feedback_btn = gr.Button("Submit Feedback", variant="secondary")
                 add_another_feedback_btn = gr.Button("Add Another Evaluation", variant="secondary", size="sm")
-            
+
             feedback_status = gr.Markdown("")
-    
+
+        # BACK TO TOP BUTTON
+        gr.Markdown("---")
+        back_to_top_btn = gr.Button("⬆️ Back to Top", size="lg", variant="secondary")
+
     components = {
         "page": page,
-        "back_btn": back_btn,
         "home_btn": home_btn,
+        "back_to_top_btn": back_to_top_btn,
         "chat_request": chat_request,
         "parse_btn": parse_btn,
         "clear_chat_btn": clear_chat_btn,
@@ -606,4 +608,10 @@ def setup_multiple_cases_events(components):
         outputs=[components["rating_clinical"], components["rating_age"], components["rating_goals"],
                 components["rating_notes"], components["rating_background"],
                 components["detailed_feedback"], components["feedback_cat"], components["feedback_status"]]
+    )
+
+    # Back to top button - uses JavaScript to scroll to top
+    components["back_to_top_btn"].click(
+        fn=lambda: None,
+        js="() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
     )
