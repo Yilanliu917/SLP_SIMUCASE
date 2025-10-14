@@ -7,6 +7,14 @@ Population specifications: {population_spec}
 
 Create a comprehensive case file for a {grade} student with {disorders}. Ensure the parent/teacher concerns, IEP goals, and session notes are all clinically aligned and create a cohesive narrative.
 
+IMPORTANT DEVELOPMENTAL CONSIDERATIONS:
+1. Annual IEP goals must be AGE-APPROPRIATE for {grade} students
+2. For speech sound errors: Only include errors that are ATYPICAL for this age (not sounds still developing normally)
+3. For Articulation Disorders: Focus on RESIDUAL ERRORS (e.g., /r/, /s/, /l/, /th/) - individual sound errors, not patterns
+4. For Phonological Disorders: Focus on PHONOLOGICAL PROCESSES/PATTERNS (e.g., fronting, stopping, cluster reduction) - sound pattern errors affecting multiple sounds
+5. For Language Disorders: Target skills that are delayed compared to age-expected milestones for {grade}
+6. Ensure all errors and targets reflect what is developmentally atypical for this specific grade level
+
 Generate a natural, readable case file with the following sections:
 
 STUDENT PROFILE:

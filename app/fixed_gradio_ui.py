@@ -1,9 +1,11 @@
 import os
 import json
+import re
 from dotenv import load_dotenv
 from typing import List, Dict, Optional
 from datetime import datetime
 from collections import defaultdict
+import glob
 
 import gradio as gr
 from pydantic import BaseModel, Field
@@ -314,15 +316,126 @@ def check_disorder_compatibility(disorders_list: List[List[str]]) -> tuple:
     
     return valid, reason
 
+def parse_markdown_case(content: str) -> Optional[Dict]:
+    """Parse a markdown case file and extract structured information."""
+    try:
+        # Extract case ID and name from header (e.g., "## S005: Camila Ramos")
+        id_match = re.search(r'##\s+([A-Z0-9]+):\s+(.+)', content)
+        if not id_match:
+            return None
+
+        case_id = id_match.group(1)
+        name = id_match.group(2).strip()
+
+        # Extract metadata line (Grade, Age, Gender, Disorders)
+        meta_match = re.search(r'\*\*Grade:\*\*\s+([^\|]+)\s+\|\s+\*\*Age:\*\*\s+(\d+)\s+\|\s+\*\*Gender:\*\*\s+(\w+)', content)
+        if not meta_match:
+            return None
+
+        grade = meta_match.group(1).strip()
+        age = int(meta_match.group(2))
+        gender = meta_match.group(3).strip()
+
+        # Extract disorders
+        disorder_match = re.search(r'\*\*Disorders:\*\*\s+([^\n]+)', content)
+        disorders = disorder_match.group(1).strip() if disorder_match else ""
+
+        # Extract model
+        model_match = re.search(r'\*\*Model:\*\*\s+([^\n]+)', content)
+        model = model_match.group(1).strip() if model_match else "Unknown"
+
+        # Extract special characteristics
+        char_match = re.search(r'\*\*Special Characteristics:\*\*\s+([^\n]+)', content)
+        characteristics = char_match.group(1).strip() if char_match else ""
+
+        # Extract Background section
+        background_section = ""
+        bg_match = re.search(r'###\s+Background\s*\n((?:- \*\*[^:]+:\*\*[^\n]+\n?)+)', content)
+        if bg_match:
+            background_section = bg_match.group(1).strip()
+
+        # Extract Annual IEP Goals
+        goals = []
+        goals_match = re.search(r'###\s+Annual IEP Goals\s*\n((?:\d+\..+\n?)+)', content)
+        if goals_match:
+            goals_text = goals_match.group(1).strip()
+            goals = [g.strip() for g in re.findall(r'\d+\.\s+(.+)', goals_text)]
+
+        # Extract Latest Session Notes
+        session_notes = []
+        notes_match = re.search(r'###\s+Latest Session Notes\s*\n((?:\*\*Session \d+:\*\*.+(?:\n(?!\*\*Session|\n---|\n##).+)*)+)', content)
+        if notes_match:
+            notes_text = notes_match.group(1).strip()
+            session_notes = re.findall(r'\*\*Session \d+:\*\*\s+(.+?)(?=\*\*Session \d+:|\Z)', notes_text, re.DOTALL)
+            session_notes = [note.strip() for note in session_notes]
+
+        return {
+            "case_id": case_id,
+            "name": name,
+            "grade": grade,
+            "age": age,
+            "gender": gender,
+            "disorders": disorders,
+            "model": model,
+            "characteristics": characteristics,
+            "background": background_section,
+            "annual_goals": goals,
+            "session_notes": session_notes
+        }
+    except Exception as e:
+        print(f"Error parsing markdown case: {e}")
+        return None
+
+def search_existing_cases_in_folder(grades: List[str], disorders_list: List[List[str]]) -> List[Dict]:
+    """Search for existing cases in generated_case_files folder matching criteria."""
+    matching_cases = []
+
+    # Get all markdown files in the generated_case_files folder
+    md_files = glob.glob(os.path.join(DEFAULT_OUTPUT_PATH, "*.md"))
+
+    for filepath in md_files:
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Split multiple cases if batch file
+            case_sections = re.split(r'\n---\n', content)
+
+            for section in case_sections:
+                if not section.strip():
+                    continue
+
+                case_data = parse_markdown_case(section)
+                if not case_data:
+                    continue
+
+                # Check if case matches any member criteria
+                for i, (grade, disorders) in enumerate(zip(grades, disorders_list)):
+                    # Match grade and any disorder
+                    if case_data["grade"] == grade:
+                        for disorder in disorders:
+                            if disorder.lower() in case_data["disorders"].lower():
+                                case_data["member_index"] = i
+                                case_data["filepath"] = filepath
+                                matching_cases.append(case_data)
+                                break
+                        if "member_index" in case_data:
+                            break
+        except Exception as e:
+            print(f"Error reading file {filepath}: {e}")
+            continue
+
+    return matching_cases
+
 def search_existing_cases(grades: List[str], disorders_list: List[List[str]]) -> List[Dict]:
-    """Search for existing cases matching criteria."""
+    """Search for existing cases matching criteria (legacy database search)."""
     db = load_json(CASES_DB, {"cases": []})
     matching_cases = []
-    
+
     for case in db["cases"]:
         case_grade = case.get("grade", "")
         case_disorders = case.get("disorders", [])
-        
+
         # Check if case matches any member criteria
         for i, (grade, disorders) in enumerate(zip(grades, disorders_list)):
             if case_grade == grade and any(d in case_disorders for d in disorders):
@@ -334,7 +447,7 @@ def search_existing_cases(grades: List[str], disorders_list: List[List[str]]) ->
                     "filepath": case.get("filepath", "")
                 })
                 break
-    
+
     return matching_cases
 
 # --- CHAT PARSING FOR MULTIPLE CASES ---
@@ -751,132 +864,220 @@ def generate_multiple_cases(tasks: List[Dict], save_path: str, use_custom_id: bo
            gr.update(interactive=True, variant="primary"))
 
 # --- GROUP SESSION GENERATION ---
-def generate_group_session(group_size: int, grades: List[str], disorders_list: List[List[str]], 
-                          model: str, search_first: bool = True):
-    """Generate or search for group session cases."""
-    
+def generate_group_session(group_size: int, grades: List[str], disorders_list: List[List[str]],
+                          model: str, search_first: bool = True, use_custom_ids: bool = False,
+                          id_prefix: str = "S", id_start: int = 1):
+    """Generate or search for group session cases with full profiles."""
+
     generation_control["should_stop"] = False
-    
+
     session_id = f"group_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    
-    yield (f"🔄 Initializing group session...", 
-           None, 
+    id_counter = id_start
+
+    yield (f"🔄 Initializing group session...",
+           None,
            gr.update(interactive=False),
            gr.update(visible=True))
-    
+
     # Check compatibility
     grade_compat, grade_msg = check_grade_compatibility(grades[:group_size])
     disorder_compat, disorder_msg = check_disorder_compatibility(disorders_list[:group_size])
-    
+
     compat_check = f"""### Compatibility Check
 
 **Grade Levels:** {grade_msg}
 **Disorder Combinations:** {disorder_msg}
 
 """
-    
+
     if not grade_compat or not disorder_compat:
         final_msg = compat_check + "\n⚠️ **Warning:** Group configuration may not be optimal per grouping strategies.\nProceed anyway or adjust configuration.\n"
         yield (final_msg, None, gr.update(interactive=True), gr.update(visible=True))
-    
-    # Search for existing cases
+
+    # Search for existing cases in folder
+    existing_cases = []
     if search_first:
-        yield (compat_check + "🔍 Searching existing cases...", 
-               None, 
+        yield (compat_check + "🔍 Searching existing cases in folder...",
+               None,
                gr.update(interactive=False),
                gr.update(visible=True))
-        
-        matching = search_existing_cases(grades[:group_size], disorders_list[:group_size])
-        
-        if len(matching) >= group_size:
-            yield (compat_check + f"✅ Found {len(matching)} matching cases!\nUsing existing cases for group session...", 
-                   None, 
+
+        existing_cases = search_existing_cases_in_folder(grades[:group_size], disorders_list[:group_size])
+
+        if len(existing_cases) >= group_size:
+            yield (compat_check + f"✅ Found {len(existing_cases)} matching cases!\nUsing existing cases for group session...",
+                   None,
                    gr.update(interactive=False),
                    gr.update(visible=True))
         else:
-            yield (compat_check + f"⚠️ Only found {len(matching)} matching cases. Need {group_size}.\nGenerating missing cases...", 
-                   None, 
+            yield (compat_check + f"⚠️ Only found {len(existing_cases)} matching cases. Need {group_size}.\nWill use existing cases where available...",
+                   None,
                    gr.update(interactive=False),
                    gr.update(visible=True))
-    
+
     # Generate group session output
     output = f"# Group Session\n**Session ID:** {session_id}\n**Date:** {datetime.now().strftime('%Y-%m-%d')}\n**Group Size:** {group_size}\n\n"
     output += compat_check + "\n---\n\n"
-    
-    # Generate/retrieve member profiles
+
+    # Process each member
     members = []
     for i in range(group_size):
         if generation_control["should_stop"]:
-            yield (output + "\n\n⛔ **Generation stopped by user**", 
-                   None, 
+            yield (output + "\n\n⛔ **Generation stopped by user**",
+                   None,
                    gr.update(interactive=True, variant="primary"),
                    gr.update(visible=True))
             return
-        
-        yield (output + f"\n🔄 Processing Member {i+1}/{group_size}...", 
-               None, 
+
+        # Generate student ID
+        if use_custom_ids:
+            student_id = f"{id_prefix}{id_counter:03d}"
+            id_counter += 1
+        else:
+            student_id = f"Member {i+1}"
+
+        yield (output + f"\n🔄 Processing {student_id}...",
+               None,
                gr.update(interactive=False),
                gr.update(visible=True))
-        
-        # Generate individual case for this member
-        member_output = f"\n## Member {i+1}: Student {chr(65+i)}\n"
-        member_output += f"**Grade:** {grades[i]}\n"
-        member_output += f"**Disorders:** {', '.join(disorders_list[i])}\n\n"
-        
-        # Generate case using the single case generation logic
-        task = {
-            "grade": grades[i],
-            "disorders": disorders_list[i],
-            "model": model,
-            "characteristics": ""
-        }
-        
-        # Quick generation (simplified)
-        member_output += f"### Background\n- Medical history relevant to {', '.join(disorders_list[i])}\n"
-        member_output += f"- Parent concerns about communication development\n"
-        member_output += f"- Teacher observations in classroom setting\n\n"
-        
-        member_output += f"### IEP Goals for Group Session\n"
-        member_output += f"1. Goal related to {disorders_list[i][0] if disorders_list[i] else 'communication'}\n"
-        member_output += f"2. Social communication goal for group interaction\n\n"
-        
-        members.append({
-            "member_num": i+1,
-            "grade": grades[i],
-            "disorders": disorders_list[i],
-            "output": member_output
-        })
-        
+
+        # Find matching existing case for this member
+        matching_case = None
+        for case in existing_cases:
+            if case.get("member_index") == i:
+                matching_case = case
+                existing_cases.remove(case)  # Remove to avoid reuse
+                break
+
+        if matching_case:
+            # Use existing case
+            member_output = f"\n## {student_id}: {matching_case['name']}\n\n"
+            member_output += f"**Grade:** {matching_case['grade']} | **Age:** {matching_case['age']} | **Gender:** {matching_case['gender']}\n"
+            member_output += f"**Disorders:** {matching_case['disorders']}\n"
+            if matching_case.get('characteristics'):
+                member_output += f"**Special Characteristics:** {matching_case['characteristics']}\n"
+            member_output += "\n"
+
+            # Add background
+            member_output += f"### Background\n{matching_case['background']}\n\n"
+
+            # Add annual goals
+            member_output += f"### Annual IEP Goals\n"
+            for idx, goal in enumerate(matching_case['annual_goals'], 1):
+                member_output += f"{idx}. {goal}\n"
+            member_output += "\n"
+
+            # Add latest session notes
+            member_output += f"### Latest Session Notes\n"
+            for idx, note in enumerate(matching_case['session_notes'], 1):
+                member_output += f"**Session {idx}:** {note}\n"
+            member_output += "\n"
+
+            # Generate group goal using AI based on session notes
+            yield (output + f"\n🔄 Generating group goal for {student_id} using {model}...",
+                   None,
+                   gr.update(interactive=False),
+                   gr.update(visible=True))
+
+            session_notes_summary = "\n".join([f"- {note[:200]}..." if len(note) > 200 else f"- {note}"
+                                              for note in matching_case['session_notes']])
+
+            try:
+                llm = ChatOllama(model=MODEL_MAP.get(model, "llama3.2:latest"), temperature=0.7)
+                goal_prompt = f"""Based on this student's latest session notes, generate ONE specific, measurable group therapy goal that would be appropriate for a small group setting (2-4 students).
+
+Student Profile:
+- Grade: {matching_case['grade']}
+- Disorders: {matching_case['disorders']}
+
+Latest Session Notes:
+{session_notes_summary}
+
+Generate a single group therapy goal that:
+1. Builds on the student's current progress shown in the session notes
+2. Is appropriate for a group setting with peer interaction
+3. Is specific and measurable
+4. Aligns with the student's disorders
+
+Provide ONLY the goal text, no explanations or additional commentary."""
+
+                response = llm.invoke(goal_prompt)
+                group_goal = response.content.strip() if hasattr(response, 'content') else "Participate in group activities to improve communication skills."
+
+                # Clean up any meta-commentary
+                if ":" in group_goal and group_goal.split(":")[0].lower() in ["goal", "group goal", "therapy goal"]:
+                    group_goal = group_goal.split(":", 1)[1].strip()
+
+            except Exception as e:
+                print(f"Error generating group goal: {e}")
+                group_goal = f"Participate in group therapy activities to improve {matching_case['disorders'].split(',')[0].lower()} skills in a collaborative setting."
+
+            member_output += f"### Group Therapy Goal (AI-Generated)\n{group_goal}\n\n"
+
+            members.append({
+                "member_num": i+1,
+                "student_id": student_id,
+                "name": matching_case['name'],
+                "grade": matching_case['grade'],
+                "disorders": matching_case['disorders'],
+                "output": member_output,
+                "group_goal": group_goal
+            })
+        else:
+            # No existing case found - create placeholder
+            member_output = f"\n## {student_id}\n\n"
+            member_output += f"**Grade:** {grades[i]}\n"
+            member_output += f"**Disorders:** {', '.join(disorders_list[i])}\n\n"
+            member_output += f"### Background\n"
+            member_output += f"- **Medical History:** No existing case found for this profile\n"
+            member_output += f"- **Parent Concerns:** Generate a new case to populate this information\n"
+            member_output += f"- **Teacher Concerns:** Generate a new case to populate this information\n\n"
+            member_output += f"### Annual IEP Goals\n"
+            member_output += f"1. No existing case found - generate a new case for full details\n\n"
+            member_output += f"### Latest Session Notes\n"
+            member_output += f"**Note:** No existing case found. Generate a new case to populate session notes.\n\n"
+            member_output += f"### Group Therapy Goal\n"
+            member_output += f"Generate a new case to create appropriate group therapy goals.\n\n"
+
+            members.append({
+                "member_num": i+1,
+                "student_id": student_id,
+                "grade": grades[i],
+                "disorders": ', '.join(disorders_list[i]),
+                "output": member_output,
+                "group_goal": "To be determined after case generation"
+            })
+
         output += member_output
-    
-    # Add group session plan
-    output += "\n---\n\n## Group Session Plan\n\n"
-    output += f"### Session Focus\nCollaborative communication skills with focus on:\n"
-    for i, member in enumerate(members):
-        output += f"- Member {i+1}: {', '.join(member['disorders'])}\n"
-    
-    output += "\n### Group Activities\n"
-    output += "1. **Turn-taking activity** - Supports all members' communication goals\n"
-    output += "2. **Collaborative problem-solving** - Targets pragmatic language skills\n"
-    output += "3. **Peer modeling** - Members support each other's articulation/language goals\n\n"
-    
-    output += "### Session Notes\n"
-    output += "**Session 1:** Initial group session. All members participated appropriately...\n"
-    output += "**Session 2:** Continued progress on individual and group goals...\n"
-    output += "**Session 3:** Strong peer interaction observed. Goals being met...\n"
-    
+
+    # Add group session plan summary
+    output += "\n---\n\n## Group Session Summary\n\n"
+    output += f"### Group Composition\n"
+    for member in members:
+        output += f"- **{member['student_id']}**: {member['grade']} - {member['disorders']}\n"
+
+    output += "\n### Individual Group Goals\n"
+    for member in members:
+        output += f"- **{member['student_id']}**: {member['group_goal']}\n"
+
+    output += "\n### Recommended Group Activities\n"
+    output += "1. **Turn-taking practice** - Supports all members' communication and social interaction goals\n"
+    output += "2. **Collaborative problem-solving tasks** - Targets pragmatic language and executive function skills\n"
+    output += "3. **Peer modeling and feedback** - Members support each other's specific articulation/language goals\n"
+    output += "4. **Structured conversation practice** - Builds on individual session notes progress in group context\n\n"
+
     # Store in global state
     group_session_data["session_id"] = session_id
     group_session_data["members"] = members
     group_session_data["timestamp"] = datetime.now().isoformat()
-    
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     suggested_filename = f"{DEFAULT_OUTPUT_PATH}group_session_{timestamp}.md"
-    
+
     output += f"\n\n---\n✅ **Group Session Plan Complete**\n**Session ID:** {session_id}"
-    
-    yield (output, 
-           suggested_filename, 
+
+    yield (output,
+           suggested_filename,
            gr.update(interactive=True, variant="primary"),
            gr.update(visible=False))
 
@@ -984,10 +1185,10 @@ def create_ui():
                     model_single = gr.Dropdown(choices=FREE_MODELS + PREMIUM_MODELS, label="AI Model", value="Llama3.2")
                     disorders_single = gr.Dropdown(choices=DISORDER_TYPES, label="Disorders", multiselect=True, value=["Articulation Disorders"])
                     population_spec_single = gr.Textbox(label="Population Characteristics", placeholder="e.g., second language learner", lines=2)
-                    
+
                     generate_btn_single = gr.Button("Generate", size="sm", variant="primary")
-            stop_btn_single = gr.Button("⛔ Stop", size="sm", variant="stop", visible=False)
-                
+                    stop_btn_single = gr.Button("⛔ Stop", size="sm", variant="stop", visible=False)
+
                 with gr.Column(scale=1, elem_classes="right-panel"):
                     gr.Markdown("### Advanced Options")
                     reference_files_single = gr.File(label="Upload References", file_count="multiple")
@@ -1177,7 +1378,26 @@ def create_ui():
             
             # Group size selection
             group_size = gr.Radio(choices=[2, 3, 4], label="Group Size", value=2)
-            
+
+            # Custom ID fields for group members
+            with gr.Row():
+                use_custom_group_ids = gr.Checkbox(label="Use Custom Student IDs", value=False)
+                custom_group_id_prefix = gr.Textbox(
+                    label="ID Prefix",
+                    placeholder="e.g., S, GRP-",
+                    value="S",
+                    visible=False,
+                    scale=1
+                )
+                custom_group_id_start = gr.Number(
+                    label="Start Number",
+                    value=1,
+                    minimum=1,
+                    step=1,
+                    visible=False,
+                    scale=1
+                )
+
             # Member configurations
             member_configs = []
             member_rows = []
@@ -1483,35 +1703,6 @@ def create_ui():
             fn=lambda: gr.update(visible=True),
             outputs=save_section_multiple
         )
-                        })
-            
-            if not tasks:
-                yield ("⚠️ Please configure at least one condition row", 
-                       gr.update(visible=False), 
-                       gr.update(choices=["Whole Batch"]), 
-                       gr.update(interactive=True))
-                return
-            
-            save_path = DEFAULT_OUTPUT_PATH
-            for output, filename, case_choices, btn_state in generate_multiple_cases(
-                tasks, save_path, use_custom, id_prefix, id_start
-            ):
-                # Show save section after generation
-                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                full_path = f"{save_path}multiple_cases_{timestamp}.md"
-                yield (output, 
-                       gr.update(visible=True, value=full_path), 
-                       gr.update(choices=case_choices), 
-                       btn_state)
-        
-        generate_btn_multiple.click(
-            fn=handle_multiple_generation,
-            inputs=[visible_row_count, use_custom_ids, custom_id_prefix, custom_id_start] + all_row_inputs,
-            outputs=[output_multiple, save_path_multiple, case_selector, generate_btn_multiple]
-        ).then(
-            fn=lambda: gr.update(visible=True),
-            outputs=save_section_multiple
-        )
         
         # Save functionality for multiple cases
         def handle_save_multiple(filepath):
@@ -1608,15 +1799,25 @@ def create_ui():
         )
         
         # === GROUP SESSION PAGE EVENT HANDLERS ===
-        
+
         # Update member row visibility based on group size
         def update_member_visibility(size):
             return [gr.update(visible=(i < size)) for i in range(4)]
-        
+
         group_size.change(
             fn=update_member_visibility,
             inputs=group_size,
             outputs=member_rows
+        )
+
+        # Toggle custom ID fields for group
+        def toggle_custom_group_ids(use_custom):
+            return gr.update(visible=use_custom), gr.update(visible=use_custom)
+
+        use_custom_group_ids.change(
+            fn=toggle_custom_group_ids,
+            inputs=use_custom_group_ids,
+            outputs=[custom_group_id_prefix, custom_group_id_start]
         )
         
         # Check compatibility
@@ -1647,25 +1848,25 @@ def create_ui():
         )
         
         # Generate group session
-        def handle_group_generation(size, model, search, *member_inputs):
+        def handle_group_generation(size, model, search, use_custom, id_prefix, id_start, *member_inputs):
             grades = [member_inputs[i*2] for i in range(size)]
             disorders = [member_inputs[i*2+1] for i in range(size)]
-            
+
             for output, filename, btn_state, stop_vis in generate_group_session(
-                size, grades, disorders, model, search
+                size, grades, disorders, model, search, use_custom, id_prefix, id_start
             ):
                 if filename:
                     full_path = f"{DEFAULT_OUTPUT_PATH}{os.path.basename(filename)}"
                     yield output, gr.update(visible=True, value=full_path), btn_state, stop_vis
                 else:
                     yield output, gr.update(), btn_state, stop_vis
-        
+
         generate_group_btn.click(
             fn=lambda: (gr.update(interactive=False), gr.update(visible=True)),
             outputs=[generate_group_btn, stop_btn_group]
         ).then(
             fn=handle_group_generation,
-            inputs=[group_size, model_group, search_existing] + all_member_inputs,
+            inputs=[group_size, model_group, search_existing, use_custom_group_ids, custom_group_id_prefix, custom_group_id_start] + all_member_inputs,
             outputs=[output_group, save_path_group, generate_group_btn, stop_btn_group]
         ).then(
             fn=lambda: gr.update(visible=True),

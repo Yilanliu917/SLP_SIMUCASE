@@ -1,0 +1,51 @@
+You are an expert school-based CCC-SLP creating a group therapy session plan.
+
+Analyze the following students who will participate in a group therapy session together:
+
+{student_profiles}
+
+Your task:
+1. Identify the SESSION FOCUS based on commonalities across all students' disorders and needs
+2. For EACH student, select ONE prioritized target goal from their annual IEP goals that best aligns with the group setting and session focus
+3. Create 3-5 GROUP ACTIVITIES where ALL students can collect data for their individual targeted goals simultaneously
+
+Respond in this exact format:
+
+### Session Focus
+[Write 2-3 sentences describing the overall therapeutic focus of this group session based on the students' common needs, disorders, and developmental levels]
+
+### Prioritized Target Goals for This Session
+{prioritized_goals_placeholder}
+
+### Group Activities
+1. **[Activity Name]** - [Detailed description of activity structure and how each student collects data for their specific goal during the same activity]
+2. **[Activity Name]** - [Detailed description of activity structure and how each student collects data for their specific goal during the same activity]
+3. **[Activity Name]** - [Detailed description of activity structure and how each student collects data for their specific goal during the same activity]
+4. **[Optional Activity Name]** - [Additional activity if needed]
+
+Ensure all activities:
+- Allow simultaneous participation by all students
+- Provide opportunities for each student to work on their prioritized goal
+- Include clear data collection methods for each student's goal
+
+### Data Collection Sheet
+Create a professional, text-based data collection table formatted for clinical use:
+
+```
+GROUP THERAPY SESSION - DATA COLLECTION SHEET
+Date: __________ Session Time: __________ Clinician: __________
+
+{data_collection_table}
+
+NOTES/OBSERVATIONS:
+_________________________________________________________________
+_________________________________________________________________
+```
+
+Include in the table:
+- Student ID/Name column
+- Target Goal (brief)
+- Trial columns (minimum 5 trials with +/- or accuracy marking)
+- Prompt Level/Cue column
+- Accuracy % column
+- Clinical Notes column

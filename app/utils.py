@@ -3,6 +3,8 @@ Utility functions for file I/O, LLM initialization, and parsing
 """
 import os
 import json
+import re
+import glob
 from typing import Optional, List, Dict, Tuple
 from datetime import datetime
 from dotenv import load_dotenv
@@ -17,6 +19,14 @@ from .models import BackgroundInfo, StudentProfile, SimuCaseFile
 
 # Ensure .env is loaded when this module is imported
 load_dotenv()
+
+# Import for PDF generation
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
+from reportlab.lib.enums import TA_LEFT, TA_CENTER
+import markdown2
 
 # --- FILE I/O ---
 def load_json(filepath: str, default) -> any:
@@ -76,6 +86,30 @@ def get_llm(model_name: str):
         if not api_key:
             raise ValueError("ANTHROPIC_API_KEY not found in environment. Please check your .env file.")
         return ChatAnthropic(model=model_id, temperature=0.7, api_key=api_key).with_structured_output(SimuCaseFile)
+    else:
+        return ChatOllama(model="llama3.2:latest", temperature=0.7)
+
+def get_text_llm(model_name: str):
+    """Initialize LLM for plain text generation without structured output."""
+    model_id = MODEL_MAP.get(model_name, "llama3.2:latest")
+
+    if model_name in FREE_MODELS:
+        return ChatOllama(model=model_id, temperature=0.7)
+    elif model_name == "GPT-4o":
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY not found in environment. Please check your .env file.")
+        return ChatOpenAI(model=model_id, temperature=0.7, api_key=api_key)
+    elif model_name == "Gemini 2.5 Pro":
+        api_key = os.getenv("GOOGLE_API_KEY")
+        if not api_key:
+            raise ValueError("GOOGLE_API_KEY not found in environment. Please check your .env file.")
+        return ChatGoogleGenerativeAI(model=model_id, temperature=0.7, google_api_key=api_key)
+    elif model_name in ["Claude 3 Opus", "Claude 3.5 Sonnet"]:
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            raise ValueError("ANTHROPIC_API_KEY not found in environment. Please check your .env file.")
+        return ChatAnthropic(model=model_id, temperature=0.7, api_key=api_key)
     else:
         return ChatOllama(model="llama3.2:latest", temperature=0.7)
 
@@ -220,11 +254,11 @@ def search_existing_cases(grades: List[str], disorders_list: List[List[str]]) ->
     """Search for existing cases matching criteria."""
     db = load_json(CASES_DB, {"cases": []})
     matching_cases = []
-    
+
     for case in db["cases"]:
         case_grade = case.get("grade", "")
         case_disorders = case.get("disorders", [])
-        
+
         for i, (grade, disorders) in enumerate(zip(grades, disorders_list)):
             if case_grade == grade and any(d in case_disorders for d in disorders):
                 matching_cases.append({
@@ -235,5 +269,195 @@ def search_existing_cases(grades: List[str], disorders_list: List[List[str]]) ->
                     "filepath": case.get("filepath", "")
                 })
                 break
-    
+
     return matching_cases
+
+# --- MARKDOWN PARSING ---
+def parse_markdown_case(content: str) -> Optional[Dict]:
+    """Parse a markdown case file and extract structured information."""
+    try:
+        # Extract case ID and name from header (e.g., "## S005: Camila Ramos")
+        id_match = re.search(r'##\s+([A-Z0-9]+):\s+(.+)', content)
+        if not id_match:
+            return None
+
+        case_id = id_match.group(1)
+        name = id_match.group(2).strip()
+
+        # Extract metadata line (Grade, Age, Gender)
+        meta_match = re.search(r'\*\*Grade:\*\*\s+([^\|]+)\s+\|\s+\*\*Age:\*\*\s+(\d+)\s+\|\s+\*\*Gender:\*\*\s+(\w+)', content)
+        if not meta_match:
+            return None
+
+        grade = meta_match.group(1).strip()
+        age = int(meta_match.group(2))
+        gender = meta_match.group(3).strip()
+
+        # Extract disorders
+        disorder_match = re.search(r'\*\*Disorders:\*\*\s+([^\n]+)', content)
+        disorders = disorder_match.group(1).strip() if disorder_match else ""
+
+        # Extract model
+        model_match = re.search(r'\*\*Model:\*\*\s+([^\n]+)', content)
+        model = model_match.group(1).strip() if model_match else ""
+
+        # Extract characteristics
+        characteristics_match = re.search(r'\*\*Special Characteristics:\*\*\s+([^\n]+)', content)
+        characteristics = characteristics_match.group(1).strip() if characteristics_match else ""
+
+        # Extract Background section
+        background_section = ""
+        bg_match = re.search(r'###\s+Background\s*\n((?:- \*\*[^:]+:\*\*[^\n]+\n?)+)', content)
+        if bg_match:
+            background_section = bg_match.group(1).strip()
+
+        # Extract Annual IEP Goals
+        goals = []
+        goals_match = re.search(r'###\s+Annual IEP Goals\s*\n((?:\d+\..+\n?)+)', content)
+        if goals_match:
+            goals_text = goals_match.group(1).strip()
+            goals = [g.strip() for g in re.findall(r'\d+\.\s+(.+)', goals_text)]
+
+        # Extract Latest Session Notes
+        session_notes = []
+        notes_match = re.search(r'###\s+Latest Session Notes\s*\n(.+?)(?=\n###|\n\n\n---|\Z)', content, re.DOTALL)
+        if notes_match:
+            notes_text = notes_match.group(1).strip()
+            # Split by **Session X:** markers
+            session_parts = re.split(r'\*\*Session \d+:\*\*\s*', notes_text)
+            # First element is empty, so skip it
+            session_notes = [note.strip() for note in session_parts[1:] if note.strip()]
+
+        return {
+            "case_id": case_id,
+            "name": name,
+            "grade": grade,
+            "age": age,
+            "gender": gender,
+            "disorders": disorders,
+            "model": model,
+            "characteristics": characteristics,
+            "background": background_section,
+            "annual_goals": goals,
+            "session_notes": session_notes
+        }
+    except Exception as e:
+        print(f"Error parsing markdown case: {e}")
+        return None
+
+def search_existing_cases_in_folder(grades: List[str], disorders_list: List[List[str]]) -> List[Dict]:
+    """Search for existing cases in generated_case_files folder matching criteria."""
+    matching_cases = []
+
+    # Get all markdown files in the generated_case_files folder
+    md_files = glob.glob(os.path.join(DEFAULT_OUTPUT_PATH, "*.md"))
+
+    for filepath in md_files:
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Split multiple cases if batch file
+            case_sections = re.split(r'\n---\n', content)
+
+            for section in case_sections:
+                if not section.strip():
+                    continue
+
+                case_data = parse_markdown_case(section)
+                if not case_data:
+                    continue
+
+                # Check if case matches any member criteria
+                for i, (grade, disorders) in enumerate(zip(grades, disorders_list)):
+                    # Match grade and any disorder
+                    if case_data["grade"] == grade:
+                        for disorder in disorders:
+                            if disorder.lower() in case_data["disorders"].lower():
+                                case_data["member_index"] = i
+                                case_data["filepath"] = filepath
+                                matching_cases.append(case_data)
+                                break
+                        if "member_index" in case_data:
+                            break
+        except Exception as e:
+            print(f"Error reading file {filepath}: {e}")
+            continue
+
+    return matching_cases
+
+# --- PDF GENERATION ---
+def markdown_to_pdf(markdown_content: str, output_path: str) -> str:
+    """Convert markdown content to PDF file."""
+    try:
+        # Create PDF document
+        doc = SimpleDocTemplate(output_path, pagesize=letter,
+                              rightMargin=72, leftMargin=72,
+                              topMargin=72, bottomMargin=18)
+
+        # Container for the 'Flowable' objects
+        elements = []
+
+        # Define styles
+        styles = getSampleStyleSheet()
+        styles.add(ParagraphStyle(name='CustomTitle',
+                                 parent=styles['Heading1'],
+                                 fontSize=24,
+                                 textColor='#2c3e50',
+                                 spaceAfter=30,
+                                 alignment=TA_CENTER))
+
+        styles.add(ParagraphStyle(name='CustomHeading',
+                                 parent=styles['Heading2'],
+                                 fontSize=16,
+                                 textColor='#34495e',
+                                 spaceAfter=12,
+                                 spaceBefore=12))
+
+        styles.add(ParagraphStyle(name='CustomBody',
+                                 parent=styles['BodyText'],
+                                 fontSize=11,
+                                 spaceAfter=12,
+                                 alignment=TA_LEFT))
+
+        # Split content into lines and process
+        lines = markdown_content.split('\n')
+
+        for i, original_line in enumerate(lines):
+            line = original_line.strip()
+
+            if not line:
+                elements.append(Spacer(1, 12))
+                continue
+
+            # Check if original line has bold markers before stripping
+            has_bold = '**' in original_line
+            is_heading = original_line.strip().startswith('#')
+
+            # Convert markdown bold/italic to reportlab format
+            # Do multiple passes to handle nested formatting
+            line = line.replace('**', '<b>', 1)  # First occurrence
+            line = line.replace('**', '</b>', 1)  # Second occurrence
+            line = line.replace('*', '<i>', 1)
+            line = line.replace('*', '</i>', 1)
+
+            # Remove markdown heading markers
+            line = line.replace('###', '').replace('##', '').replace('#', '').strip()
+
+            # Detect headings based on original content
+            if is_heading and '# ' in original_line:
+                elements.append(Paragraph(line, styles['CustomTitle']))
+            elif has_bold or is_heading:
+                # Bold text or heading detected
+                elements.append(Paragraph(line, styles['CustomHeading']))
+            else:
+                # Regular text
+                elements.append(Paragraph(line, styles['CustomBody']))
+
+        # Build PDF
+        doc.build(elements)
+        return output_path
+
+    except Exception as e:
+        print(f"Error generating PDF: {e}")
+        raise e

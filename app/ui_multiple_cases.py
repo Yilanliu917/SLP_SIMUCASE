@@ -8,7 +8,7 @@ from .config import *
 from .models import multiple_cases_batch, generation_control
 from .generation import generate_multiple_cases, parse_complex_request, parse_table_request
 from .feedback import submit_feedback
-from .utils import ai_grammar_check, load_json, save_case_file, save_case_to_db
+from .utils import ai_grammar_check, load_json, save_case_file, save_case_to_db, markdown_to_pdf
 
 def create_multiple_cases_ui():
     """Create the multiple cases generation page UI."""
@@ -136,7 +136,7 @@ def create_multiple_cases_ui():
             
             with gr.Row():
                 save_btn = gr.Button("💾 Save", variant="primary", size="sm")
-                save_as_btn = gr.DownloadButton("📥 Save As", size="sm")
+                download_pdf_btn = gr.DownloadButton("📄 Download PDF", size="sm")
             
             save_status = gr.Markdown("")
         
@@ -211,7 +211,7 @@ def create_multiple_cases_ui():
         "save_section": save_section,
         "save_path": save_path,
         "save_btn": save_btn,
-        "save_as_btn": save_as_btn,
+        "download_pdf_btn": download_pdf_btn,
         "save_status": save_status,
         "case_selector": case_selector,
         "rating_clinical": rating_clinical,
@@ -531,19 +531,20 @@ def setup_multiple_cases_events(components):
         outputs=components["save_status"]
     )
     
-    # Download
+    # Download PDF
     def prepare_download_multiple():
         if multiple_cases_batch["cases"]:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            temp_file = f"temp_batch_{timestamp}.md"
-            combined = "\n\n".join([case["content"] for case in multiple_cases_batch["cases"]])
-            save_case_file(combined, temp_file)
-            return temp_file
+            temp_pdf = f"temp_batch_{timestamp}.pdf"
+            combined = f"# Multiple Cases Batch\n**Batch ID:** {multiple_cases_batch['batch_id']}\n\n"
+            combined += "\n\n".join([case["content"] for case in multiple_cases_batch["cases"]])
+            markdown_to_pdf(combined, temp_pdf)
+            return temp_pdf
         return None
-    
-    components["save_as_btn"].click(
+
+    components["download_pdf_btn"].click(
         fn=prepare_download_multiple,
-        outputs=components["save_as_btn"]
+        outputs=components["download_pdf_btn"]
     )
     
     # Feedback

@@ -1,0 +1,41 @@
+You are an expert school-based CCC-SLP creating a group therapy session plan.
+
+Analyze the following students who will participate in a group therapy session together:
+
+{student_profiles}
+
+Your task:
+1. Identify the SESSION FOCUS based on commonalities across all students' disorders and needs
+2. For EACH student, select ONE prioritized target goal from their annual IEP goals that best fits the group setting
+3. Create 3-5 GROUP ACTIVITIES where ALL students can collect data for their individual targeted goals simultaneously
+
+Respond in this exact format:
+
+### Session Focus
+[Write 2-3 sentences describing the overall focus of this group session based on the students' common needs and disorders]
+
+### Prioritized Target Goals for This Session
+{prioritized_goals_placeholder}
+
+### Group Activities
+1. **[Activity Name]** - [Description of activity and how each student collects data for their goal]
+2. **[Activity Name]** - [Description of activity and how each student collects data for their goal]
+3. **[Activity Name]** - [Description of activity and how each student collects data for their goal]
+
+Ensure all activities allow simultaneous data collection for all students' targeted goals.
+
+### Data Collection Sheet
+Create a text-based data collection table that the clinician can use directly during the session:
+
+```
+GROUP SESSION DATA COLLECTION
+Date: __________ Clinician: __________
+
+{data_collection_table}
+```
+
+Format the table with columns for:
+- Student ID/Name
+- Target Goal
+- Activity (with space for 3-5 trials)
+- Accuracy/Notes column

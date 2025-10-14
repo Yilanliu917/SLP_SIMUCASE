@@ -8,7 +8,7 @@ from .config import *
 from .models import current_case_data, generation_control
 from .generation import generate_single_case
 from .feedback import submit_feedback, handle_save
-from .utils import ai_grammar_check, load_json, save_case_file
+from .utils import ai_grammar_check, load_json, save_case_file, save_case_to_db, markdown_to_pdf
 from .asr_processor import get_speech_analyzer
 
 def create_single_case_ui(back_btn_handler):
@@ -17,7 +17,7 @@ def create_single_case_ui(back_btn_handler):
     with gr.Column(visible=False) as page:
         with gr.Row():
             gr.Markdown("# Generate Single Case")
-            back_btn = gr.Button("← Back", size="sm")
+            back_btn = gr.Button("🏠 Home", size="sm", variant="secondary")
         
         # LEFT AND RIGHT PANELS
         with gr.Row(equal_height=True):
@@ -89,7 +89,7 @@ def create_single_case_ui(back_btn_handler):
             
             with gr.Row():
                 save_btn = gr.Button("💾 Save", variant="primary", size="sm")
-                save_as_btn = gr.DownloadButton("📥 Save As (Download)", size="sm")
+                download_pdf_btn = gr.DownloadButton("📄 Download PDF", size="sm")
             
             save_status = gr.Markdown("")
         
@@ -114,7 +114,11 @@ def create_single_case_ui(back_btn_handler):
             
             submit_feedback_btn = gr.Button("Submit Feedback", variant="secondary")
             feedback_status = gr.Markdown("")
-    
+
+        # BACK TO TOP BUTTON
+        gr.Markdown("---")
+        back_to_top_btn = gr.Button("⬆️ Back to Top", size="lg", variant="secondary")
+
     # Store components
     components = {
         "page": page,
@@ -136,7 +140,7 @@ def create_single_case_ui(back_btn_handler):
         "save_section": save_section,
         "save_path_display": save_path_display,
         "save_btn": save_btn,
-        "save_as_btn": save_as_btn,
+        "download_pdf_btn": download_pdf_btn,
         "save_status": save_status,
         "rating_clinical": rating_clinical,
         "rating_age": rating_age,
@@ -147,9 +151,10 @@ def create_single_case_ui(back_btn_handler):
         "detailed_feedback": detailed_feedback,
         "grammar_check_btn": grammar_check_btn,
         "submit_feedback_btn": submit_feedback_btn,
-        "feedback_status": feedback_status
+        "feedback_status": feedback_status,
+        "back_to_top_btn": back_to_top_btn
     }
-    
+
     return components
 
 def setup_single_case_events(components, generated_filename):
@@ -364,18 +369,18 @@ def setup_single_case_events(components, generated_filename):
         outputs=components["save_status"]
     )
 
-    # Download button
+    # Download PDF button
     def prepare_download_single():
         if current_case_data["content"]:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            temp_file = f"temp_case_{timestamp}.md"
-            save_case_file(current_case_data["content"], temp_file)
-            return temp_file
+            temp_pdf = f"temp_case_{timestamp}.pdf"
+            markdown_to_pdf(current_case_data["content"], temp_pdf)
+            return temp_pdf
         return None
 
-    components["save_as_btn"].click(
+    components["download_pdf_btn"].click(
         fn=prepare_download_single,
-        outputs=components["save_as_btn"]
+        outputs=components["download_pdf_btn"]
     )
 
     # Feedback
@@ -420,4 +425,10 @@ def setup_single_case_events(components, generated_filename):
                 components["rating_clinical"], components["rating_age"], components["rating_goals"],
                 components["rating_notes"], components["rating_background"],
                 components["detailed_feedback"], components["feedback_cat"]]
+    )
+
+    # Back to top button
+    components["back_to_top_btn"].click(
+        fn=lambda: None,
+        js="() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }"
     )

@@ -1,0 +1,2320 @@
+[
+  {
+    "student_id": "S-001",
+    "anonymous_name": "Student_a9e3dd",
+    "grade_level": "5",
+    "room": "B104",
+    "teacher": "Teacher_3a242c",
+    "annual_goals": [
+      "Goal1: \nOn or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will produce prevocalic /r/ sounds with 70% accuracy at the sentence level for 2 data collection sessions. \nGoal2:\nOn or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will produce vocalic /r/ sounds (i.e., er, ar, air, ear, ire, or) with 70% accuracy at the sentence level for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 10:30-11:00",
+        "note": "data was not taken",
+        "row_number": 10
+      },
+      {
+        "date": "1/13, 10:35-11:15",
+        "note": "ar: 8/10 w/1 cue",
+        "row_number": 11
+      },
+      {
+        "date": "1/17, 9:00-9:40",
+        "note": "great gradma: 7/10 w/1 cue",
+        "row_number": 12
+      },
+      {
+        "date": "1/22, 11:15-11:45",
+        "note": "sentence ear and ire: 7/10 w/ 2-3 cues",
+        "row_number": 13
+      },
+      {
+        "date": "1/27, 10:15-10:45",
+        "note": "5/6 w/1 cue in phrases",
+        "row_number": 14
+      },
+      {
+        "date": "1/28, 11:00-11:15",
+        "note": "phrase, 7/10 w1-2 cues for gr",
+        "row_number": 15
+      },
+      {
+        "date": "2/3, 11:45-12:00",
+        "note": "phrase: four radios/ or: 8/10 w/1 cue\nrooster: r: 6/10 w/1-2 cues",
+        "row_number": 16
+      },
+      {
+        "date": "2/10",
+        "note": "regress, mouth was not open for pre-voicalic /r/, needs at least 2 cues to open his mouth bigger.",
+        "row_number": 17
+      },
+      {
+        "date": "2/18",
+        "note": "1 cue, pre-voicalic r blends: br, kr, fr, pr: 7/10 w/1 cue in sentences",
+        "row_number": 19
+      },
+      {
+        "date": "2/20",
+        "note": "1 cue, prevocalic and r in one sentence: 8/10",
+        "row_number": 21
+      },
+      {
+        "date": "2/24",
+        "note": "third grader: ir.er: 8/10, gr/: 7/10",
+        "row_number": 22
+      },
+      {
+        "date": "2/27",
+        "note": "pr 2cues, firework 2 cue, fairy 2 cue.",
+        "row_number": 23
+      },
+      {
+        "date": "3/3",
+        "note": "w/1 cue, able to use say r blends and r in sentences w/ 7/10",
+        "row_number": 24
+      },
+      {
+        "date": "¾",
+        "note": "R BLEND: 9/10 W/1 CUE IN SENTENCE\nVOCALIC R 15/18 IN SENTENCE W/1 CUE",
+        "row_number": 25
+      }
+    ],
+    "source_file": "Document_4a97036e.docx",
+    "extraction_date": "2025-10-05T20:45:55.775830"
+  },
+  {
+    "student_id": "S-002",
+    "anonymous_name": "Student_d02431",
+    "grade_level": "3",
+    "room": "A104",
+    "teacher": "Teacher_154688",
+    "annual_goals": [
+      "On or before the next annual ARD, when given verbal, visual, tactile cues, [STUDENT] will produce dr, gr, and kr at the word level with 70% accuracy across 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 1:30-2",
+        "note": "final ar: 5/10 w/1 cue, 8/10 w/2 cues",
+        "row_number": 10
+      },
+      {
+        "date": "1/13, 2:10-2:40",
+        "note": "initial: 12/15, final 8/10 w/ 1 cue",
+        "row_number": 11
+      },
+      {
+        "date": "1/16, 10:20-10:50",
+        "note": "w/1 cue, looking at mirror: final ar and middle ar: 8/10 w/1 cue",
+        "row_number": 12
+      },
+      {
+        "date": "1/22, 1:30-2",
+        "note": "w/1 cue, initial ar: 7/10",
+        "row_number": 14
+      },
+      {
+        "date": "1/27",
+        "note": "middle r: card, hard w/1 cue 4/6",
+        "row_number": 15
+      },
+      {
+        "date": "1/29",
+        "note": "grasshopper: 7/10 w/1 cue",
+        "row_number": 16
+      },
+      {
+        "date": "2/3, 1:15-1:45",
+        "note": "earth: 6/7 w/1 cue\ngive me a pair of sissors:6/8 w/1 cue",
+        "row_number": 17
+      },
+      {
+        "date": "2/5",
+        "note": "give me eraser: 5/6 w/ 1 cue",
+        "row_number": 18
+      },
+      {
+        "date": "2/10",
+        "note": "green grass: 8/10 w/1 cue",
+        "row_number": 19
+      },
+      {
+        "date": "2/17",
+        "note": "President day",
+        "row_number": 20
+      },
+      {
+        "date": "2/19",
+        "note": "absent",
+        "row_number": 21
+      },
+      {
+        "date": "2/20",
+        "note": "Ark: 5/5, gr: 6/10 w/",
+        "row_number": 22
+      },
+      {
+        "date": "2/25",
+        "note": "ar,er: 8/10 w/1 cue\nin sentence: 2-3 cues",
+        "row_number": 23
+      },
+      {
+        "date": "2/27",
+        "note": "ar: initial, middle, final: 7/10 w/ 1 cue.",
+        "row_number": 24
+      },
+      {
+        "date": "3/3",
+        "note": "mastered final ar, er, or, air in phrase  w/ 7/10 w/1 cue . prevocalic r 8/10 in phrase w/1 cue",
+        "row_number": 25
+      }
+    ],
+    "source_file": "Document_feb2ec76.docx",
+    "extraction_date": "2025-10-05T20:45:55.787895"
+  },
+  {
+    "student_id": "S-003",
+    "anonymous_name": "Student_54251f",
+    "grade_level": "4",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [
+      "On or before the next annual ARD, when given no cues, [STUDENT] will maintain a topic chosen by a teacher/staff member for at least 3 conversational turns by commenting, adding information, or asking questions in 4/5 trials across 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 12:30-1",
+        "note": "redirected x2, followed 3/5 w/1 cue, and was able to use AAC to say: I like snow. I like TV.",
+        "row_number": 9
+      },
+      {
+        "date": "1/13, 12:00-12:30",
+        "note": "was able to redirect w/1 cue, 3/5 turns\nfound “Snow”, “Tooth”, “put toothpaste on brush” on AAC",
+        "row_number": 10
+      },
+      {
+        "date": "1/22, 2:00-2:30",
+        "note": "found “ride a bike”, “dirty” on AAC using search function. Maintained attention through the session",
+        "row_number": 11
+      },
+      {
+        "date": "1/29",
+        "note": "absent , sick",
+        "row_number": 12
+      },
+      {
+        "date": "2/5",
+        "note": "x2 redirect w/1 cue, found “I am your best friend” w/ verbal prompts, found “face mask” using search function.",
+        "row_number": 13
+      },
+      {
+        "date": "2/11, 1:45-2:15",
+        "note": "3/5 w/ 1-2 cues. Found “rabbit’s home”, “rabbit’s party” on AAC",
+        "row_number": 14
+      },
+      {
+        "date": "2/19",
+        "note": "absent",
+        "row_number": 15
+      },
+      {
+        "date": "2/26",
+        "note": "reduced to x2 distractions. 3 turns w/1 cue followed instruction to find holiday and feelings in AAC w/ 1-2 cuesx3 and commented verbally x2.",
+        "row_number": 16
+      },
+      {
+        "date": "¾",
+        "note": "commenting, request, response x4/6 times",
+        "row_number": 18
+      }
+    ],
+    "source_file": "Document_32fe49da.docx",
+    "extraction_date": "2025-10-05T20:45:55.797313"
+  },
+  {
+    "student_id": "S-004",
+    "anonymous_name": "Student_36ff7d",
+    "grade_level": "k",
+    "room": "C105",
+    "teacher": "Teacher_976d01",
+    "annual_goals": [
+      "On or before the next annual ARD, when given verbal and visual cues, [STUDENT] will use plurals (i.e dogs, cats), in 7/10 trials across 2 data collection sessions.  3/5x1 mod cues"
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 9:40-10:10",
+        "note": "8/10 w/1-2 cues, sequence 2/2 independently",
+        "row_number": 11
+      },
+      {
+        "date": "1/13, 9:30-10:00",
+        "note": "still needs a modeling for front and behind, but was able w/1 cue, able to use SVO sentence to describe action pictures.",
+        "row_number": 12
+      },
+      {
+        "date": "1/15",
+        "note": "front/behind/beside: w/1 cue, 6/8, was able to sequence and tell the order.",
+        "row_number": 13
+      },
+      {
+        "date": "1/21, 9:30-10:00",
+        "note": "7/8 for front/behind/beside w/1 cue",
+        "row_number": 14
+      },
+      {
+        "date": "1/23, 9:30-10",
+        "note": "4/5 w/1 cue, mastered this goal. Function, wh questions: 13/18 independently.",
+        "row_number": 15
+      },
+      {
+        "date": "1/27, 9:30-10",
+        "note": "preposition: 5/6 mastered\nname the category: 2/4",
+        "row_number": 16
+      },
+      {
+        "date": "1/28",
+        "note": "in the testing.",
+        "row_number": 17
+      },
+      {
+        "date": "2/3, 9:30-10",
+        "note": "category, convergent: 4/5\ndivergent: 4 things.",
+        "row_number": 18
+      },
+      {
+        "date": "2/5, 9:30-10",
+        "note": "inference/why questions: 5/7\nprediction: 4/6\ndifficulties in using verbs. Target: describe the sequence cards using verb.",
+        "row_number": 19
+      },
+      {
+        "date": "2/10, 9:30-10",
+        "note": "4 sequential cards, describe x3/3 w/ 2 -3 cues",
+        "row_number": 20
+      },
+      {
+        "date": "2/12, 9:20-9:50",
+        "note": "3 categories: sports, furniture, ocean animals to tell 3 things, w/ more than 3 cues",
+        "row_number": 21
+      },
+      {
+        "date": "2/18, 9:50-10:20",
+        "note": "4 sequential cards: 3/4w/ 2 cues",
+        "row_number": 22
+      },
+      {
+        "date": "2/24",
+        "note": "describe things x3 w/ 2-3 cues",
+        "row_number": 23
+      },
+      {
+        "date": "3/3",
+        "note": "describe 4 sequence: 3/5 w/2 cues",
+        "row_number": 24
+      }
+    ],
+    "source_file": "Document_47de1a04.docx",
+    "extraction_date": "2025-10-05T20:45:55.809887"
+  },
+  {
+    "student_id": "S-005",
+    "anonymous_name": "Student_977d8f",
+    "grade_level": "2",
+    "room": "D109",
+    "teacher": "Teacher_63d700",
+    "annual_goals": [
+      "On or before the next annual ARD date when given modified instruction, accommodations, and verbal/visual support, [STUDENT] will develop and sustain foundational language skills: listening, speaking, discussion, and thinking 4 out of 5 times."
+    ],
+    "goal_date": "",
+    "session_notes": [],
+    "source_file": "Document_0cf926cf.docx",
+    "extraction_date": "2025-10-05T20:45:55.821254"
+  },
+  {
+    "student_id": "S-006",
+    "anonymous_name": "Student_5f3695",
+    "grade_level": "5",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [
+      "By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will tell at least 3 differences and 3 similarities about attributes of common objects or pictures in 4 out of 5 trails, for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "2/19, 9:45-10:15",
+        "note": "5/5 w/1-2 cues, he is ready to differentiate similarities and differences w/1 cue, 25/30 for all 5 pairs.  Needs visual organizer and 1 more verbal cue.",
+        "row_number": 11
+      }
+    ],
+    "source_file": "Document_b567413d.docx",
+    "extraction_date": "2025-10-05T20:45:55.829131"
+  },
+  {
+    "student_id": "S-007",
+    "anonymous_name": "Student_8cf988",
+    "grade_level": "5",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [],
+    "goal_date": "",
+    "session_notes": [],
+    "source_file": "Document_a83b3744.docx",
+    "extraction_date": "2025-10-05T20:45:55.836385"
+  },
+  {
+    "student_id": "S-008",
+    "anonymous_name": "Student_c5f9e4",
+    "grade_level": "4",
+    "room": "B102",
+    "teacher": "Teacher_d41d8c",
+    "annual_goals": [
+      "On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will produce both voiced and voiceless /th/ sounds at sentence level at least 70% accuracy for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "3/4",
+        "note": "w/1 cue, able to read /r/ and th w/ 70% accuracy in sentences.",
+        "row_number": 11
+      }
+    ],
+    "source_file": "Document_0bfc85b6.docx",
+    "extraction_date": "2025-10-05T20:45:55.844277"
+  },
+  {
+    "student_id": "S-009",
+    "anonymous_name": "Student_baa9e2",
+    "grade_level": "K",
+    "room": "C105",
+    "teacher": "Teacher_d41d8c",
+    "annual_goals": [],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "3/3, 8-8:30",
+        "note": "ch initial 7/10 w/1 cue. Sh mastered.",
+        "row_number": 11
+      },
+      {
+        "date": "3/5",
+        "note": "ch intial sentence 7/10 w/1-2 cuse, sh needs 1 cue in sentence",
+        "row_number": 12
+      }
+    ],
+    "source_file": "Document_353cce2e.docx",
+    "extraction_date": "2025-10-05T20:45:55.852486"
+  },
+  {
+    "student_id": "S-010",
+    "anonymous_name": "Student_bd465b",
+    "grade_level": "K",
+    "room": "C107",
+    "teacher": "Teacher_e99c19",
+    "annual_goals": [
+      "By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe objects with at least 5 out of 7 key attributes (i.e., name, category, function, location, color, shape, parts) in 4 out of 5 trials for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "3/3",
+        "note": "g: initial: 6/10 w/1 cue, final 6/10 w/2 cues in words",
+        "row_number": 12
+      },
+      {
+        "date": "3/5",
+        "note": "g, b, initial in sentence 7/10 w/1 cue\nfinal d 6/10 w/ 1 cue.",
+        "row_number": 13
+      }
+    ],
+    "source_file": "Document_15e1a61f.docx",
+    "extraction_date": "2025-10-05T20:45:55.860880"
+  },
+  {
+    "student_id": "S-011",
+    "anonymous_name": "Student_1fcf15",
+    "grade_level": "3",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [
+      "Goal1: \nOn or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will make predictions from social contexts in 4 out of 5 trials for 2 data collection sessions. \nGoal2:\nOn or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will use complete sentences to describe common objects with at least 5 different semantic features (i.e., name, category, location, function, color, shape, size, and parts) in 4 out of 5 trials for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/8, 8:45-9:25",
+        "note": "probe for goals\npredicting: 5/10 w/ picture cueing\ndescribe things with 5 features: visual cue+2 verbal cues to use complete sentence.",
+        "row_number": 10
+      },
+      {
+        "date": "1/14, 10:50-11:20",
+        "note": "why: 4/5 w/ 1 cue, needs 2 cues to use the complete conjunction sentences.",
+        "row_number": 11
+      },
+      {
+        "date": "1/15, 9-9:30",
+        "note": "why without cueing he is able to answer why do you like it? Why are you upset? And inferential pictures. 4/5",
+        "row_number": 12
+      },
+      {
+        "date": "1/22, 2:00-2:30",
+        "note": "“why” about submarin and titanic “ because to move”, “because of iceberg”.",
+        "row_number": 13
+      },
+      {
+        "date": "1/27, 9:00-9:30",
+        "note": "why: 4/5 w/1 cue, describe things: 2/5 w/1 cue",
+        "row_number": 14
+      },
+      {
+        "date": "1/28",
+        "note": "Spontaneous conversation: I wan to go there in person. I want to see that in person! Why: because he is going to.. because he had.. because iceberg",
+        "row_number": 15
+      },
+      {
+        "date": "2/4, 9-9:40",
+        "note": "describe x4 w/2 cues, name, function, category, looks like",
+        "row_number": 16
+      },
+      {
+        "date": "2/6, 8-8:30",
+        "note": "describe x3 w/2-3 cues. Name, category, looks like, location, function",
+        "row_number": 17
+      },
+      {
+        "date": "2/11, 9:15-9:45",
+        "note": "prediction, x4/5 w/2-3 cues.",
+        "row_number": 18
+      },
+      {
+        "date": "2/13, 9-9:30",
+        "note": "3/5 w/2 cues, 4/5 w/1-2 cues to answer prediction question in complete sentences.",
+        "row_number": 19
+      },
+      {
+        "date": "2/19, 9:45-10:15",
+        "note": "Prediction: 3/5 w/2 cues",
+        "row_number": 20
+      },
+      {
+        "date": "2/20, 11:00-11:30",
+        "note": "Prediction in complete sentences: with sentence carrier 6/7 w/ 1 verbal prompt",
+        "row_number": 21
+      },
+      {
+        "date": "2/24, 8:10-8:40",
+        "note": "describe x3 things w/1-2 cues. Needs vocabulary to complete the sentence.",
+        "row_number": 22
+      },
+      {
+        "date": "2/27",
+        "note": "prediction for picture story w/ sentence carrier: 3/5 w/2-3 cues",
+        "row_number": 23
+      },
+      {
+        "date": "3/4",
+        "note": "prediction 3/5 w/2 cues",
+        "row_number": 24
+      },
+      {
+        "date": "3/6",
+        "note": "watched a video of sprunki. Language sample:\nWhat are you making: Clocker. \nNo, they hurt his head. Evil black smashed her head off, but still hurts. I am gonna make clocker’s eyeballs. Oh, it’s too big. I want it small. I can play games. (What will they do?) They will escape.(w/ sentence carrier). Will they fall? They will fall. He pushed clocker.",
+        "row_number": 25
+      }
+    ],
+    "source_file": "Document_b307db86.docx",
+    "extraction_date": "2025-10-05T20:45:55.879424"
+  },
+  {
+    "student_id": "S-012",
+    "anonymous_name": "Student_3e8ed7",
+    "grade_level": "1",
+    "room": "D111",
+    "teacher": "Teacher_5e0ef6",
+    "annual_goals": [
+      "By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce vocalic /r/ sounds (i.e., ar and er sounds) accurately in all word positions (i.e., initial, medial, and final) with 70% accuracy, for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/17, 1:50-2:20",
+        "note": "ar w/1 cue 8/10",
+        "row_number": 11
+      },
+      {
+        "date": "1/21, 12:30-1:00",
+        "note": "final ar 8/10 w/1 cue\nmiddle r 5/5 w/ 1cue\nfinal er: 1 cue 4/5",
+        "row_number": 12
+      },
+      {
+        "date": "1/23",
+        "note": "initial er: 8/10 w/1 cue\nfinal th:  8/10 w/1 cue",
+        "row_number": 13
+      },
+      {
+        "date": "1/27, 12:30-1",
+        "note": "final er/o: 8/10 w/1-2 cues",
+        "row_number": 14
+      },
+      {
+        "date": "1/28",
+        "note": "initial r in rocks: 3/5 w/2 -3 cues",
+        "row_number": 15
+      },
+      {
+        "date": "2/3, 12:30-1",
+        "note": "initial r:6/10 w/2 cues",
+        "row_number": 16
+      },
+      {
+        "date": "2/4",
+        "note": "initial r: 7/10 w/ 1-2 cues",
+        "row_number": 17
+      },
+      {
+        "date": "2/10",
+        "note": "initial r: 7/10 w/1-2 cues",
+        "row_number": 18
+      },
+      {
+        "date": "2/11, 12:30-1",
+        "note": "initial r 6/10 w/ 1 cue",
+        "row_number": 19
+      },
+      {
+        "date": "2/18, 12:40-1:10",
+        "note": "initial r in words: 7/10 w/1 cue",
+        "row_number": 20
+      },
+      {
+        "date": "2/19, 12:40-1:10",
+        "note": "Initial r in words: 7/10 w/1 cue",
+        "row_number": 21
+      },
+      {
+        "date": "2/24",
+        "note": "initial r in phrase: 7/10 w/1 cue",
+        "row_number": 22
+      },
+      {
+        "date": "2/25",
+        "note": "thirty-three: th: 1 cue 7/10\nir: 1 cue 7/10\nthr: 7/10 w/1 cue",
+        "row_number": 23
+      },
+      {
+        "date": "3/3",
+        "note": "vocalic r: 7/10 w/1 cue\nprevocalic r: in phrase: 7/10 w/1 cue",
+        "row_number": 24
+      },
+      {
+        "date": "3/5",
+        "note": "prevocalic r in sentence: 6/10 w/1 cue",
+        "row_number": 25
+      }
+    ],
+    "source_file": "Document_0328eed7.docx",
+    "extraction_date": "2025-10-05T20:45:55.890691"
+  },
+  {
+    "student_id": "S-013",
+    "anonymous_name": "Student_8755f8",
+    "grade_level": "1",
+    "room": "D105",
+    "teacher": "Teacher_d41d8c",
+    "annual_goals": [
+      "[STUDENT] 1: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce /l/ blends accurately in sentences with 80% accuracy, for 3 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 1/7",
+        "note": "with 2 cues, 8/10 at sentence level.",
+        "row_number": 11
+      },
+      {
+        "date": "1/13, 11:20-11:50",
+        "note": "voiced: w/1-2 cues, 7/10 sentence.",
+        "row_number": 12
+      },
+      {
+        "date": "1/21",
+        "note": "voiceless initial /th/ 12/15 at sentence w/1 cue",
+        "row_number": 13
+      },
+      {
+        "date": "1/29",
+        "note": "voiced /th/ in would rather activity: 8/10 in sentences w/1-2 cues",
+        "row_number": 14
+      },
+      {
+        "date": "2/3, 10:30-11",
+        "note": "voiceless th in sentence: 8/10 w/1 cue",
+        "row_number": 15
+      },
+      {
+        "date": "2/11, 10:15-10:45",
+        "note": "9/10 for voiced th in sentence w/1 cue",
+        "row_number": 16
+      },
+      {
+        "date": "2/25",
+        "note": "voiceless in sentence during conversation: 7/10 w/1 cue",
+        "row_number": 21
+      }
+    ],
+    "source_file": "Document_498183c2.docx",
+    "extraction_date": "2025-10-05T20:45:55.901897"
+  },
+  {
+    "student_id": "S-014",
+    "anonymous_name": "Student_af2a7d",
+    "grade_level": "k",
+    "room": "D105",
+    "teacher": "Teacher_d41d8c",
+    "annual_goals": [
+      "Goal1\nOn or before the next annual ARD, with no more than 1 cue, [STUDENT] will produce final /t/ and /k/ at the sentence level with 70% accuracy across 2 data collection sessions.\nGoal2\nOn or before the next annual ARD, with no more than 1 cue, [STUDENT] will use correct verb tense in complete sentences to describe a 4-step sequential story in 4/5 trials across 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7",
+        "note": "absent",
+        "row_number": 12
+      },
+      {
+        "date": "1/14, 10:15-10:45",
+        "note": "read a book, as introduced how to describe a story picture by using who and what.",
+        "row_number": 13
+      },
+      {
+        "date": "1/15",
+        "note": "describe pictures using 2-3 complete sentences 4/5 w/1-2 cues",
+        "row_number": 14
+      },
+      {
+        "date": "1/21, 10:15-10:45",
+        "note": "describing story pictures using complete setences w/ at least 5 words 4/5 w/1-2 cues.",
+        "row_number": 15
+      },
+      {
+        "date": "1/23, 10:10-10:40",
+        "note": "4/5 w/1 cue to describe picutures using complete sentences, starting to use complete sentences. “he doesn’t want to race because his bike will get dirty”",
+        "row_number": 16
+      },
+      {
+        "date": "1/28",
+        "note": "sick absent",
+        "row_number": 17
+      },
+      {
+        "date": "1/29, 10:15-10:45",
+        "note": "described pictures in complete simple sentences 4/5 w/ correct grammar w/1 cue",
+        "row_number": 18
+      },
+      {
+        "date": "2/4, 10:15-10:45",
+        "note": "described pictures and able to answer predict and inferential questions, 4/5 w/ 1 cue",
+        "row_number": 19
+      },
+      {
+        "date": "2/5",
+        "note": "retold stories w/ pictures and 1 verbal prompt, included all the important story elements. The utterance length was above 6, with occasional grammatical errors. Needs to work on using irregular verb and regular verb tense.",
+        "row_number": 20
+      },
+      {
+        "date": "2/10, 10:10-10:40",
+        "note": "retold a story, introduced regular past verb tense",
+        "row_number": 21
+      },
+      {
+        "date": "2/12, 10:20-10:50",
+        "note": "3/5 w/multiple cues for regular ed.",
+        "row_number": 22
+      },
+      {
+        "date": "2/24",
+        "note": "verb tense: 7/10 w/ 1-2 cues for regular ed and common irregular ones.",
+        "row_number": 24
+      },
+      {
+        "date": "2/26, 10:15-10:45",
+        "note": "introduced future verb tense. 4/5 w/ 2-3 cues",
+        "row_number": 25
+      },
+      {
+        "date": "3/3",
+        "note": "verb tense regular past tense: 4/5 w/ 1-2 cues\nfuture tense w/ will: 3/5 w/2 cues,\nfinal t, d, k, 4/6 w/1 cue in a sentence",
+        "row_number": 26
+      },
+      {
+        "date": "3/5",
+        "note": "story telling using acurate verb tense: regular/irregular past tense 4/5 w/2 cues, future tense: 4/5 w/2 cues.",
+        "row_number": 27
+      }
+    ],
+    "source_file": "Document_5c32b70f.docx",
+    "extraction_date": "2025-10-05T20:45:55.916494"
+  },
+  {
+    "student_id": "S-015",
+    "anonymous_name": "Student_728371",
+    "grade_level": "",
+    "room": "1",
+    "teacher": "Teacher_c08cfd",
+    "annual_goals": [],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 11-11:30",
+        "note": "answered questions in a storybook reading: 7/10 w/ 1-2 cues",
+        "row_number": 11
+      },
+      {
+        "date": "1/14, 10:15-10:45",
+        "note": "answered questions in a story book reading 4/5 w/ 1cue",
+        "row_number": 12
+      },
+      {
+        "date": "1/15",
+        "note": "answered questions about a picture: 5/6 in complete questions.",
+        "row_number": 13
+      },
+      {
+        "date": "1/21, 10:15-10:45",
+        "note": "who, whose, where, when, what 5/6 independently,  needs more cues in when questions",
+        "row_number": 14
+      },
+      {
+        "date": "1/23, 10:10-10:40",
+        "note": "where, who, what 4/5 w/1 visual cue in a story",
+        "row_number": 15
+      },
+      {
+        "date": "1/28",
+        "note": "4/5 w/1 cue for a book",
+        "row_number": 16
+      },
+      {
+        "date": "1/29",
+        "note": "resistant reading a book, did not want to answer questions",
+        "row_number": 17
+      },
+      {
+        "date": "2/4, 10:10-10:40",
+        "note": "answered inferential and prediction questions 5/7 w/1 cue, He knows how to answer where, why, and what questions",
+        "row_number": 18
+      },
+      {
+        "date": "2/5, 10:10-10:40",
+        "note": "answered questions in a story read to him: 5/6 independently.",
+        "row_number": 19
+      },
+      {
+        "date": "2/10",
+        "note": "absent for sickness",
+        "row_number": 20
+      },
+      {
+        "date": "2/12, 10:20-10:50",
+        "note": "got him from nurse when he was sleeping, and slept throughout the session did not get up with multiple cues (i.e., dancing song, game). Sent back to nurse post session.",
+        "row_number": 21
+      },
+      {
+        "date": "2/18, 2:10-2:40",
+        "note": "PLANO:\nLanguage concepts and organization:\nbasic concepts: 9/10, main idea from pictures: 5/5, cause and effect: 9/10, predictions from situational context: 2/5, make inferences from situational contexts: 1/5, sequence and verbalize a 3-4 step task: 2/2\nSemantics: identifying objects from oral description 1/5, divergent categories: 78%, convergent categories: 3/5, antonyms: 1/5,\nNarrative tasks: identifying main idea when stated in paragraphs: 2/5.\n\nPossible goals:\nlistening comprehension for short text: \nmain idea, prediction. \nidentifying objects from oral description.",
+        "row_number": 22
+      },
+      {
+        "date": "2/20",
+        "note": "Answered questions  about a story book: 6/7 independently. Retelling story: main idea w/2 cue, frustrated to retell the story and cried. With sentence carrier and pictures, able to recall the main events in phrases, rather than complete sentences. Needs to work on complete sentences",
+        "row_number": 23
+      },
+      {
+        "date": "2/24",
+        "note": "answered questions related to a video, doesn’t want to use complete sentences. Was not able to generate main idea of the video in complete sentences, needs 2 verbal prompts.",
+        "row_number": 24
+      },
+      {
+        "date": "2/26",
+        "note": "answered questions about a story 5/6 w/ 1 verbal cue",
+        "row_number": 25
+      },
+      {
+        "date": "3/3",
+        "note": "retold a story w/ main events w/ pictures in complete sentences w/2-3 cues",
+        "row_number": 26
+      },
+      {
+        "date": "3/5",
+        "note": "mainidea of a story w/2-3 verbal prompts. Recalled story elements w/ 2-3 verbal prompts and pictures.",
+        "row_number": 27
+      }
+    ],
+    "source_file": "Document_3eed204d.docx",
+    "extraction_date": "2025-10-05T20:45:55.929020"
+  },
+  {
+    "student_id": "S-016",
+    "anonymous_name": "Student_e28310",
+    "grade_level": "1",
+    "room": "D105",
+    "teacher": "Teacher_d41d8c",
+    "annual_goals": [
+      "On or before the next annual ARD, when given no cues, [STUDENT] will identify common categories when given at least 3 members of the category in 7/10 trials across 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 11:00-11:30",
+        "note": "was able to make SVO sentence. Still has hard time to produce /s/ sound in words without reading it. E.g., sandwich",
+        "row_number": 11
+      },
+      {
+        "date": "1/13, 11:20-11:50",
+        "note": "s blends in a words and phrase, for s production. \nstill needs about 2 cues 1 visual and 1 verbal to say s clearly in the phrase.",
+        "row_number": 12
+      },
+      {
+        "date": "1/15",
+        "note": "absent",
+        "row_number": 13
+      },
+      {
+        "date": "1/17, 2",
+        "note": "medial clusters multiple syllables w/1-2 cues, pataka fine, no apraxia.",
+        "row_number": 14
+      },
+      {
+        "date": "1/21",
+        "note": "initial sl 8/9 w/1 cue in sentence. “I don’t like snail cause they are scary and evil animals”.",
+        "row_number": 15
+      },
+      {
+        "date": "1/23",
+        "note": "language session: able to use complete sentence to describe story pictures. Answer WH questions. Try to see describe things.",
+        "row_number": 16
+      },
+      {
+        "date": "1/28",
+        "note": "absent sick",
+        "row_number": 17
+      },
+      {
+        "date": "1/29",
+        "note": "sick absent",
+        "row_number": 18
+      },
+      {
+        "date": "2/3, 10:30-11",
+        "note": "initial /sl/: 6/8 w/1 cue in a sentence",
+        "row_number": 19
+      },
+      {
+        "date": "2/4, 10:10-10:40",
+        "note": "with one cue, initial clusters: 4/5, \nable to answer inferential questions and predict questions using “because” and “will”",
+        "row_number": 20
+      },
+      {
+        "date": "2/10",
+        "note": "absent",
+        "row_number": 21
+      },
+      {
+        "date": "2/11, 9:45-10:45",
+        "note": "final cluster sentence 8/10 w/1 cue.",
+        "row_number": 22
+      },
+      {
+        "date": "2/18, 10:30-11",
+        "note": "final cluster last, next, gift, lift, after 7/10 w/1 cue in phrases.",
+        "row_number": 23
+      },
+      {
+        "date": "2/20",
+        "note": "W/1 cue for final clusters\nRetelling story:",
+        "row_number": 24
+      },
+      {
+        "date": "2/24",
+        "note": "w/1 cue final cluster and initial cluster: 7/10, able to retell a video in complete sentences",
+        "row_number": 25
+      },
+      {
+        "date": "2/25",
+        "note": "retell a story book with right main idea and details. Able to use longer sentences, and w/1-2 cues to say the middle clusters accurate",
+        "row_number": 26
+      },
+      {
+        "date": "3/3",
+        "note": "absent",
+        "row_number": 27
+      },
+      {
+        "date": "3/4",
+        "note": "able to use  conjunction, because in a compound sentence. 1-2 cue, 7/10 in final clusters",
+        "row_number": 28
+      }
+    ],
+    "source_file": "Document_1bb03bd7.docx",
+    "extraction_date": "2025-10-05T20:45:55.943236"
+  },
+  {
+    "student_id": "S-017",
+    "anonymous_name": "Student_e4a1f7",
+    "grade_level": "1",
+    "room": "D103",
+    "teacher": "Teacher_6af267",
+    "annual_goals": [],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 9-9:30",
+        "note": "PLANO: Basic concepts: 6/10 describe things on the picture.",
+        "row_number": 11
+      },
+      {
+        "date": "1/13, 8:40-9:20",
+        "note": "main idea: 5/6 still confusing about pronouns due to dialects, but is able to make longer sentences.",
+        "row_number": 12
+      },
+      {
+        "date": "1/14, 9:35-10:05",
+        "note": "cause effect: 8/10, prediction: 1/5,",
+        "row_number": 13
+      },
+      {
+        "date": "1/21, 9:35-10:05",
+        "note": "describing sequence: x2 using present progressive",
+        "row_number": 14
+      },
+      {
+        "date": "1/23",
+        "note": "absent",
+        "row_number": 15
+      },
+      {
+        "date": "1/28",
+        "note": "absent",
+        "row_number": 16
+      },
+      {
+        "date": "1/29, 9:00-9:40",
+        "note": "worked on vocalic /r/. 7/10 w/1 -2 cues in words\ndescribed lego parts in a structured activity.",
+        "row_number": 17
+      },
+      {
+        "date": "2/3",
+        "note": "r: vocalic r 8/10 w/1-2 cues, prevocalic: 3/5 w/2 cues",
+        "row_number": 18
+      },
+      {
+        "date": "2/5",
+        "note": "final or, er 8/10w/1 cue, rooster: 3/5 w/2 cues",
+        "row_number": 19
+      },
+      {
+        "date": "2/10",
+        "note": "thirty, /th/, /r/: 7/10 w/1-2 cues",
+        "row_number": 20
+      },
+      {
+        "date": "2/11, 11:10-11:40",
+        "note": "able to describe 6 step sequential pictures.",
+        "row_number": 21
+      },
+      {
+        "date": "2/18, 9:15-9:45",
+        "note": "3/5 w/1 cue to describe with /5 features",
+        "row_number": 22
+      },
+      {
+        "date": "2/24",
+        "note": "Testing",
+        "row_number": 23
+      },
+      {
+        "date": "2/25",
+        "note": "describe things 4/5 w/1 cue w/ 5 features",
+        "row_number": 24
+      },
+      {
+        "date": "3/3",
+        "note": "identify things from descriptions: 4/5. Prevocalic r: 3/5 in words w/2 cues",
+        "row_number": 25
+      },
+      {
+        "date": "3/5",
+        "note": "storytelling: was able to tell the main events 5/7 w/ pictures and no more than 1 verbal prompt.",
+        "row_number": 27
+      }
+    ],
+    "source_file": "Document_3ae046a6.docx",
+    "extraction_date": "2025-10-05T20:45:55.954541"
+  },
+  {
+    "student_id": "S-018",
+    "anonymous_name": "Student_101979",
+    "grade_level": "5",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [
+      "By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will retell a story with at least 5 story grammatical elements (i.e., character, setting, problem, resolution, feelings) for 3 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 12:30-1",
+        "note": "5/8 w/2 cues to answer inferencial questions in a storybook read to him",
+        "row_number": 9
+      },
+      {
+        "date": "1/13, 12:00-12:30",
+        "note": "using social context,w/ 2 options, Juan 4/5 to answer inferential questions in complete sentences",
+        "row_number": 10
+      },
+      {
+        "date": "1/14, 10:50-11:20",
+        "note": "using inferential pictures, 5/5 w/1-2 cues to use complete sentences.",
+        "row_number": 11
+      },
+      {
+        "date": "1/22",
+        "note": "absent, sick",
+        "row_number": 14
+      },
+      {
+        "date": "1/23, 1:40-2:10",
+        "note": "retold story book with at least 4 story elements w/ 2 cues",
+        "row_number": 15
+      },
+      {
+        "date": "1/28",
+        "note": "retold a story book w/2 cues, needs cueing for sentence structure and prompts at the beginning of retelling",
+        "row_number": 16
+      },
+      {
+        "date": "1/29",
+        "note": "retold a story with 4/5 key points w/ pictures and 2-3 verbal prompts",
+        "row_number": 17
+      },
+      {
+        "date": "2/5",
+        "note": "retold a story w/ 5 key points w/ 2 verbal prompts. Was able to write the main idea and the problem w/2 cues.",
+        "row_number": 18
+      },
+      {
+        "date": "2/11, 1:45-2:15",
+        "note": "wrote 5 key points of a story w/ pictures and 1-2 verbal prompts.",
+        "row_number": 19
+      },
+      {
+        "date": "2/13, 1",
+        "note": "why in complete sentence: 4/5 w/ 2 cues after a video.\nstory retelling:\n\nThe lady grabbed a cookie on the Ban (Vending) machine. Then she sit on the bench next to a guy. The guy grabbed lady’s cookie. The lady got angry and asked they guy” why did you steal my cookie?” Then there is a train. The lady got on the train. The lady see (verb tense) a cookie in her bag. The lady thought  that (was) guy’s cookie. Then the lady feels sorry because the lady ate the guy’s cookie (sentence carrier and one verbal prompt).",
+        "row_number": 20
+      },
+      {
+        "date": "2/19",
+        "note": "Was able to tell character, setting, and 1 problem, 1 attempt w/ 1 verbal prompt. W/2-3 cues, able to tell 5 elements and use complete sentences",
+        "row_number": 21
+      },
+      {
+        "date": "2/20",
+        "note": "How is he feeling and why: 4/5",
+        "row_number": 22
+      },
+      {
+        "date": "2/26",
+        "note": "retold a story with all the details independently.",
+        "row_number": 23
+      },
+      {
+        "date": "¾",
+        "note": "why: 3/6 w/1 cue, 5/6 w/2 cues\nHow: 4/5 w/2 cues\nretold a picture  story book w/ 2-3 verbal prompts and pictures",
+        "row_number": 24
+      },
+      {
+        "date": "3/6",
+        "note": "How are you going to spend your easter? w/ sentence carries (First, I will), language sample: First, I will find three eggs. Next, I will find more eggs. After that, I will open eggs. Last, I will get moneys, toys, candies.",
+        "row_number": 25
+      }
+    ],
+    "source_file": "Document_83ea686a.docx",
+    "extraction_date": "2025-10-05T20:45:55.967415"
+  },
+  {
+    "student_id": "S-019",
+    "anonymous_name": "Student_e57777",
+    "grade_level": "2",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [
+      "[STUDENT] 2: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe objects with at least 5 out of 7 key attributes (i.e., name, category, function, location, color, shape, parts) in 4 out of 5 trials for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 8:30-9:00",
+        "note": "3/4w/2 cues in a story book",
+        "row_number": 9
+      },
+      {
+        "date": "1/14, 9:00-9:30",
+        "note": "3/5 w/1 cue to describe in complete setneces",
+        "row_number": 10
+      },
+      {
+        "date": "1/15, 8:30-9",
+        "note": "worked on complete sentence for inferential.",
+        "row_number": 11
+      },
+      {
+        "date": "1/22, 8:30-9",
+        "note": "describe things 3/3 w/ 5 features w/1 cue\nprediction x3 w/ 2 cues",
+        "row_number": 12
+      },
+      {
+        "date": "1/27, 8:30-9",
+        "note": "15/20 to describe 5 features w/ 1 cue",
+        "row_number": 13
+      },
+      {
+        "date": "1/30, 8:30-9",
+        "note": "predict: 3/5 w/1 cue watching video",
+        "row_number": 14
+      },
+      {
+        "date": "2/4, 8:30-9",
+        "note": "predict 3/5 w/1-2 cues in inferential picture describing",
+        "row_number": 15
+      },
+      {
+        "date": "2/5",
+        "note": "x4 describe 6 features.",
+        "row_number": 16
+      },
+      {
+        "date": "2/10, 8:30-9",
+        "note": "x3 describe 6 features w/1 cue",
+        "row_number": 17
+      },
+      {
+        "date": "2/11, 9:45-10:15",
+        "note": "6/8 w/2 cues for predictions in complete sentences.",
+        "row_number": 18
+      },
+      {
+        "date": "2/18",
+        "note": "absent",
+        "row_number": 19
+      },
+      {
+        "date": "2/19",
+        "note": "TELPAS testing",
+        "row_number": 20
+      },
+      {
+        "date": "2/24",
+        "note": "mastered describe 5/5 w/ 1 cue\nstill needs to work on prediction 3/5 w/2 cues",
+        "row_number": 21
+      },
+      {
+        "date": "¾",
+        "note": "with sentence carrier and picture cues, 4/5 to predict in a story",
+        "row_number": 22
+      },
+      {
+        "date": "3/5",
+        "note": "Social context cards: 5/5 in multiple choice. Use XXwillXXX answered 4/5 w/1 cue.",
+        "row_number": 23
+      }
+    ],
+    "source_file": "Document_5322274e.docx",
+    "extraction_date": "2025-10-05T20:45:55.979088"
+  },
+  {
+    "student_id": "S-020",
+    "anonymous_name": "Student_5d471f",
+    "grade_level": "k",
+    "room": "C109",
+    "teacher": "Teacher_8b9196",
+    "annual_goals": [
+      "By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce initial and final /f/ and /v/ sounds accurately in 4 out of 5 trials, for 3 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 8-8:30",
+        "note": "final /f/ 80% w/1 cue initial /f/ 80% w/2 cues",
+        "row_number": 10
+      },
+      {
+        "date": "1/13, 8-8:30",
+        "note": "initial /f/ 60% w/1 cue",
+        "row_number": 11
+      },
+      {
+        "date": "1/15, 8-8:30",
+        "note": "4/6w/1 cue",
+        "row_number": 12
+      },
+      {
+        "date": "1/21, 8-830",
+        "note": "final /f/ 90% w/1 cue, initial /f/ 70% w/ 1 cue",
+        "row_number": 13
+      },
+      {
+        "date": "1/23",
+        "note": "initial /f/ 80% w/1 cue",
+        "row_number": 14
+      },
+      {
+        "date": "1/27, 8-8:30",
+        "note": "4/5 w/1-2 cues",
+        "row_number": 15
+      },
+      {
+        "date": "1/28",
+        "note": "absent",
+        "row_number": 16
+      },
+      {
+        "date": "1/30",
+        "note": "initial /f/ 7/10 w/1 cue, final mastered, needs to work on middle /f/ and /v/",
+        "row_number": 17
+      },
+      {
+        "date": "2/3",
+        "note": "initial /f/ 8/10 w/1 cue, mastered. \n3/5 w/1-2 cues He.she/they",
+        "row_number": 18
+      },
+      {
+        "date": "2/4, 8-8:30",
+        "note": "6/8 w/2 visual cues, 1 sentence carrier and 1 picture cue",
+        "row_number": 19
+      },
+      {
+        "date": "2/10",
+        "note": "7/10 w/1 cue, /v/ needs 2 cues to reach 8/10",
+        "row_number": 20
+      },
+      {
+        "date": "2/12, 8-8:30",
+        "note": "8/10 w/1 cue for both /f/ and /v/ in words. Worked on front lisp s",
+        "row_number": 21
+      },
+      {
+        "date": "2/18, 8-8:30",
+        "note": "she/he/they: 7/10 w/1 cue",
+        "row_number": 22
+      },
+      {
+        "date": "2/24, 8-8:30",
+        "note": "/f/ masterd, initial /v/ 7/10 w/1 cue in word",
+        "row_number": 23
+      },
+      {
+        "date": "2/26, 9-15-9:45",
+        "note": "/f/ and /v/ should be moved to phrase level.\n he/she/they 7/10 w/1 cue",
+        "row_number": 24
+      },
+      {
+        "date": "3/3, 8:00-8:30",
+        "note": "initial /f/, /v/ 8/10 w/1 cue in words, she/he/ they 7/10 w/1-2 cues",
+        "row_number": 25
+      },
+      {
+        "date": "3/4",
+        "note": "his/her/ theirs 7/10 w/ 2 cues",
+        "row_number": 26
+      }
+    ],
+    "source_file": "Document_bd73549b.docx",
+    "extraction_date": "2025-10-05T20:45:55.993118"
+  },
+  {
+    "student_id": "S-021",
+    "anonymous_name": "Student_d8acc5",
+    "grade_level": "4",
+    "room": "B101",
+    "teacher": "Teacher_3e3125",
+    "annual_goals": [
+      "[STUDENT] 1 By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will answer [STUDENT] and why questions from a grade level story or a text using sentences with conjunction words (i.e., and, but, because) accurately in 8 out of 10 trials, for 2 data collection sessions. \n[STUDENT] 2: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will use complete sentences to retell a grade-level story with at least 5 story grammatical elements (i.e., character, setting, problem, solution, emotions) for 3 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 10:20-11:00",
+        "note": "with 2 cues, Kedan summarized 6 paragraphs in a grade level reading after reading by himself.",
+        "row_number": 8
+      },
+      {
+        "date": "1/13, 10:35-11:15",
+        "note": "Kedan summarized 3 paragraphs w/2 cues. He is able to use highlighter to mark out the key elements in the story and summarize it.",
+        "row_number": 9
+      },
+      {
+        "date": "1/17, 9:00-9:40",
+        "note": "How: 3 cues to say complete sentences x3 after a book reading about martin’s big words",
+        "row_number": 10
+      },
+      {
+        "date": "1/22, 11:00-11:45",
+        "note": "Answered How and why questions in science. Able to use first, then, to answer How, and because to answer Why. X3",
+        "row_number": 11
+      },
+      {
+        "date": "1/27, 10:15-10:45",
+        "note": "summarized 4/5 paragraphs in guided reading, answered Why x3/5 w/ 1 cue after reading (Vampire bats).",
+        "row_number": 12
+      },
+      {
+        "date": "1/28",
+        "note": "used strategies to read 6 paragraphs, and retell the text with 6 main ideas for this non-fiction w/1-2 cues.",
+        "row_number": 13
+      },
+      {
+        "date": "2/3, 11:10-11:45",
+        "note": "How:  3/5 w/1 cue\nWhy: 3/ 4 w/1 cue\n\nin a non-fiction reading about Circulation system",
+        "row_number": 14
+      },
+      {
+        "date": "2/10, 10:30-11:00",
+        "note": "wrote 6 steps of HOW to wash dishes  w/2 cues (sentence carrier, and picture cue)",
+        "row_number": 15
+      },
+      {
+        "date": "2/11, 11:30-12",
+        "note": "wrote 6 steps of HOW to brush teeth w/1-2 cues.",
+        "row_number": 16
+      },
+      {
+        "date": "2/18, 11:05-11:35",
+        "note": "work on story elements with a creating story activity.",
+        "row_number": 17
+      },
+      {
+        "date": "2/20",
+        "note": "retell a 3rd story book w/ all the elements w/ 1-2 cues.",
+        "row_number": 18
+      },
+      {
+        "date": "2/25",
+        "note": "read a passage w/ pictures, was able to answer why questions w/2 cues.",
+        "row_number": 19
+      },
+      {
+        "date": "3/3",
+        "note": "watched two videos about How to catch a Kraken and How to catch a megalodon. Used 4 sentences to describe how questions w/ 2 cues.",
+        "row_number": 20
+      },
+      {
+        "date": "3/4",
+        "note": "retold a story w/ pictures and 2-3 verbal prompts for all story elements and details.",
+        "row_number": 21
+      }
+    ],
+    "source_file": "Document_af9826b7.docx",
+    "extraction_date": "2025-10-05T20:45:56.006688"
+  },
+  {
+    "student_id": "S-022",
+    "anonymous_name": "Student_b4b8b5",
+    "grade_level": "3",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [
+      "[STUDENT] 3: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe objects with at least 5 out of 7 key attributes (i.e., name, category, function, location, color, shape, parts) in 4 out of 5 trials for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 8:30-9:00",
+        "note": "3 out of 5 w/2 cues in a story book not in a complete sentence.",
+        "row_number": 10
+      },
+      {
+        "date": "1/14, 9:00-9:30",
+        "note": "x4 objects with at least 2 cues.",
+        "row_number": 11
+      },
+      {
+        "date": "1/15, 8:30-9",
+        "note": "w/2 cues, 4/5 still needs 2 cues to see the complete sentences, sentence carrier",
+        "row_number": 12
+      },
+      {
+        "date": "1/22, 8:30-9",
+        "note": "read a book: was able to answer inferential questions3 /4 w/ 1 cue, x3 describe things w/2 cues",
+        "row_number": 13
+      },
+      {
+        "date": "1/27, 8:30-9",
+        "note": "absent",
+        "row_number": 14
+      },
+      {
+        "date": "1/30, 8:30-9",
+        "note": "w/2-3 cues, described 2 objects w/5 features.",
+        "row_number": 15
+      },
+      {
+        "date": "2/4, 8:30-9",
+        "note": "x3/5 w/2 cues",
+        "row_number": 16
+      },
+      {
+        "date": "2/5, 8:30-9",
+        "note": "x4 w/2-3 cues",
+        "row_number": 17
+      },
+      {
+        "date": "2/10, 8:30-9",
+        "note": "x3 w/1-2 cues",
+        "row_number": 18
+      },
+      {
+        "date": "2/11, 8:40-9:10",
+        "note": "bl, gl, gl, pl, 7/10 w/1 cue, kl, fl 6/10 w/1 cue",
+        "row_number": 19
+      },
+      {
+        "date": "2/18",
+        "note": "Absent",
+        "row_number": 21
+      },
+      {
+        "date": "2/19",
+        "note": "absent",
+        "row_number": 22
+      },
+      {
+        "date": "2/20",
+        "note": "6/8 2/ 2 cues to use complete sentence to infer",
+        "row_number": 23
+      },
+      {
+        "date": "2/24",
+        "note": "describe in complete sentences: 4/5 w/ 2 verb prompts and visual cue.",
+        "row_number": 24
+      },
+      {
+        "date": "¾",
+        "note": "/l/ blends: 7/10 w/1 cue in sentence\nw/2 cues, inference 3/5",
+        "row_number": 25
+      },
+      {
+        "date": "3/5",
+        "note": "struggled to understand other’s perspectives. \ninference w/2 cues, 3/5",
+        "row_number": 26
+      }
+    ],
+    "source_file": "Document_a4463ef6.docx",
+    "extraction_date": "2025-10-05T20:45:56.017963"
+  },
+  {
+    "student_id": "S-023",
+    "anonymous_name": "Student_f9f773",
+    "grade_level": "2",
+    "room": "D109",
+    "teacher": "Teacher_63d700",
+    "annual_goals": [
+      "1 On or before the next annual ARD, with no more than 1 cue, [STUDENT] will produce final consonant clusters (i.e., st, sk, ft, pt) at the sentence level with 70% accuracy across 2 data collection sessions.\n\n2 On or before the next annual ARD, with no more than 1 cue, [STUDENT] will use complete sentences to describe a 4-step sequential story in 4/5 trials across 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 1-1:30",
+        "note": "PLANO: p,b,m,t,d,n,ng, f, v, s,z,w  100%, th w/1 cue, 30, +voice th 2-3 cues, l 100%",
+        "row_number": 8
+      },
+      {
+        "date": "1/13, 1-1:30",
+        "note": "Artic U: \ny, h, j, k, g, sh, ch, pl, fl, kl, gl, sl, br, dr, fr , gr, kr, pr, thr 50 %, str 50%, st, tr, sk, skr, sm, sn, sp, spl, spr, st, tw, skw,  mixed r 100% w/1 cue, air 60%, er 100%, ear 100%, ire 100%, or 60%.",
+        "row_number": 9
+      },
+      {
+        "date": "1/15",
+        "note": "is able to sequence, and describe a sequential picture using SVO sentences x3, but needs multiple cues to say it clearly.",
+        "row_number": 10
+      },
+      {
+        "date": "1/21",
+        "note": "needs plano. Is able to sequence story, and describe it w/ at least 2 cues",
+        "row_number": 11
+      },
+      {
+        "date": "1/22, 12:30-1:20",
+        "note": "PLANO: basic concepts: 7/10, main idea from picture: 5/6, cause and effect: 7/10. Making prediction from situational context: 1/5, making inferences: 0. Sequence description: 0. Identifying objects: 8/10, divergent category: 4/10, convergent category: 5/10,",
+        "row_number": 12
+      },
+      {
+        "date": "1/23",
+        "note": "read a story and retold it with 3 elements and not in complete sentences.",
+        "row_number": 13
+      },
+      {
+        "date": "1/28, 1:15-1:45",
+        "note": "sequence 3 step picture cards, used complete sentences w/ SVO correct 7/9 w/ 1 cue",
+        "row_number": 14
+      },
+      {
+        "date": "1/30",
+        "note": "final consonant in sentence :sk, st, ft, sp, 4/6 w/1-2 cues",
+        "row_number": 15
+      },
+      {
+        "date": "2/4",
+        "note": "basic inferential pictures for why question:\n3/5 w/ 2-3 cues",
+        "row_number": 16
+      },
+      {
+        "date": "2/6",
+        "note": "SV 3/4 trials w/1-2 cues",
+        "row_number": 17
+      },
+      {
+        "date": "2/11, 1-1:30",
+        "note": "wrote 6 sentences for a sequential pictures w/ correct SVO. 5/6 w/1 cue to say it.",
+        "row_number": 18
+      },
+      {
+        "date": "2/13, 1-1:30",
+        "note": "wrote 6 sentences for 4 steps of a video watched, Snack Attack. Needs 2-3 cues to use complete sentences.",
+        "row_number": 19
+      },
+      {
+        "date": "2/18, 1:30-2",
+        "note": "absent",
+        "row_number": 20
+      },
+      {
+        "date": "2/20",
+        "note": "3/5 w/ 2-3 cues to sequence",
+        "row_number": 21
+      },
+      {
+        "date": "2/24",
+        "note": "retell a book story in sequence w/1-2 cues.",
+        "row_number": 22
+      },
+      {
+        "date": "3/4",
+        "note": "sequenced 5, describe 4/5  using complete sentence w/ 2 cues.",
+        "row_number": 23
+      },
+      {
+        "date": "3/6",
+        "note": "read a book Sloppy Joe. Frustrated to finish reading, listening or writing words related to the book.",
+        "row_number": 24
+      }
+    ],
+    "source_file": "Document_7d4a261b.docx",
+    "extraction_date": "2025-10-05T20:45:56.031503"
+  },
+  {
+    "student_id": "S-024",
+    "anonymous_name": "Student_0da8f4",
+    "grade_level": "K",
+    "room": "C105",
+    "teacher": "Teacher_d41d8c",
+    "annual_goals": [
+      "Goal1: \nBy the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will sequence a 4-step scene using picture cards accurately in 4 out of 5 trials, for 3 data collection sessions. \n\nGoal2: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe a 4-step picture story using complete sentences accurately in 4 out of 5 trials, for 3 data collection sessions. \n\nGoal3: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will name at least 4 things in the basic categories (i.e., animals, foods, drinks, vehicles, vegetables, sports, furniture, and clothing) accurately in 4 out of 5 trials, for 3 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 9:40-10:10",
+        "note": "sequence x2/3 w/2 cues",
+        "row_number": 10
+      },
+      {
+        "date": "1/13, 9:30-10:00",
+        "note": "with multiple cues, visual and a verbal modeling, 2/3",
+        "row_number": 11
+      },
+      {
+        "date": "1/15",
+        "note": "with 2 cues, 2/3.",
+        "row_number": 12
+      },
+      {
+        "date": "1/21, 9:30-10:00",
+        "note": "4/5 w/ 2 cues to sequence 3 steps",
+        "row_number": 13
+      },
+      {
+        "date": "1/23, 9:30-10",
+        "note": "5/5 w/ 3 verbal description for each story",
+        "row_number": 14
+      },
+      {
+        "date": "1/27, 9:30-10",
+        "note": "2/3 w/1 cue to sequenc 3 steps",
+        "row_number": 15
+      },
+      {
+        "date": "1/28",
+        "note": "3/5 w/1 cue, 4/5 w/ 2 cues",
+        "row_number": 16
+      },
+      {
+        "date": "2/3, 9:30-10",
+        "note": "4/5 w/1-2 cues",
+        "row_number": 17
+      },
+      {
+        "date": "2/10, 9:30-10",
+        "note": "for 4-step story, 2/2 w/3 cues",
+        "row_number": 18
+      },
+      {
+        "date": "2/12, 9:20-9:50",
+        "note": "divergent categories: x3 w/ multiple cues (furniture, sports)",
+        "row_number": 19
+      },
+      {
+        "date": "2/18, 9:50-10:20",
+        "note": "4-step: 2/3 w/ 2 cues",
+        "row_number": 20
+      },
+      {
+        "date": "2/24",
+        "note": "name 4 things in a category: x2 fruit and vegetable, w/ 3 cues",
+        "row_number": 21
+      },
+      {
+        "date": "3/3",
+        "note": "describe 4 steps pictures x3 w/2 cues\nsequence:3/ 4 w/2 cues",
+        "row_number": 22
+      },
+      {
+        "date": "3/4",
+        "note": "named 2 things in 4 categories w/2 cues",
+        "row_number": 23
+      },
+      {
+        "date": "=",
+        "note": "named 2 things in 4 cate",
+        "row_number": 24
+      }
+    ],
+    "source_file": "Document_ec4e6493.docx",
+    "extraction_date": "2025-10-05T20:45:56.044488"
+  },
+  {
+    "student_id": "S-025",
+    "anonymous_name": "Student_dfb63c",
+    "grade_level": "3",
+    "room": "D101",
+    "teacher": "Teacher_9c0ca0",
+    "annual_goals": [
+      "On or before the next annual ARD, when given modeling, [STUDENT] will use verbal expression to indicate likes/dislikes and protest in 4/5 trials across 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 8:30-9",
+        "note": "Marcus initiated interaction to argue for longer tablet time and shorter reading time x2, initiated likes/dislikes x2",
+        "row_number": 11
+      },
+      {
+        "date": "1/14, 9:00-9:30",
+        "note": "reduced timer to take more activity turns, and encourage for conversation. Initiated request: x2\nresponse by Comment: x2",
+        "row_number": 12
+      },
+      {
+        "date": "1/15, 8:30-9:00",
+        "note": "w/1 cue, 3/5 turn to response. Initiated request when he needs help with tie shoes.",
+        "row_number": 13
+      },
+      {
+        "date": "1/22, 8:30-9",
+        "note": "participated x4 w/1 cue, was able to response during the activity using 1 verbal cue. \ndescribed things w/ at least 4 features w/2 cues",
+        "row_number": 14
+      },
+      {
+        "date": "1/27, 8:30-9",
+        "note": "responded to interactions 4/5 w/ 1 cue in structured activity. Described things w/5 features 3/5 w/1-2 cues",
+        "row_number": 15
+      },
+      {
+        "date": "1/30",
+        "note": "participated to activities in 20 mins. Responded to interactions 4/6 w/1cue, \ne.g., where do you want to go?\nM: (zoom in google earth) Yellowstone National Park. \nPrepare a video of Yellowstone National Park.",
+        "row_number": 16
+      },
+      {
+        "date": "2/4, 9:10-9:40",
+        "note": "requested for Map puzzles. Participated x3 turns in describing activity.",
+        "row_number": 19
+      },
+      {
+        "date": "2/5, 12:30-1",
+        "note": "can you talk with me?\n-Yes. (Eyes to SLP)",
+        "row_number": 20
+      },
+      {
+        "date": "2/10, 8:30-9",
+        "note": "described x3 w/1 visual cue. Interacted 4/5 w/1 cue",
+        "row_number": 23
+      },
+      {
+        "date": "2/11, 8:40-9:10",
+        "note": "PARTICIPATED X4/5 W/1 CUE",
+        "row_number": 24
+      },
+      {
+        "date": "2/17",
+        "note": "President day",
+        "row_number": 26
+      },
+      {
+        "date": "2/20, 8:40-9:10",
+        "note": "Prediction w/ sentence carrier and 1 verbal prompt: 3",
+        "row_number": 27
+      },
+      {
+        "date": "2/25, 8:10-8:40",
+        "note": "describe things w/1-2 cues in complete sentences. Able to response in 4/5 w/1 -2 cues, needs a structure for response (timer, take turns) able to make conversational turn 4/5 w/ minum cue",
+        "row_number": 28
+      },
+      {
+        "date": "¾",
+        "note": "was not able to answer inference why questions, needs sentence carrier. 3/5 w/1-2 cues to redirect",
+        "row_number": 29
+      },
+      {
+        "date": "3/5",
+        "note": "able to response when it’s his turn. He initiated: I like math, I don’t like reading. I want 4 mins tablet, not 3 mins. New York. Yellow Stone National Park. It is very far. For predict questions, he showed difficulties.",
+        "row_number": 30
+      }
+    ],
+    "source_file": "Document_dc9e2653.docx",
+    "extraction_date": "2025-10-05T20:45:56.058216"
+  },
+  {
+    "student_id": "S-026",
+    "anonymous_name": "Student_e1e243",
+    "grade_level": "k",
+    "room": "C108",
+    "teacher": "Teacher_61ff21",
+    "annual_goals": [
+      "On or before the next annual ARD, [STUDENT] will produce initial and medial /l/ at the word level when naming objects and pictures with 70% accuracy as measured on 2 data collections. ([STUDENT] level)"
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 8-8:30",
+        "note": "working at sentence level 3/5 w/1 cue",
+        "row_number": 11
+      },
+      {
+        "date": "1/14, 8:10-8:40",
+        "note": "medial /l/ 7/10  w/1-2 cues, sh: initian&final: 8/10w/1 cue, ch, initial and final 7/10 w/1 cue",
+        "row_number": 12
+      },
+      {
+        "date": "1/15, 8-8:30",
+        "note": "medial /l/  in chocolate 4/6 w/2-3 cues.",
+        "row_number": 13
+      },
+      {
+        "date": "1/21, 8:30-9",
+        "note": "initial /ch/ 7/10 w/1 cue, needs to work on /r/",
+        "row_number": 14
+      },
+      {
+        "date": "1/23, 8:30-9",
+        "note": "1 cue in sentence: 6/10: I like blue pillow.",
+        "row_number": 15
+      },
+      {
+        "date": "1/27, 8-8:30",
+        "note": "1 cue in sentence: 6/10",
+        "row_number": 16
+      },
+      {
+        "date": "1/30, 8-8:30",
+        "note": "sentence: 8/10 w/1 cue",
+        "row_number": 17
+      },
+      {
+        "date": "2/3, 8:30-9",
+        "note": "sentence: I like blue slippers: 7/10 for l w/1 cue",
+        "row_number": 18
+      },
+      {
+        "date": "2/5, 8:30-9",
+        "note": "tail /l/ : 3/5 w/2 cues, water: 5/6 w/2 cues",
+        "row_number": 19
+      },
+      {
+        "date": "2/11, 8:30-9",
+        "note": "I like blue pillow, helicopter, chocolate, jelly beans: 7/10 w./1 cue",
+        "row_number": 20
+      },
+      {
+        "date": "2/12, 8:30-9",
+        "note": "absent",
+        "row_number": 21
+      },
+      {
+        "date": "2/18, 8:30-9",
+        "note": "middle /l/ 7/10 w/ 1cue",
+        "row_number": 22
+      },
+      {
+        "date": "2/20, 8-8:30",
+        "note": "Artic U: r-w, br, bw, dr-g, l 1 cue. Th-f, +th,",
+        "row_number": 23
+      },
+      {
+        "date": "2/24",
+        "note": "l in sentence: 7/10 w/1 cue",
+        "row_number": 24
+      },
+      {
+        "date": "2/26, 8-8:30",
+        "note": "Atic U: fr, gr, kr, pr, thr ,skr, r->l, str-sg, tr-g, tw-kl, prevocalic r-w, er-o, ar-a, th->f, ear-eao, air-aio,",
+        "row_number": 25
+      },
+      {
+        "date": "3/3, 8-8:30",
+        "note": "chocolate bar: r 7/10 w/1 cue",
+        "row_number": 26
+      },
+      {
+        "date": "3/5",
+        "note": "introduced dr and tr. Able to say tr, need 2-3 cues for isolated dr.",
+        "row_number": 27
+      }
+    ],
+    "source_file": "Document_58019f54.docx",
+    "extraction_date": "2025-10-05T20:45:56.075222"
+  },
+  {
+    "student_id": "S-027",
+    "anonymous_name": "Student_389c85",
+    "grade_level": "k",
+    "room": "C108",
+    "teacher": "Teacher_61ff21",
+    "annual_goals": [
+      "By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce /f/ and /v/ sounds accurately in all word positions (i.e., initial, medial, and final) with 70% accuracy, for 2 data collection sessions"
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/13, 8:00-8:30",
+        "note": "introduced /s/ goal,",
+        "row_number": 11
+      },
+      {
+        "date": "1/16, 8:05-8:40",
+        "note": "initial and final /s/ 6/10 w/1-2 cues in words.",
+        "row_number": 12
+      },
+      {
+        "date": "1/21, 8-8:30",
+        "note": "initial /s/ 8/10 w/2 cues, final /s/  80% w/1 cue",
+        "row_number": 13
+      },
+      {
+        "date": "1/23, 8-8:30",
+        "note": "initial /s/ 8/10 w/2 cues",
+        "row_number": 14
+      },
+      {
+        "date": "1/27, 8-8:30",
+        "note": "absent",
+        "row_number": 15
+      },
+      {
+        "date": "1/28",
+        "note": "initial /s/ 8/10 w/2 cues, still working on the placement, initial /f/ 6/10 w/1 cue",
+        "row_number": 16
+      },
+      {
+        "date": "2/3, 8-8:30",
+        "note": "initial /f/, 7/10w/1 cue, /s/ distorted reduced 5/10 for accurate one",
+        "row_number": 17
+      },
+      {
+        "date": "2/4, 8-8:30",
+        "note": "/s/ distorted reduced 7/10 for isolated on, in syllables, si, sa, so, 7/10 w/1 cue",
+        "row_number": 18
+      },
+      {
+        "date": "2/10",
+        "note": "initial /s/ 7/10 w/1 cue, final /s/ 6/10 w/1 cue",
+        "row_number": 19
+      },
+      {
+        "date": "2/12, 8-8:30",
+        "note": "9/10 w/ 1 cue for both initial and final",
+        "row_number": 20
+      },
+      {
+        "date": "2/18, 8-8:30",
+        "note": "initial, final, middle s 7/10 w/ 1 cue",
+        "row_number": 21
+      },
+      {
+        "date": "2/24",
+        "note": "initial /s/ in phrase: 3/5 w/2 cues",
+        "row_number": 22
+      },
+      {
+        "date": "2/26, 9:15-9:45",
+        "note": "initial /s/ in words: 8/10 w/1 cue, middle s in baseball 7/10 w/1 cue. In phrase 7/10 w/2 cues. Ready to move to phrase",
+        "row_number": 23
+      },
+      {
+        "date": "3/3",
+        "note": "initial and final /s/ 8/10 w/1 cue middle /s/ 7/10 w/1 cue",
+        "row_number": 24
+      },
+      {
+        "date": "3/ 4",
+        "note": "7/10 w/1 cue for /f,v/, /s,z/ needs to get on phrase level.",
+        "row_number": 25
+      }
+    ],
+    "source_file": "Document_43a3ad7e.docx",
+    "extraction_date": "2025-10-05T20:45:56.087050"
+  },
+  {
+    "student_id": "S-028",
+    "anonymous_name": "Student_6b5aa6",
+    "grade_level": "",
+    "room": "",
+    "teacher": "Teacher_d41d8c",
+    "annual_goals": [
+      "On or before the next annual ARD, when given verbal and visual cues, [STUDENT] will answer concrete where and when questions and \"what doing\" and \"where\" questions about a short story or paragraph with 70% accuracy across 2 data collection session. \n(65% in when, 60% in where with visual cues, mastered \"what doing\")\n[STUDENT] things using  vocabularies, retelling stories, needs PLANO"
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 1:30-2",
+        "note": "Compare and contrast: needs 2-3 cues to find 3 similarities and 3 differences",
+        "row_number": 11
+      },
+      {
+        "date": "1/13",
+        "note": "absent",
+        "row_number": 12
+      },
+      {
+        "date": "1/16, 10:20-10:50",
+        "note": "when, what, where in story: 5/5 w/1 cue",
+        "row_number": 13
+      },
+      {
+        "date": "1/22, 1:30-2",
+        "note": "when, who, what, where in a story read: 5/6 independently.",
+        "row_number": 15
+      },
+      {
+        "date": "1/27, 1:30-2",
+        "note": "absent",
+        "row_number": 16
+      },
+      {
+        "date": "1/29",
+        "note": "answered grade level questions in a non-fiction w/1-2 cues 4/5",
+        "row_number": 17
+      },
+      {
+        "date": "2/3, 1:15-1:45",
+        "note": "non-fiction reading: where in a complicate sentence w/2-3 cues,",
+        "row_number": 18
+      },
+      {
+        "date": "2/5, 1:30-2",
+        "note": "grade text book on desserts, one paragraph retelling w/ 3 prompts. She is able to answer why question.",
+        "row_number": 19
+      },
+      {
+        "date": "2/10",
+        "note": "absent",
+        "row_number": 20
+      },
+      {
+        "date": "2/17",
+        "note": "President day",
+        "row_number": 21
+      },
+      {
+        "date": "2/19",
+        "note": "absent",
+        "row_number": 22
+      },
+      {
+        "date": "2/20",
+        "note": "absent",
+        "row_number": 23
+      },
+      {
+        "date": "2/25",
+        "note": "read a book, and retold the story.",
+        "row_number": 24
+      },
+      {
+        "date": "2/28, 2:00-2:30",
+        "note": "Vocabulary",
+        "row_number": 25
+      }
+    ],
+    "source_file": "Document_49d286a5.docx",
+    "extraction_date": "2025-10-05T20:45:56.098870"
+  },
+  {
+    "student_id": "S-029",
+    "anonymous_name": "Student_d9eb09",
+    "grade_level": "K",
+    "room": "C107",
+    "teacher": "Teacher_e99c19",
+    "annual_goals": [],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 9-9:30",
+        "note": "PLANO1: followed direction: 4/5, basic concepts: 4/5",
+        "row_number": 11
+      },
+      {
+        "date": "1/13, 8:40-9:20",
+        "note": "PLANO: main idea from pictures: 5/6, cause and effect:7/10, prediction: 4/5,",
+        "row_number": 12
+      },
+      {
+        "date": "1/21, 9:05-9:35",
+        "note": "sequence 4 steps pictures x2/2",
+        "row_number": 13
+      },
+      {
+        "date": "1/28",
+        "note": "teacher reported no concern for his communication\nDescribed picture and created a story",
+        "row_number": 14
+      },
+      {
+        "date": "1/31, 10:30-11:00\n2:30-3",
+        "note": "PLANO",
+        "row_number": 15
+      },
+      {
+        "date": "2/3, 9:15-9:45",
+        "note": "convergent category: 4/5 independently.",
+        "row_number": 16
+      },
+      {
+        "date": "2/10, 9:00-9:30",
+        "note": "describe things with 5 features x2 w/1 cue",
+        "row_number": 17
+      },
+      {
+        "date": "tested completed",
+        "note": "Needs to be DNQ",
+        "row_number": 19
+      }
+    ],
+    "source_file": "Document_771cdcbe.docx",
+    "extraction_date": "2025-10-05T20:45:56.108278"
+  },
+  {
+    "student_id": "S-030",
+    "anonymous_name": "Student_97c62f",
+    "grade_level": "2",
+    "room": "D113",
+    "teacher": "Teacher_645d58",
+    "annual_goals": [
+      "On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will use complete sentences to answer [STUDENT] and [STUDENT] questions related to a story in 4 out of 5 trials for 2 data collection sessions."
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 1-1:30",
+        "note": "w/2 cues to describe How questions in order: x2",
+        "row_number": 12
+      },
+      {
+        "date": "1/13, 1-1:30",
+        "note": "x2 to describe a four scene pictures w/ multiple cues",
+        "row_number": 13
+      },
+      {
+        "date": "1/15, 1-1:30",
+        "note": "introduced new goal 2. \ndescribed sequential story for How question x3 w/ multiple cues.",
+        "row_number": 14
+      },
+      {
+        "date": "1/21, 1-1:30",
+        "note": "describe sequential 3 steps for How x4 w/ 2-3 cues.",
+        "row_number": 15
+      },
+      {
+        "date": "1/23, 1-1:30",
+        "note": "w/2 cue, using first, then, next, after for How x3 times",
+        "row_number": 16
+      },
+      {
+        "date": "1/28",
+        "note": "absent",
+        "row_number": 17
+      },
+      {
+        "date": "1/30",
+        "note": "introduced /th/ sound: 7/10 for teeth, earth in words w/1-2 cues",
+        "row_number": 18
+      },
+      {
+        "date": "2/4",
+        "note": "why for basic inferential pictures in complete sentences 7/10 w/1-2 cues",
+        "row_number": 19
+      },
+      {
+        "date": "2/6",
+        "note": "Use completed sentence to answer How: 6 step pictures x2 w/ 2 cues to produce 5-6 words utterances.",
+        "row_number": 20
+      },
+      {
+        "date": "2/11, 1:00-1:30",
+        "note": "absent, sick.",
+        "row_number": 21
+      },
+      {
+        "date": "2/13",
+        "note": "absent, sick",
+        "row_number": 22
+      },
+      {
+        "date": "2/18",
+        "note": "absent, sick",
+        "row_number": 23
+      },
+      {
+        "date": "2/24",
+        "note": "retell and wrote a story in sequence w/2-3 cues. Was able to answer why questions about that story.",
+        "row_number": 24
+      },
+      {
+        "date": "2/28, 1:00-1:30",
+        "note": "retell the story in sequence. How: 3/5 w/1 cue,  Why: 2/3 w/1 cue",
+        "row_number": 25
+      },
+      {
+        "date": "3/4",
+        "note": "/TH/ needs 1-2 cues in sentences 7/10",
+        "row_number": 26
+      },
+      {
+        "date": "3/6",
+        "note": "How in sloppy Joe, was able to use first, after, next to describe actions in the book.",
+        "row_number": 27
+      }
+    ],
+    "source_file": "Document_5951acf3.docx",
+    "extraction_date": "2025-10-05T20:45:56.121166"
+  },
+  {
+    "student_id": "S-031",
+    "anonymous_name": "Student_b87ccb",
+    "grade_level": "1",
+    "room": "D111",
+    "teacher": "Teacher_5e0ef6",
+    "annual_goals": [
+      "On or before the next annual ARD, when given no cues, [STUDENT] will identify an object from an oral description in 7/10 trials across 2 data collection sessions. (78% in one session, needs more sessions to generalize)"
+    ],
+    "goal_date": "",
+    "session_notes": [
+      {
+        "date": "1/7, 2:00-2:30",
+        "note": "/pr/ needs 2 cues, \nPLANO1, describe sequence of daily activities, 14/21 w/1 cue",
+        "row_number": 11
+      },
+      {
+        "date": "1/13, 12:30-1",
+        "note": "PLANO: analogy: 1/5, \nidentify objects: 7/10 independently\ndescribe things with features, 3 features independently, needs at least 2 cues to tell more features.",
+        "row_number": 12
+      },
+      {
+        "date": "1/15, 12:30-1",
+        "note": "identify objects: 5/5 independently\ndescribe things w/3 features w/1 cue, x4",
+        "row_number": 13
+      },
+      {
+        "date": "1/21, 12:30-1",
+        "note": "describe things w/ 4 features w/ 2 cues, 4/5",
+        "row_number": 14
+      },
+      {
+        "date": "1/23",
+        "note": "described things w/ 4 features w/ 2 cues 4/5",
+        "row_number": 15
+      },
+      {
+        "date": "1/27, 12:30-1",
+        "note": "described thingsw/1 cue, 11/15 for 4 features",
+        "row_number": 16
+      },
+      {
+        "date": "1/28",
+        "note": "described 4 things w/ 5 features, w/2-3 cues use complete sentences",
+        "row_number": 17
+      },
+      {
+        "date": "2/3, 12:40-1:10",
+        "note": "described 3 things w/2-3 cues",
+        "row_number": 18
+      },
+      {
+        "date": "2/4",
+        "note": "described 4 things w/ 2-3 cues w/ 4 features",
+        "row_number": 19
+      },
+      {
+        "date": "2/10",
+        "note": "described 3 things w/2-3 cues for 5 features",
+        "row_number": 20
+      },
+      {
+        "date": "2/11",
+        "note": "described 3/5 w/1 cue. 5/5 w/2 cues for 5 features.",
+        "row_number": 21
+      },
+      {
+        "date": "2/18",
+        "note": "described 4/5 w/1-2 cues for 5 features.",
+        "row_number": 22
+      },
+      {
+        "date": "2/19, 12:40-1",
+        "note": "Described 3/5 w/ 1cue, 5/5 w/2 cues, needs help with category.",
+        "row_number": 23
+      },
+      {
+        "date": "2/24",
+        "note": "described 3/5 w/1 cue, able to find category w/1 cue",
+        "row_number": 24
+      },
+      {
+        "date": "2/25",
+        "note": "described 4/5 w/1-2 cues. Able to compare w/2 cue, need help to use but, because, those conjunction words to say a sentence",
+        "row_number": 25
+      },
+      {
+        "date": "3/3",
+        "note": "used complete sentence to retell a story w/ picutres and less than 2 verbal prompt: A tiger is hiding in a jungle. Hunters are looking for animal. All the animals are running (cue) because they don’t want to get caught. Then, a monkey told a tiger to run. The hunter SPOTTED the tiger. The hunter made a plan to get a tiger. The hunter caught the tigher w/ a net (2 cues).",
+        "row_number": 26
+      },
+      {
+        "date": "3/5",
+        "note": "NEEDS WORK ON ANSWERING STORY QUESTIONS,\n2-3 cues to answer How and Why questions in a story.",
+        "row_number": 27
+      }
+    ],
+    "source_file": "Document_e7533a7a.docx",
+    "extraction_date": "2025-10-05T20:45:56.137802"
+  }
+]

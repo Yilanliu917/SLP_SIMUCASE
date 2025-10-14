@@ -1,27 +1,92 @@
-﻿# Python
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 venv/
-env/
+ENV/
 
-# SECRETS - NEVER COMMIT
-.env
-.env.*
-*.env
-.env.backup
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+backend/logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+postgres-data/
 
 # Generated files
 generated_case_files/
+*.md
+!README.md
+!docs/*.md
+
+# Temporary files
+temp_*
+nul
+
+# Secrets
+*.pem
+*.key
+*.crt
+secrets/
+
+# Docker
+docker-compose.override.yml
+
+# Kubernetes
+k8s/secrets.yaml
+
+# Mac
+.DS_Store
+
+# Redis
+dump.rdb
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data
+data/slp_vector_db/
 feedback_log.json
 feedback_categories.json
 cases_database.json
 
-# Large data
-data/
-*.pdf
-
-# IDE & OS
-.vscode/
-.DS_Store
-*.log
-temp_*.md
+# Backups
+*.backup
+*.bak

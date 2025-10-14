@@ -6,6 +6,14 @@ Population specifications: {population_spec}
 
 Generate a case file for a {grade} student with: {disorders}
 
+CRITICAL DEVELOPMENTAL GUIDELINES:
+1. Annual IEP goals MUST be AGE-APPROPRIATE for {grade} students
+2. Speech sound errors: Only include sounds that are ATYPICAL for this age (consult developmental norms)
+3. Articulation Disorders = RESIDUAL ERRORS (individual sounds like /r/, /s/, /l/, /th/) - NOT phonological patterns
+4. Phonological Disorders = PHONOLOGICAL PROCESSES/PATTERNS (fronting, stopping, cluster reduction, final consonant deletion) - NOT individual sound errors
+5. Language targets: Must reflect delays compared to age-expected milestones for {grade}
+6. All errors and goals must be developmentally atypical for this specific grade level
+
 Respond with valid JSON:
 {{
     "student_profile": {{

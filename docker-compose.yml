@@ -1,0 +1,167 @@
+version: '3.8'
+
+services:
+  # OAuth2 Proxy - Auth0 integration
+  oauth2-proxy:
+    image: quay.io/oauth2-proxy/oauth2-proxy:v7.5.1
+    container_name: slp-oauth2-proxy
+    command:
+      - --provider=oidc
+      - --provider-display-name="Auth0"
+      - --oidc-issuer-url=${AUTH0_ISSUER_URL}
+      - --client-id=${AUTH0_CLIENT_ID}
+      - --client-secret=${AUTH0_CLIENT_SECRET}
+      - --cookie-secret=${OAUTH2_PROXY_COOKIE_SECRET}
+      - --email-domain=*
+      - --upstream=http://gradio-app:7860
+      - --http-address=0.0.0.0:4180
+      - --redirect-url=${OAUTH2_REDIRECT_URL}
+      - --cookie-secure=true
+      - --cookie-httponly=true
+      - --cookie-samesite=lax
+      - --set-xauthrequest=true
+      - --pass-access-token=true
+      - --pass-authorization-header=true
+      - --set-authorization-header=true
+      - --skip-provider-button=false
+      - --scope=openid profile email
+      - --oidc-email-claim=email
+    ports:
+      - "4180:4180"
+    environment:
+      OAUTH2_PROXY_COOKIE_SECRET: ${OAUTH2_PROXY_COOKIE_SECRET}
+      AUTH0_CLIENT_ID: ${AUTH0_CLIENT_ID}
+      AUTH0_CLIENT_SECRET: ${AUTH0_CLIENT_SECRET}
+      AUTH0_ISSUER_URL: ${AUTH0_ISSUER_URL}
+    depends_on:
+      - gradio-app
+    networks:
+      - slp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:4180/ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # FastAPI RBAC Backend
+  fastapi-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi
+    container_name: slp-fastapi-backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://postgres:postgres@postgres:5432/slp_rbac}
+      AUTH0_DOMAIN: ${AUTH0_DOMAIN}
+      AUTH0_API_AUDIENCE: ${AUTH0_API_AUDIENCE}
+      REDIS_URL: redis://redis:6379/0
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - slp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./backend/logs:/app/logs
+
+  # Gradio Application
+  gradio-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: slp-gradio-app
+    ports:
+      - "7860:7860"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      BACKEND_API_URL: http://fastapi-backend:8000
+      GRADIO_SERVER_NAME: 0.0.0.0
+      GRADIO_SERVER_PORT: 7860
+      GRADIO_ROOT_PATH: ${GRADIO_ROOT_PATH:-}
+    volumes:
+      - ./data:/app/data
+      - ./generated_case_files:/app/generated_case_files
+      - ./prompts:/app/prompts
+      - ./feedback_log.json:/app/feedback_log.json
+      - ./cases_database.json:/app/cases_database.json
+    networks:
+      - slp-network
+    restart: unless-stopped
+    depends_on:
+      - fastapi-backend
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: slp-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: slp_rbac
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./backend/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - slp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: slp-redis
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-redis_password}
+    volumes:
+      - redis-data:/data
+    networks:
+      - slp-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Nginx Reverse Proxy (Production)
+  nginx:
+    image: nginx:alpine
+    container_name: slp-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - nginx-logs:/var/log/nginx
+    depends_on:
+      - oauth2-proxy
+      - fastapi-backend
+    networks:
+      - slp-network
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+  nginx-logs:
+
+networks:
+  slp-network:
+    driver: bridge

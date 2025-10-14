@@ -1,0 +1,486 @@
+student_id,anonymous_name,grade_level,room,teacher,source_file,data_type,content,date,goal_number,note_number
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,annual_goal,"Goal1: 
+On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will produce prevocalic /r/ sounds with 70% accuracy at the sentence level for 2 data collection sessions. 
+Goal2:
+On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will produce vocalic /r/ sounds (i.e., er, ar, air, ear, ire, or) with 70% accuracy at the sentence level for 2 data collection sessions.",,1.0,
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,data was not taken,"1/7, 10:30-11:00",,1.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,ar: 8/10 w/1 cue,"1/13, 10:35-11:15",,2.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,great gradma: 7/10 w/1 cue,"1/17, 9:00-9:40",,3.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,sentence ear and ire: 7/10 w/ 2-3 cues,"1/22, 11:15-11:45",,4.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,5/6 w/1 cue in phrases,"1/27, 10:15-10:45",,5.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"phrase, 7/10 w1-2 cues for gr","1/28, 11:00-11:15",,6.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"phrase: four radios/ or: 8/10 w/1 cue
+rooster: r: 6/10 w/1-2 cues","2/3, 11:45-12:00",,7.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"regress, mouth was not open for pre-voicalic /r/, needs at least 2 cues to open his mouth bigger.",2/10,,8.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"1 cue, pre-voicalic r blends: br, kr, fr, pr: 7/10 w/1 cue in sentences",2/18,,9.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"1 cue, prevocalic and r in one sentence: 8/10",2/20,,10.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"third grader: ir.er: 8/10, gr/: 7/10",2/24,,11.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"pr 2cues, firework 2 cue, fairy 2 cue.",2/27,,12.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"w/1 cue, able to use say r blends and r in sentences w/ 7/10",3/3,,13.0
+S-001,Student_a9e3dd,5,B104,Teacher_3a242c,Document_4a97036e.docx,session_note,"R BLEND: 9/10 W/1 CUE IN SENTENCE
+VOCALIC R 15/18 IN SENTENCE W/1 CUE",¾,,14.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,annual_goal,"On or before the next annual ARD, when given verbal, visual, tactile cues, [STUDENT] will produce dr, gr, and kr at the word level with 70% accuracy across 2 data collection sessions.",,1.0,
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"final ar: 5/10 w/1 cue, 8/10 w/2 cues","1/7, 1:30-2",,1.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"initial: 12/15, final 8/10 w/ 1 cue","1/13, 2:10-2:40",,2.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"w/1 cue, looking at mirror: final ar and middle ar: 8/10 w/1 cue","1/16, 10:20-10:50",,3.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"w/1 cue, initial ar: 7/10","1/22, 1:30-2",,4.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"middle r: card, hard w/1 cue 4/6",1/27,,5.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,grasshopper: 7/10 w/1 cue,1/29,,6.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"earth: 6/7 w/1 cue
+give me a pair of sissors:6/8 w/1 cue","2/3, 1:15-1:45",,7.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,give me eraser: 5/6 w/ 1 cue,2/5,,8.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,green grass: 8/10 w/1 cue,2/10,,9.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,President day,2/17,,10.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,absent,2/19,,11.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"Ark: 5/5, gr: 6/10 w/",2/20,,12.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"ar,er: 8/10 w/1 cue
+in sentence: 2-3 cues",2/25,,13.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"ar: initial, middle, final: 7/10 w/ 1 cue.",2/27,,14.0
+S-002,Student_d02431,3,A104,Teacher_154688,Document_feb2ec76.docx,session_note,"mastered final ar, er, or, air in phrase  w/ 7/10 w/1 cue . prevocalic r 8/10 in phrase w/1 cue",3/3,,15.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,annual_goal,"On or before the next annual ARD, when given no cues, [STUDENT] will maintain a topic chosen by a teacher/staff member for at least 3 conversational turns by commenting, adding information, or asking questions in 4/5 trials across 2 data collection sessions.",,1.0,
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,"redirected x2, followed 3/5 w/1 cue, and was able to use AAC to say: I like snow. I like TV.","1/7, 12:30-1",,1.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,"was able to redirect w/1 cue, 3/5 turns
+found “Snow”, “Tooth”, “put toothpaste on brush” on AAC","1/13, 12:00-12:30",,2.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,"found “ride a bike”, “dirty” on AAC using search function. Maintained attention through the session","1/22, 2:00-2:30",,3.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,"absent , sick",1/29,,4.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,"x2 redirect w/1 cue, found “I am your best friend” w/ verbal prompts, found “face mask” using search function.",2/5,,5.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,"3/5 w/ 1-2 cues. Found “rabbit’s home”, “rabbit’s party” on AAC","2/11, 1:45-2:15",,6.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,absent,2/19,,7.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,reduced to x2 distractions. 3 turns w/1 cue followed instruction to find holiday and feelings in AAC w/ 1-2 cuesx3 and commented verbally x2.,2/26,,8.0
+S-003,Student_54251f,4,D101,Teacher_9c0ca0,Document_32fe49da.docx,session_note,"commenting, request, response x4/6 times",¾,,9.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,annual_goal,"On or before the next annual ARD, when given verbal and visual cues, [STUDENT] will use plurals (i.e dogs, cats), in 7/10 trials across 2 data collection sessions.  3/5x1 mod cues",,1.0,
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"8/10 w/1-2 cues, sequence 2/2 independently","1/7, 9:40-10:10",,1.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"still needs a modeling for front and behind, but was able w/1 cue, able to use SVO sentence to describe action pictures.","1/13, 9:30-10:00",,2.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"front/behind/beside: w/1 cue, 6/8, was able to sequence and tell the order.",1/15,,3.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,7/8 for front/behind/beside w/1 cue,"1/21, 9:30-10:00",,4.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"4/5 w/1 cue, mastered this goal. Function, wh questions: 13/18 independently.","1/23, 9:30-10",,5.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"preposition: 5/6 mastered
+name the category: 2/4","1/27, 9:30-10",,6.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,in the testing.,1/28,,7.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"category, convergent: 4/5
+divergent: 4 things.","2/3, 9:30-10",,8.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"inference/why questions: 5/7
+prediction: 4/6
+difficulties in using verbs. Target: describe the sequence cards using verb.","2/5, 9:30-10",,9.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"4 sequential cards, describe x3/3 w/ 2 -3 cues","2/10, 9:30-10",,10.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,"3 categories: sports, furniture, ocean animals to tell 3 things, w/ more than 3 cues","2/12, 9:20-9:50",,11.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,4 sequential cards: 3/4w/ 2 cues,"2/18, 9:50-10:20",,12.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,describe things x3 w/ 2-3 cues,2/24,,13.0
+S-004,Student_36ff7d,k,C105,Teacher_976d01,Document_47de1a04.docx,session_note,describe 4 sequence: 3/5 w/2 cues,3/3,,14.0
+S-005,Student_977d8f,2,D109,Teacher_63d700,Document_0cf926cf.docx,annual_goal,"On or before the next annual ARD date when given modified instruction, accommodations, and verbal/visual support, [STUDENT] will develop and sustain foundational language skills: listening, speaking, discussion, and thinking 4 out of 5 times.",,1.0,
+S-006,Student_5f3695,5,D101,Teacher_9c0ca0,Document_b567413d.docx,annual_goal,"By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will tell at least 3 differences and 3 similarities about attributes of common objects or pictures in 4 out of 5 trails, for 2 data collection sessions.",,1.0,
+S-006,Student_5f3695,5,D101,Teacher_9c0ca0,Document_b567413d.docx,session_note,"5/5 w/1-2 cues, he is ready to differentiate similarities and differences w/1 cue, 25/30 for all 5 pairs.  Needs visual organizer and 1 more verbal cue.","2/19, 9:45-10:15",,1.0
+S-007,Student_8cf988,5,D101,Teacher_9c0ca0,Document_a83b3744.docx,student_record,Basic student information,,,
+S-008,Student_c5f9e4,4,B102,Teacher_d41d8c,Document_0bfc85b6.docx,annual_goal,"On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will produce both voiced and voiceless /th/ sounds at sentence level at least 70% accuracy for 2 data collection sessions.",,1.0,
+S-008,Student_c5f9e4,4,B102,Teacher_d41d8c,Document_0bfc85b6.docx,session_note,"w/1 cue, able to read /r/ and th w/ 70% accuracy in sentences.",3/4,,1.0
+S-009,Student_baa9e2,K,C105,Teacher_d41d8c,Document_353cce2e.docx,session_note,ch initial 7/10 w/1 cue. Sh mastered.,"3/3, 8-8:30",,1.0
+S-009,Student_baa9e2,K,C105,Teacher_d41d8c,Document_353cce2e.docx,session_note,"ch intial sentence 7/10 w/1-2 cuse, sh needs 1 cue in sentence",3/5,,2.0
+S-010,Student_bd465b,K,C107,Teacher_e99c19,Document_15e1a61f.docx,annual_goal,"By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe objects with at least 5 out of 7 key attributes (i.e., name, category, function, location, color, shape, parts) in 4 out of 5 trials for 2 data collection sessions.",,1.0,
+S-010,Student_bd465b,K,C107,Teacher_e99c19,Document_15e1a61f.docx,session_note,"g: initial: 6/10 w/1 cue, final 6/10 w/2 cues in words",3/3,,1.0
+S-010,Student_bd465b,K,C107,Teacher_e99c19,Document_15e1a61f.docx,session_note,"g, b, initial in sentence 7/10 w/1 cue
+final d 6/10 w/ 1 cue.",3/5,,2.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,annual_goal,"Goal1: 
+On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will make predictions from social contexts in 4 out of 5 trials for 2 data collection sessions. 
+Goal2:
+On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will use complete sentences to describe common objects with at least 5 different semantic features (i.e., name, category, location, function, color, shape, size, and parts) in 4 out of 5 trials for 2 data collection sessions.",,1.0,
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"probe for goals
+predicting: 5/10 w/ picture cueing
+describe things with 5 features: visual cue+2 verbal cues to use complete sentence.","1/8, 8:45-9:25",,1.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"why: 4/5 w/ 1 cue, needs 2 cues to use the complete conjunction sentences.","1/14, 10:50-11:20",,2.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,why without cueing he is able to answer why do you like it? Why are you upset? And inferential pictures. 4/5,"1/15, 9-9:30",,3.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"“why” about submarin and titanic “ because to move”, “because of iceberg”.","1/22, 2:00-2:30",,4.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"why: 4/5 w/1 cue, describe things: 2/5 w/1 cue","1/27, 9:00-9:30",,5.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,Spontaneous conversation: I wan to go there in person. I want to see that in person! Why: because he is going to.. because he had.. because iceberg,1/28,,6.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"describe x4 w/2 cues, name, function, category, looks like","2/4, 9-9:40",,7.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"describe x3 w/2-3 cues. Name, category, looks like, location, function","2/6, 8-8:30",,8.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"prediction, x4/5 w/2-3 cues.","2/11, 9:15-9:45",,9.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"3/5 w/2 cues, 4/5 w/1-2 cues to answer prediction question in complete sentences.","2/13, 9-9:30",,10.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,Prediction: 3/5 w/2 cues,"2/19, 9:45-10:15",,11.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,Prediction in complete sentences: with sentence carrier 6/7 w/ 1 verbal prompt,"2/20, 11:00-11:30",,12.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,describe x3 things w/1-2 cues. Needs vocabulary to complete the sentence.,"2/24, 8:10-8:40",,13.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,prediction for picture story w/ sentence carrier: 3/5 w/2-3 cues,2/27,,14.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,prediction 3/5 w/2 cues,3/4,,15.0
+S-011,Student_1fcf15,3,D101,Teacher_9c0ca0,Document_b307db86.docx,session_note,"watched a video of sprunki. Language sample:
+What are you making: Clocker. 
+No, they hurt his head. Evil black smashed her head off, but still hurts. I am gonna make clocker’s eyeballs. Oh, it’s too big. I want it small. I can play games. (What will they do?) They will escape.(w/ sentence carrier). Will they fall? They will fall. He pushed clocker.",3/6,,16.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,annual_goal,"By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce vocalic /r/ sounds (i.e., ar and er sounds) accurately in all word positions (i.e., initial, medial, and final) with 70% accuracy, for 2 data collection sessions.",,1.0,
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,ar w/1 cue 8/10,"1/17, 1:50-2:20",,1.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,"final ar 8/10 w/1 cue
+middle r 5/5 w/ 1cue
+final er: 1 cue 4/5","1/21, 12:30-1:00",,2.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,"initial er: 8/10 w/1 cue
+final th:  8/10 w/1 cue",1/23,,3.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,final er/o: 8/10 w/1-2 cues,"1/27, 12:30-1",,4.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,initial r in rocks: 3/5 w/2 -3 cues,1/28,,5.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,initial r:6/10 w/2 cues,"2/3, 12:30-1",,6.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,initial r: 7/10 w/ 1-2 cues,2/4,,7.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,initial r: 7/10 w/1-2 cues,2/10,,8.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,initial r 6/10 w/ 1 cue,"2/11, 12:30-1",,9.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,initial r in words: 7/10 w/1 cue,"2/18, 12:40-1:10",,10.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,Initial r in words: 7/10 w/1 cue,"2/19, 12:40-1:10",,11.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,initial r in phrase: 7/10 w/1 cue,2/24,,12.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,"thirty-three: th: 1 cue 7/10
+ir: 1 cue 7/10
+thr: 7/10 w/1 cue",2/25,,13.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,"vocalic r: 7/10 w/1 cue
+prevocalic r: in phrase: 7/10 w/1 cue",3/3,,14.0
+S-012,Student_3e8ed7,1,D111,Teacher_5e0ef6,Document_0328eed7.docx,session_note,prevocalic r in sentence: 6/10 w/1 cue,3/5,,15.0
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,annual_goal,"[STUDENT] 1: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce /l/ blends accurately in sentences with 80% accuracy, for 3 data collection sessions.",,1.0,
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,session_note,"with 2 cues, 8/10 at sentence level.","1/7, 1/7",,1.0
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,session_note,"voiced: w/1-2 cues, 7/10 sentence.","1/13, 11:20-11:50",,2.0
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,session_note,voiceless initial /th/ 12/15 at sentence w/1 cue,1/21,,3.0
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,session_note,voiced /th/ in would rather activity: 8/10 in sentences w/1-2 cues,1/29,,4.0
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,session_note,voiceless th in sentence: 8/10 w/1 cue,"2/3, 10:30-11",,5.0
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,session_note,9/10 for voiced th in sentence w/1 cue,"2/11, 10:15-10:45",,6.0
+S-013,Student_8755f8,1,D105,Teacher_d41d8c,Document_498183c2.docx,session_note,voiceless in sentence during conversation: 7/10 w/1 cue,2/25,,7.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,annual_goal,"Goal1
+On or before the next annual ARD, with no more than 1 cue, [STUDENT] will produce final /t/ and /k/ at the sentence level with 70% accuracy across 2 data collection sessions.
+Goal2
+On or before the next annual ARD, with no more than 1 cue, [STUDENT] will use correct verb tense in complete sentences to describe a 4-step sequential story in 4/5 trials across 2 data collection sessions.",,1.0,
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,absent,1/7,,1.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,"read a book, as introduced how to describe a story picture by using who and what.","1/14, 10:15-10:45",,2.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,describe pictures using 2-3 complete sentences 4/5 w/1-2 cues,1/15,,3.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,describing story pictures using complete setences w/ at least 5 words 4/5 w/1-2 cues.,"1/21, 10:15-10:45",,4.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,"4/5 w/1 cue to describe picutures using complete sentences, starting to use complete sentences. “he doesn’t want to race because his bike will get dirty”","1/23, 10:10-10:40",,5.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,sick absent,1/28,,6.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,described pictures in complete simple sentences 4/5 w/ correct grammar w/1 cue,"1/29, 10:15-10:45",,7.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,"described pictures and able to answer predict and inferential questions, 4/5 w/ 1 cue","2/4, 10:15-10:45",,8.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,"retold stories w/ pictures and 1 verbal prompt, included all the important story elements. The utterance length was above 6, with occasional grammatical errors. Needs to work on using irregular verb and regular verb tense.",2/5,,9.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,"retold a story, introduced regular past verb tense","2/10, 10:10-10:40",,10.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,3/5 w/multiple cues for regular ed.,"2/12, 10:20-10:50",,11.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,verb tense: 7/10 w/ 1-2 cues for regular ed and common irregular ones.,2/24,,12.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,introduced future verb tense. 4/5 w/ 2-3 cues,"2/26, 10:15-10:45",,13.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,"verb tense regular past tense: 4/5 w/ 1-2 cues
+future tense w/ will: 3/5 w/2 cues,
+final t, d, k, 4/6 w/1 cue in a sentence",3/3,,14.0
+S-014,Student_af2a7d,k,D105,Teacher_d41d8c,Document_5c32b70f.docx,session_note,"story telling using acurate verb tense: regular/irregular past tense 4/5 w/2 cues, future tense: 4/5 w/2 cues.",3/5,,15.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,answered questions in a storybook reading: 7/10 w/ 1-2 cues,"1/7, 11-11:30",,1.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,answered questions in a story book reading 4/5 w/ 1cue,"1/14, 10:15-10:45",,2.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,answered questions about a picture: 5/6 in complete questions.,1/15,,3.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"who, whose, where, when, what 5/6 independently,  needs more cues in when questions","1/21, 10:15-10:45",,4.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"where, who, what 4/5 w/1 visual cue in a story","1/23, 10:10-10:40",,5.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,4/5 w/1 cue for a book,1/28,,6.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"resistant reading a book, did not want to answer questions",1/29,,7.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"answered inferential and prediction questions 5/7 w/1 cue, He knows how to answer where, why, and what questions","2/4, 10:10-10:40",,8.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,answered questions in a story read to him: 5/6 independently.,"2/5, 10:10-10:40",,9.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,absent for sickness,2/10,,10.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"got him from nurse when he was sleeping, and slept throughout the session did not get up with multiple cues (i.e., dancing song, game). Sent back to nurse post session.","2/12, 10:20-10:50",,11.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"PLANO:
+Language concepts and organization:
+basic concepts: 9/10, main idea from pictures: 5/5, cause and effect: 9/10, predictions from situational context: 2/5, make inferences from situational contexts: 1/5, sequence and verbalize a 3-4 step task: 2/2
+Semantics: identifying objects from oral description 1/5, divergent categories: 78%, convergent categories: 3/5, antonyms: 1/5,
+Narrative tasks: identifying main idea when stated in paragraphs: 2/5.
+
+Possible goals:
+listening comprehension for short text: 
+main idea, prediction. 
+identifying objects from oral description.","2/18, 2:10-2:40",,12.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"Answered questions  about a story book: 6/7 independently. Retelling story: main idea w/2 cue, frustrated to retell the story and cried. With sentence carrier and pictures, able to recall the main events in phrases, rather than complete sentences. Needs to work on complete sentences",2/20,,13.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,"answered questions related to a video, doesn’t want to use complete sentences. Was not able to generate main idea of the video in complete sentences, needs 2 verbal prompts.",2/24,,14.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,answered questions about a story 5/6 w/ 1 verbal cue,2/26,,15.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,retold a story w/ main events w/ pictures in complete sentences w/2-3 cues,3/3,,16.0
+S-015,Student_728371,,1,Teacher_c08cfd,Document_3eed204d.docx,session_note,mainidea of a story w/2-3 verbal prompts. Recalled story elements w/ 2-3 verbal prompts and pictures.,3/5,,17.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,annual_goal,"On or before the next annual ARD, when given no cues, [STUDENT] will identify common categories when given at least 3 members of the category in 7/10 trials across 2 data collection sessions.",,1.0,
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"was able to make SVO sentence. Still has hard time to produce /s/ sound in words without reading it. E.g., sandwich","1/7, 11:00-11:30",,1.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"s blends in a words and phrase, for s production. 
+still needs about 2 cues 1 visual and 1 verbal to say s clearly in the phrase.","1/13, 11:20-11:50",,2.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,absent,1/15,,3.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"medial clusters multiple syllables w/1-2 cues, pataka fine, no apraxia.","1/17, 2",,4.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,initial sl 8/9 w/1 cue in sentence. “I don’t like snail cause they are scary and evil animals”.,1/21,,5.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,language session: able to use complete sentence to describe story pictures. Answer WH questions. Try to see describe things.,1/23,,6.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,absent sick,1/28,,7.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,sick absent,1/29,,8.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,initial /sl/: 6/8 w/1 cue in a sentence,"2/3, 10:30-11",,9.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"with one cue, initial clusters: 4/5, 
+able to answer inferential questions and predict questions using “because” and “will”","2/4, 10:10-10:40",,10.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,absent,2/10,,11.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,final cluster sentence 8/10 w/1 cue.,"2/11, 9:45-10:45",,12.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"final cluster last, next, gift, lift, after 7/10 w/1 cue in phrases.","2/18, 10:30-11",,13.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"W/1 cue for final clusters
+Retelling story:",2/20,,14.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"w/1 cue final cluster and initial cluster: 7/10, able to retell a video in complete sentences",2/24,,15.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"retell a story book with right main idea and details. Able to use longer sentences, and w/1-2 cues to say the middle clusters accurate",2/25,,16.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,absent,3/3,,17.0
+S-016,Student_e28310,1,D105,Teacher_d41d8c,Document_1bb03bd7.docx,session_note,"able to use  conjunction, because in a compound sentence. 1-2 cue, 7/10 in final clusters",3/4,,18.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,PLANO: Basic concepts: 6/10 describe things on the picture.,"1/7, 9-9:30",,1.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,"main idea: 5/6 still confusing about pronouns due to dialects, but is able to make longer sentences.","1/13, 8:40-9:20",,2.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,"cause effect: 8/10, prediction: 1/5,","1/14, 9:35-10:05",,3.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,describing sequence: x2 using present progressive,"1/21, 9:35-10:05",,4.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,absent,1/23,,5.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,absent,1/28,,6.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,"worked on vocalic /r/. 7/10 w/1 -2 cues in words
+described lego parts in a structured activity.","1/29, 9:00-9:40",,7.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,"r: vocalic r 8/10 w/1-2 cues, prevocalic: 3/5 w/2 cues",2/3,,8.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,"final or, er 8/10w/1 cue, rooster: 3/5 w/2 cues",2/5,,9.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,"thirty, /th/, /r/: 7/10 w/1-2 cues",2/10,,10.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,able to describe 6 step sequential pictures.,"2/11, 11:10-11:40",,11.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,3/5 w/1 cue to describe with /5 features,"2/18, 9:15-9:45",,12.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,Testing,2/24,,13.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,describe things 4/5 w/1 cue w/ 5 features,2/25,,14.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,identify things from descriptions: 4/5. Prevocalic r: 3/5 in words w/2 cues,3/3,,15.0
+S-017,Student_e4a1f7,1,D103,Teacher_6af267,Document_3ae046a6.docx,session_note,storytelling: was able to tell the main events 5/7 w/ pictures and no more than 1 verbal prompt.,3/5,,16.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,annual_goal,"By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will retell a story with at least 5 story grammatical elements (i.e., character, setting, problem, resolution, feelings) for 3 data collection sessions.",,1.0,
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,5/8 w/2 cues to answer inferencial questions in a storybook read to him,"1/7, 12:30-1",,1.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"using social context,w/ 2 options, Juan 4/5 to answer inferential questions in complete sentences","1/13, 12:00-12:30",,2.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"using inferential pictures, 5/5 w/1-2 cues to use complete sentences.","1/14, 10:50-11:20",,3.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"absent, sick",1/22,,4.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,retold story book with at least 4 story elements w/ 2 cues,"1/23, 1:40-2:10",,5.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"retold a story book w/2 cues, needs cueing for sentence structure and prompts at the beginning of retelling",1/28,,6.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,retold a story with 4/5 key points w/ pictures and 2-3 verbal prompts,1/29,,7.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,retold a story w/ 5 key points w/ 2 verbal prompts. Was able to write the main idea and the problem w/2 cues.,2/5,,8.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,wrote 5 key points of a story w/ pictures and 1-2 verbal prompts.,"2/11, 1:45-2:15",,9.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"why in complete sentence: 4/5 w/ 2 cues after a video.
+story retelling:
+
+The lady grabbed a cookie on the Ban (Vending) machine. Then she sit on the bench next to a guy. The guy grabbed lady’s cookie. The lady got angry and asked they guy” why did you steal my cookie?” Then there is a train. The lady got on the train. The lady see (verb tense) a cookie in her bag. The lady thought  that (was) guy’s cookie. Then the lady feels sorry because the lady ate the guy’s cookie (sentence carrier and one verbal prompt).","2/13, 1",,10.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"Was able to tell character, setting, and 1 problem, 1 attempt w/ 1 verbal prompt. W/2-3 cues, able to tell 5 elements and use complete sentences",2/19,,11.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,How is he feeling and why: 4/5,2/20,,12.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,retold a story with all the details independently.,2/26,,13.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"why: 3/6 w/1 cue, 5/6 w/2 cues
+How: 4/5 w/2 cues
+retold a picture  story book w/ 2-3 verbal prompts and pictures",¾,,14.0
+S-018,Student_101979,5,D101,Teacher_9c0ca0,Document_83ea686a.docx,session_note,"How are you going to spend your easter? w/ sentence carries (First, I will), language sample: First, I will find three eggs. Next, I will find more eggs. After that, I will open eggs. Last, I will get moneys, toys, candies.",3/6,,15.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,annual_goal,"[STUDENT] 2: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe objects with at least 5 out of 7 key attributes (i.e., name, category, function, location, color, shape, parts) in 4 out of 5 trials for 2 data collection sessions.",,1.0,
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,3/4w/2 cues in a story book,"1/7, 8:30-9:00",,1.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,3/5 w/1 cue to describe in complete setneces,"1/14, 9:00-9:30",,2.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,worked on complete sentence for inferential.,"1/15, 8:30-9",,3.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,"describe things 3/3 w/ 5 features w/1 cue
+prediction x3 w/ 2 cues","1/22, 8:30-9",,4.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,15/20 to describe 5 features w/ 1 cue,"1/27, 8:30-9",,5.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,predict: 3/5 w/1 cue watching video,"1/30, 8:30-9",,6.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,predict 3/5 w/1-2 cues in inferential picture describing,"2/4, 8:30-9",,7.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,x4 describe 6 features.,2/5,,8.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,x3 describe 6 features w/1 cue,"2/10, 8:30-9",,9.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,6/8 w/2 cues for predictions in complete sentences.,"2/11, 9:45-10:15",,10.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,absent,2/18,,11.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,TELPAS testing,2/19,,12.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,"mastered describe 5/5 w/ 1 cue
+still needs to work on prediction 3/5 w/2 cues",2/24,,13.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,"with sentence carrier and picture cues, 4/5 to predict in a story",¾,,14.0
+S-019,Student_e57777,2,D101,Teacher_9c0ca0,Document_5322274e.docx,session_note,Social context cards: 5/5 in multiple choice. Use XXwillXXX answered 4/5 w/1 cue.,3/5,,15.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,annual_goal,"By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce initial and final /f/ and /v/ sounds accurately in 4 out of 5 trials, for 3 data collection sessions.",,1.0,
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,final /f/ 80% w/1 cue initial /f/ 80% w/2 cues,"1/7, 8-8:30",,1.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,initial /f/ 60% w/1 cue,"1/13, 8-8:30",,2.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,4/6w/1 cue,"1/15, 8-8:30",,3.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"final /f/ 90% w/1 cue, initial /f/ 70% w/ 1 cue","1/21, 8-830",,4.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,initial /f/ 80% w/1 cue,1/23,,5.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,4/5 w/1-2 cues,"1/27, 8-8:30",,6.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,absent,1/28,,7.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"initial /f/ 7/10 w/1 cue, final mastered, needs to work on middle /f/ and /v/",1/30,,8.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"initial /f/ 8/10 w/1 cue, mastered. 
+3/5 w/1-2 cues He.she/they",2/3,,9.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"6/8 w/2 visual cues, 1 sentence carrier and 1 picture cue","2/4, 8-8:30",,10.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"7/10 w/1 cue, /v/ needs 2 cues to reach 8/10",2/10,,11.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,8/10 w/1 cue for both /f/ and /v/ in words. Worked on front lisp s,"2/12, 8-8:30",,12.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,she/he/they: 7/10 w/1 cue,"2/18, 8-8:30",,13.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"/f/ masterd, initial /v/ 7/10 w/1 cue in word","2/24, 8-8:30",,14.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"/f/ and /v/ should be moved to phrase level.
+ he/she/they 7/10 w/1 cue","2/26, 9-15-9:45",,15.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,"initial /f/, /v/ 8/10 w/1 cue in words, she/he/ they 7/10 w/1-2 cues","3/3, 8:00-8:30",,16.0
+S-020,Student_5d471f,k,C109,Teacher_8b9196,Document_bd73549b.docx,session_note,his/her/ theirs 7/10 w/ 2 cues,3/4,,17.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,annual_goal,"[STUDENT] 1 By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will answer [STUDENT] and why questions from a grade level story or a text using sentences with conjunction words (i.e., and, but, because) accurately in 8 out of 10 trials, for 2 data collection sessions. 
+[STUDENT] 2: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will use complete sentences to retell a grade-level story with at least 5 story grammatical elements (i.e., character, setting, problem, solution, emotions) for 3 data collection sessions.",,1.0,
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,"with 2 cues, Kedan summarized 6 paragraphs in a grade level reading after reading by himself.","1/7, 10:20-11:00",,1.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,Kedan summarized 3 paragraphs w/2 cues. He is able to use highlighter to mark out the key elements in the story and summarize it.,"1/13, 10:35-11:15",,2.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,How: 3 cues to say complete sentences x3 after a book reading about martin’s big words,"1/17, 9:00-9:40",,3.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,"Answered How and why questions in science. Able to use first, then, to answer How, and because to answer Why. X3","1/22, 11:00-11:45",,4.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,"summarized 4/5 paragraphs in guided reading, answered Why x3/5 w/ 1 cue after reading (Vampire bats).","1/27, 10:15-10:45",,5.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,"used strategies to read 6 paragraphs, and retell the text with 6 main ideas for this non-fiction w/1-2 cues.",1/28,,6.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,"How:  3/5 w/1 cue
+Why: 3/ 4 w/1 cue
+
+in a non-fiction reading about Circulation system","2/3, 11:10-11:45",,7.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,"wrote 6 steps of HOW to wash dishes  w/2 cues (sentence carrier, and picture cue)","2/10, 10:30-11:00",,8.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,wrote 6 steps of HOW to brush teeth w/1-2 cues.,"2/11, 11:30-12",,9.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,work on story elements with a creating story activity.,"2/18, 11:05-11:35",,10.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,retell a 3rd story book w/ all the elements w/ 1-2 cues.,2/20,,11.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,"read a passage w/ pictures, was able to answer why questions w/2 cues.",2/25,,12.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,watched two videos about How to catch a Kraken and How to catch a megalodon. Used 4 sentences to describe how questions w/ 2 cues.,3/3,,13.0
+S-021,Student_d8acc5,4,B101,Teacher_3e3125,Document_af9826b7.docx,session_note,retold a story w/ pictures and 2-3 verbal prompts for all story elements and details.,3/4,,14.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,annual_goal,"[STUDENT] 3: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe objects with at least 5 out of 7 key attributes (i.e., name, category, function, location, color, shape, parts) in 4 out of 5 trials for 2 data collection sessions.",,1.0,
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,3 out of 5 w/2 cues in a story book not in a complete sentence.,"1/7, 8:30-9:00",,1.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,x4 objects with at least 2 cues.,"1/14, 9:00-9:30",,2.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,"w/2 cues, 4/5 still needs 2 cues to see the complete sentences, sentence carrier","1/15, 8:30-9",,3.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,"read a book: was able to answer inferential questions3 /4 w/ 1 cue, x3 describe things w/2 cues","1/22, 8:30-9",,4.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,absent,"1/27, 8:30-9",,5.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,"w/2-3 cues, described 2 objects w/5 features.","1/30, 8:30-9",,6.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,x3/5 w/2 cues,"2/4, 8:30-9",,7.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,x4 w/2-3 cues,"2/5, 8:30-9",,8.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,x3 w/1-2 cues,"2/10, 8:30-9",,9.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,"bl, gl, gl, pl, 7/10 w/1 cue, kl, fl 6/10 w/1 cue","2/11, 8:40-9:10",,10.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,Absent,2/18,,11.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,absent,2/19,,12.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,6/8 2/ 2 cues to use complete sentence to infer,2/20,,13.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,describe in complete sentences: 4/5 w/ 2 verb prompts and visual cue.,2/24,,14.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,"/l/ blends: 7/10 w/1 cue in sentence
+w/2 cues, inference 3/5",¾,,15.0
+S-022,Student_b4b8b5,3,D101,Teacher_9c0ca0,Document_a4463ef6.docx,session_note,"struggled to understand other’s perspectives. 
+inference w/2 cues, 3/5",3/5,,16.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,annual_goal,"1 On or before the next annual ARD, with no more than 1 cue, [STUDENT] will produce final consonant clusters (i.e., st, sk, ft, pt) at the sentence level with 70% accuracy across 2 data collection sessions.
+
+2 On or before the next annual ARD, with no more than 1 cue, [STUDENT] will use complete sentences to describe a 4-step sequential story in 4/5 trials across 2 data collection sessions.",,1.0,
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"PLANO: p,b,m,t,d,n,ng, f, v, s,z,w  100%, th w/1 cue, 30, +voice th 2-3 cues, l 100%","1/7, 1-1:30",,1.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"Artic U: 
+y, h, j, k, g, sh, ch, pl, fl, kl, gl, sl, br, dr, fr , gr, kr, pr, thr 50 %, str 50%, st, tr, sk, skr, sm, sn, sp, spl, spr, st, tw, skw,  mixed r 100% w/1 cue, air 60%, er 100%, ear 100%, ire 100%, or 60%.","1/13, 1-1:30",,2.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"is able to sequence, and describe a sequential picture using SVO sentences x3, but needs multiple cues to say it clearly.",1/15,,3.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"needs plano. Is able to sequence story, and describe it w/ at least 2 cues",1/21,,4.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"PLANO: basic concepts: 7/10, main idea from picture: 5/6, cause and effect: 7/10. Making prediction from situational context: 1/5, making inferences: 0. Sequence description: 0. Identifying objects: 8/10, divergent category: 4/10, convergent category: 5/10,","1/22, 12:30-1:20",,5.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,read a story and retold it with 3 elements and not in complete sentences.,1/23,,6.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"sequence 3 step picture cards, used complete sentences w/ SVO correct 7/9 w/ 1 cue","1/28, 1:15-1:45",,7.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"final consonant in sentence :sk, st, ft, sp, 4/6 w/1-2 cues",1/30,,8.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"basic inferential pictures for why question:
+3/5 w/ 2-3 cues",2/4,,9.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,SV 3/4 trials w/1-2 cues,2/6,,10.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,wrote 6 sentences for a sequential pictures w/ correct SVO. 5/6 w/1 cue to say it.,"2/11, 1-1:30",,11.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"wrote 6 sentences for 4 steps of a video watched, Snack Attack. Needs 2-3 cues to use complete sentences.","2/13, 1-1:30",,12.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,absent,"2/18, 1:30-2",,13.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,3/5 w/ 2-3 cues to sequence,2/20,,14.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,retell a book story in sequence w/1-2 cues.,2/24,,15.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"sequenced 5, describe 4/5  using complete sentence w/ 2 cues.",3/4,,16.0
+S-023,Student_f9f773,2,D109,Teacher_63d700,Document_7d4a261b.docx,session_note,"read a book Sloppy Joe. Frustrated to finish reading, listening or writing words related to the book.",3/6,,17.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,annual_goal,"Goal1: 
+By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will sequence a 4-step scene using picture cards accurately in 4 out of 5 trials, for 3 data collection sessions. 
+
+Goal2: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will describe a 4-step picture story using complete sentences accurately in 4 out of 5 trials, for 3 data collection sessions. 
+
+Goal3: By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will name at least 4 things in the basic categories (i.e., animals, foods, drinks, vehicles, vegetables, sports, furniture, and clothing) accurately in 4 out of 5 trials, for 3 data collection sessions.",,1.0,
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,sequence x2/3 w/2 cues,"1/7, 9:40-10:10",,1.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,"with multiple cues, visual and a verbal modeling, 2/3","1/13, 9:30-10:00",,2.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,"with 2 cues, 2/3.",1/15,,3.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,4/5 w/ 2 cues to sequence 3 steps,"1/21, 9:30-10:00",,4.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,5/5 w/ 3 verbal description for each story,"1/23, 9:30-10",,5.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,2/3 w/1 cue to sequenc 3 steps,"1/27, 9:30-10",,6.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,"3/5 w/1 cue, 4/5 w/ 2 cues",1/28,,7.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,4/5 w/1-2 cues,"2/3, 9:30-10",,8.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,"for 4-step story, 2/2 w/3 cues","2/10, 9:30-10",,9.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,"divergent categories: x3 w/ multiple cues (furniture, sports)","2/12, 9:20-9:50",,10.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,4-step: 2/3 w/ 2 cues,"2/18, 9:50-10:20",,11.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,"name 4 things in a category: x2 fruit and vegetable, w/ 3 cues",2/24,,12.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,"describe 4 steps pictures x3 w/2 cues
+sequence:3/ 4 w/2 cues",3/3,,13.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,named 2 things in 4 categories w/2 cues,3/4,,14.0
+S-024,Student_0da8f4,K,C105,Teacher_d41d8c,Document_ec4e6493.docx,session_note,named 2 things in 4 cate,=,,15.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,annual_goal,"On or before the next annual ARD, when given modeling, [STUDENT] will use verbal expression to indicate likes/dislikes and protest in 4/5 trials across 2 data collection sessions.",,1.0,
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"Marcus initiated interaction to argue for longer tablet time and shorter reading time x2, initiated likes/dislikes x2","1/7, 8:30-9",,1.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"reduced timer to take more activity turns, and encourage for conversation. Initiated request: x2
+response by Comment: x2","1/14, 9:00-9:30",,2.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"w/1 cue, 3/5 turn to response. Initiated request when he needs help with tie shoes.","1/15, 8:30-9:00",,3.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"participated x4 w/1 cue, was able to response during the activity using 1 verbal cue. 
+described things w/ at least 4 features w/2 cues","1/22, 8:30-9",,4.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,responded to interactions 4/5 w/ 1 cue in structured activity. Described things w/5 features 3/5 w/1-2 cues,"1/27, 8:30-9",,5.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"participated to activities in 20 mins. Responded to interactions 4/6 w/1cue, 
+e.g., where do you want to go?
+M: (zoom in google earth) Yellowstone National Park. 
+Prepare a video of Yellowstone National Park.",1/30,,6.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,requested for Map puzzles. Participated x3 turns in describing activity.,"2/4, 9:10-9:40",,7.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"can you talk with me?
+-Yes. (Eyes to SLP)","2/5, 12:30-1",,8.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,described x3 w/1 visual cue. Interacted 4/5 w/1 cue,"2/10, 8:30-9",,9.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,PARTICIPATED X4/5 W/1 CUE,"2/11, 8:40-9:10",,10.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,President day,2/17,,11.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,Prediction w/ sentence carrier and 1 verbal prompt: 3,"2/20, 8:40-9:10",,12.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"describe things w/1-2 cues in complete sentences. Able to response in 4/5 w/1 -2 cues, needs a structure for response (timer, take turns) able to make conversational turn 4/5 w/ minum cue","2/25, 8:10-8:40",,13.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"was not able to answer inference why questions, needs sentence carrier. 3/5 w/1-2 cues to redirect",¾,,14.0
+S-025,Student_dfb63c,3,D101,Teacher_9c0ca0,Document_dc9e2653.docx,session_note,"able to response when it’s his turn. He initiated: I like math, I don’t like reading. I want 4 mins tablet, not 3 mins. New York. Yellow Stone National Park. It is very far. For predict questions, he showed difficulties.",3/5,,15.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,annual_goal,"On or before the next annual ARD, [STUDENT] will produce initial and medial /l/ at the word level when naming objects and pictures with 70% accuracy as measured on 2 data collections. ([STUDENT] level)",,1.0,
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,working at sentence level 3/5 w/1 cue,"1/7, 8-8:30",,1.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,"medial /l/ 7/10  w/1-2 cues, sh: initian&final: 8/10w/1 cue, ch, initial and final 7/10 w/1 cue","1/14, 8:10-8:40",,2.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,medial /l/  in chocolate 4/6 w/2-3 cues.,"1/15, 8-8:30",,3.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,"initial /ch/ 7/10 w/1 cue, needs to work on /r/","1/21, 8:30-9",,4.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,1 cue in sentence: 6/10: I like blue pillow.,"1/23, 8:30-9",,5.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,1 cue in sentence: 6/10,"1/27, 8-8:30",,6.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,sentence: 8/10 w/1 cue,"1/30, 8-8:30",,7.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,sentence: I like blue slippers: 7/10 for l w/1 cue,"2/3, 8:30-9",,8.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,"tail /l/ : 3/5 w/2 cues, water: 5/6 w/2 cues","2/5, 8:30-9",,9.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,"I like blue pillow, helicopter, chocolate, jelly beans: 7/10 w./1 cue","2/11, 8:30-9",,10.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,absent,"2/12, 8:30-9",,11.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,middle /l/ 7/10 w/ 1cue,"2/18, 8:30-9",,12.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,"Artic U: r-w, br, bw, dr-g, l 1 cue. Th-f, +th,","2/20, 8-8:30",,13.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,l in sentence: 7/10 w/1 cue,2/24,,14.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,"Atic U: fr, gr, kr, pr, thr ,skr, r->l, str-sg, tr-g, tw-kl, prevocalic r-w, er-o, ar-a, th->f, ear-eao, air-aio,","2/26, 8-8:30",,15.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,chocolate bar: r 7/10 w/1 cue,"3/3, 8-8:30",,16.0
+S-026,Student_e1e243,k,C108,Teacher_61ff21,Document_58019f54.docx,session_note,"introduced dr and tr. Able to say tr, need 2-3 cues for isolated dr.",3/5,,17.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,annual_goal,"By the next annual ARD, with no more than 1 visual or verbal cue, [STUDENT] will produce /f/ and /v/ sounds accurately in all word positions (i.e., initial, medial, and final) with 70% accuracy, for 2 data collection sessions",,1.0,
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"introduced /s/ goal,","1/13, 8:00-8:30",,1.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,initial and final /s/ 6/10 w/1-2 cues in words.,"1/16, 8:05-8:40",,2.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"initial /s/ 8/10 w/2 cues, final /s/  80% w/1 cue","1/21, 8-8:30",,3.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,initial /s/ 8/10 w/2 cues,"1/23, 8-8:30",,4.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,absent,"1/27, 8-8:30",,5.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"initial /s/ 8/10 w/2 cues, still working on the placement, initial /f/ 6/10 w/1 cue",1/28,,6.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"initial /f/, 7/10w/1 cue, /s/ distorted reduced 5/10 for accurate one","2/3, 8-8:30",,7.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"/s/ distorted reduced 7/10 for isolated on, in syllables, si, sa, so, 7/10 w/1 cue","2/4, 8-8:30",,8.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"initial /s/ 7/10 w/1 cue, final /s/ 6/10 w/1 cue",2/10,,9.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,9/10 w/ 1 cue for both initial and final,"2/12, 8-8:30",,10.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"initial, final, middle s 7/10 w/ 1 cue","2/18, 8-8:30",,11.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,initial /s/ in phrase: 3/5 w/2 cues,2/24,,12.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"initial /s/ in words: 8/10 w/1 cue, middle s in baseball 7/10 w/1 cue. In phrase 7/10 w/2 cues. Ready to move to phrase","2/26, 9:15-9:45",,13.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,initial and final /s/ 8/10 w/1 cue middle /s/ 7/10 w/1 cue,3/3,,14.0
+S-027,Student_389c85,k,C108,Teacher_61ff21,Document_43a3ad7e.docx,session_note,"7/10 w/1 cue for /f,v/, /s,z/ needs to get on phrase level.",3/ 4,,15.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,annual_goal,"On or before the next annual ARD, when given verbal and visual cues, [STUDENT] will answer concrete where and when questions and ""what doing"" and ""where"" questions about a short story or paragraph with 70% accuracy across 2 data collection session. 
+(65% in when, 60% in where with visual cues, mastered ""what doing"")
+[STUDENT] things using  vocabularies, retelling stories, needs PLANO",,1.0,
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,Compare and contrast: needs 2-3 cues to find 3 similarities and 3 differences,"1/7, 1:30-2",,1.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,absent,1/13,,2.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,"when, what, where in story: 5/5 w/1 cue","1/16, 10:20-10:50",,3.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,"when, who, what, where in a story read: 5/6 independently.","1/22, 1:30-2",,4.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,absent,"1/27, 1:30-2",,5.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,answered grade level questions in a non-fiction w/1-2 cues 4/5,1/29,,6.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,"non-fiction reading: where in a complicate sentence w/2-3 cues,","2/3, 1:15-1:45",,7.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,"grade text book on desserts, one paragraph retelling w/ 3 prompts. She is able to answer why question.","2/5, 1:30-2",,8.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,absent,2/10,,9.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,President day,2/17,,10.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,absent,2/19,,11.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,absent,2/20,,12.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,"read a book, and retold the story.",2/25,,13.0
+S-028,Student_6b5aa6,,,Teacher_d41d8c,Document_49d286a5.docx,session_note,Vocabulary,"2/28, 2:00-2:30",,14.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,"PLANO1: followed direction: 4/5, basic concepts: 4/5","1/7, 9-9:30",,1.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,"PLANO: main idea from pictures: 5/6, cause and effect:7/10, prediction: 4/5,","1/13, 8:40-9:20",,2.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,sequence 4 steps pictures x2/2,"1/21, 9:05-9:35",,3.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,"teacher reported no concern for his communication
+Described picture and created a story",1/28,,4.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,PLANO,"1/31, 10:30-11:00
+2:30-3",,5.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,convergent category: 4/5 independently.,"2/3, 9:15-9:45",,6.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,describe things with 5 features x2 w/1 cue,"2/10, 9:00-9:30",,7.0
+S-029,Student_d9eb09,K,C107,Teacher_e99c19,Document_771cdcbe.docx,session_note,Needs to be DNQ,tested completed,,8.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,annual_goal,"On or before the next annual ARD, with no more than one visual or verbal cue, [STUDENT] will use complete sentences to answer [STUDENT] and [STUDENT] questions related to a story in 4 out of 5 trials for 2 data collection sessions.",,1.0,
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,w/2 cues to describe How questions in order: x2,"1/7, 1-1:30",,1.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,x2 to describe a four scene pictures w/ multiple cues,"1/13, 1-1:30",,2.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"introduced new goal 2. 
+described sequential story for How question x3 w/ multiple cues.","1/15, 1-1:30",,3.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,describe sequential 3 steps for How x4 w/ 2-3 cues.,"1/21, 1-1:30",,4.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"w/2 cue, using first, then, next, after for How x3 times","1/23, 1-1:30",,5.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,absent,1/28,,6.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"introduced /th/ sound: 7/10 for teeth, earth in words w/1-2 cues",1/30,,7.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,why for basic inferential pictures in complete sentences 7/10 w/1-2 cues,2/4,,8.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,Use completed sentence to answer How: 6 step pictures x2 w/ 2 cues to produce 5-6 words utterances.,2/6,,9.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"absent, sick.","2/11, 1:00-1:30",,10.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"absent, sick",2/13,,11.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"absent, sick",2/18,,12.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,retell and wrote a story in sequence w/2-3 cues. Was able to answer why questions about that story.,2/24,,13.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"retell the story in sequence. How: 3/5 w/1 cue,  Why: 2/3 w/1 cue","2/28, 1:00-1:30",,14.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,/TH/ needs 1-2 cues in sentences 7/10,3/4,,15.0
+S-030,Student_97c62f,2,D113,Teacher_645d58,Document_5951acf3.docx,session_note,"How in sloppy Joe, was able to use first, after, next to describe actions in the book.",3/6,,16.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,annual_goal,"On or before the next annual ARD, when given no cues, [STUDENT] will identify an object from an oral description in 7/10 trials across 2 data collection sessions. (78% in one session, needs more sessions to generalize)",,1.0,
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"/pr/ needs 2 cues, 
+PLANO1, describe sequence of daily activities, 14/21 w/1 cue","1/7, 2:00-2:30",,1.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"PLANO: analogy: 1/5, 
+identify objects: 7/10 independently
+describe things with features, 3 features independently, needs at least 2 cues to tell more features.","1/13, 12:30-1",,2.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"identify objects: 5/5 independently
+describe things w/3 features w/1 cue, x4","1/15, 12:30-1",,3.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"describe things w/ 4 features w/ 2 cues, 4/5","1/21, 12:30-1",,4.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,described things w/ 4 features w/ 2 cues 4/5,1/23,,5.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"described thingsw/1 cue, 11/15 for 4 features","1/27, 12:30-1",,6.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"described 4 things w/ 5 features, w/2-3 cues use complete sentences",1/28,,7.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,described 3 things w/2-3 cues,"2/3, 12:40-1:10",,8.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,described 4 things w/ 2-3 cues w/ 4 features,2/4,,9.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,described 3 things w/2-3 cues for 5 features,2/10,,10.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,described 3/5 w/1 cue. 5/5 w/2 cues for 5 features.,2/11,,11.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,described 4/5 w/1-2 cues for 5 features.,2/18,,12.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"Described 3/5 w/ 1cue, 5/5 w/2 cues, needs help with category.","2/19, 12:40-1",,13.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"described 3/5 w/1 cue, able to find category w/1 cue",2/24,,14.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"described 4/5 w/1-2 cues. Able to compare w/2 cue, need help to use but, because, those conjunction words to say a sentence",2/25,,15.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"used complete sentence to retell a story w/ picutres and less than 2 verbal prompt: A tiger is hiding in a jungle. Hunters are looking for animal. All the animals are running (cue) because they don’t want to get caught. Then, a monkey told a tiger to run. The hunter SPOTTED the tiger. The hunter made a plan to get a tiger. The hunter caught the tigher w/ a net (2 cues).",3/3,,16.0
+S-031,Student_b87ccb,1,D111,Teacher_5e0ef6,Document_e7533a7a.docx,session_note,"NEEDS WORK ON ANSWERING STORY QUESTIONS,
+2-3 cues to answer How and Why questions in a story.",3/5,,17.0

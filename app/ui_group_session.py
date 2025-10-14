@@ -9,7 +9,7 @@ from .config import *
 from .models import group_session_data, generation_control
 from .generation import generate_group_session
 from .feedback import submit_feedback
-from .utils import ai_grammar_check, load_json, save_case_file, save_case_to_db, check_grade_compatibility, check_disorder_compatibility
+from .utils import ai_grammar_check, load_json, save_case_file, save_case_to_db, check_grade_compatibility, check_disorder_compatibility, markdown_to_pdf
 
 def create_group_session_ui():
     """Create the group session generation page UI."""
@@ -17,7 +17,7 @@ def create_group_session_ui():
     with gr.Column(visible=False) as page:
         with gr.Row():
             gr.Markdown("# Generate Group Session")
-            back_btn = gr.Button("← Back", size="sm")
+            back_btn = gr.Button("🏠 Home", size="sm", variant="secondary")
         
         gr.Markdown("### Configure Group Members")
         gr.Markdown("*Create therapy groups following clinical grouping strategies*")
@@ -64,16 +64,42 @@ def create_group_session_ui():
                 value=True,
                 scale=1
             )
+
+        # Custom ID fields
+        with gr.Row():
+            use_custom_ids = gr.Checkbox(
+                label="Use Custom Student IDs",
+                value=False
+            )
+            id_prefix = gr.Textbox(
+                label="ID Prefix",
+                placeholder="e.g., S, GRP-",
+                value="S",
+                visible=False,
+                scale=1
+            )
+            id_start = gr.Number(
+                label="Start Number",
+                value=1,
+                minimum=1,
+                step=1,
+                visible=False,
+                scale=1
+            )
         
         with gr.Row():
             check_compat_btn = gr.Button("🔍 Check Compatibility", size="sm", variant="secondary")
             generate_group_btn = gr.Button("🚀 Generate Group Session", variant="primary", size="sm")
             stop_btn = gr.Button("⛔ Stop", size="sm", variant="stop", visible=False)
+            reset_btn = gr.Button("🔄 Reset", size="sm", variant="secondary")
         
         # Output
         gr.Markdown("### Group Session Plan")
         output = gr.Markdown()
-        
+
+        # Back to top button
+        back_to_top_btn = gr.Button("⬆️ Back to Top", size="sm", variant="secondary")
+
         # Save section
         with gr.Group(visible=False, elem_classes="save-section") as save_section:
             gr.Markdown("### 💾 Save Group Session")
@@ -86,7 +112,7 @@ def create_group_session_ui():
             
             with gr.Row():
                 save_btn = gr.Button("💾 Save", variant="primary", size="sm")
-                save_as_btn = gr.DownloadButton("📥 Save As", size="sm")
+                download_pdf_btn = gr.DownloadButton("📄 Download PDF", size="sm")
             
             save_status = gr.Markdown("")
         
@@ -132,14 +158,19 @@ def create_group_session_ui():
         "compatibility_status": compatibility_status,
         "model_group": model_group,
         "search_existing": search_existing,
+        "use_custom_ids": use_custom_ids,
+        "id_prefix": id_prefix,
+        "id_start": id_start,
         "check_compat_btn": check_compat_btn,
         "generate_group_btn": generate_group_btn,
         "stop_btn": stop_btn,
+        "reset_btn": reset_btn,
         "output": output,
+        "back_to_top_btn": back_to_top_btn,
         "save_section": save_section,
         "save_path": save_path,
         "save_btn": save_btn,
-        "save_as_btn": save_as_btn,
+        "download_pdf_btn": download_pdf_btn,
         "save_status": save_status,
         "rating_grade_accuracy": rating_grade_accuracy,
         "rating_disorder_accuracy": rating_disorder_accuracy,
@@ -157,15 +188,25 @@ def create_group_session_ui():
 
 def setup_group_session_events(components):
     """Setup event handlers for group session UI."""
-    
+
     # Update member row visibility based on group size
     def update_member_visibility(size):
         return [gr.update(visible=(i < size)) for i in range(4)]
-    
+
     components["group_size"].change(
         fn=update_member_visibility,
         inputs=components["group_size"],
         outputs=components["member_rows"]
+    )
+
+    # Toggle custom ID fields visibility
+    def toggle_custom_ids(use_custom):
+        return gr.update(visible=use_custom), gr.update(visible=use_custom)
+
+    components["use_custom_ids"].change(
+        fn=toggle_custom_ids,
+        inputs=components["use_custom_ids"],
+        outputs=[components["id_prefix"], components["id_start"]]
     )
     
     # Check compatibility
@@ -196,25 +237,26 @@ def setup_group_session_events(components):
     )
     
     # Generate group session
-    def handle_group_generation(size, model, search, *member_inputs):
+    def handle_group_generation(size, model, search, use_custom, id_prefix, id_start, *member_inputs):
         grades = [member_inputs[i*2] for i in range(size)]
         disorders = [member_inputs[i*2+1] for i in range(size)]
-        
+
         for output, filename, btn_state, stop_vis in generate_group_session(
-            size, grades, disorders, model, search
+            size, grades, disorders, model, search, use_custom, id_prefix, id_start
         ):
             if filename:
                 full_path = f"{DEFAULT_OUTPUT_PATH}{os.path.basename(filename)}"
                 yield output, gr.update(visible=True, value=full_path), btn_state, stop_vis
             else:
                 yield output, gr.update(), btn_state, stop_vis
-    
+
     components["generate_group_btn"].click(
         fn=lambda: (gr.update(interactive=False), gr.update(visible=True)),
         outputs=[components["generate_group_btn"], components["stop_btn"]]
     ).then(
         fn=handle_group_generation,
-        inputs=[components["group_size"], components["model_group"], components["search_existing"]] + all_member_inputs,
+        inputs=[components["group_size"], components["model_group"], components["search_existing"],
+                components["use_custom_ids"], components["id_prefix"], components["id_start"]] + all_member_inputs,
         outputs=[components["output"], components["save_path"], components["generate_group_btn"], components["stop_btn"]]
     ).then(
         fn=lambda: gr.update(visible=True),
@@ -230,7 +272,42 @@ def setup_group_session_events(components):
         fn=stop_generation,
         outputs=[components["stop_btn"], components["generate_group_btn"], components["output"]]
     )
-    
+
+    # Reset button
+    def reset_group_session():
+        generation_control["should_stop"] = True
+        group_session_data["session_id"] = None
+        group_session_data["members"] = []
+        group_session_data["timestamp"] = None
+        return (
+            "",  # Clear output
+            gr.update(visible=False),  # Hide save section
+            "",  # Clear save path
+            "",  # Clear save status
+            "### Compatibility Status\n*Configure members above to check compatibility*",  # Reset compatibility status
+            gr.update(interactive=True, variant="primary"),  # Enable generate button
+            gr.update(visible=False)  # Hide stop button
+        )
+
+    components["reset_btn"].click(
+        fn=reset_group_session,
+        outputs=[
+            components["output"],
+            components["save_section"],
+            components["save_path"],
+            components["save_status"],
+            components["compatibility_status"],
+            components["generate_group_btn"],
+            components["stop_btn"]
+        ]
+    )
+
+    # Back to top button
+    components["back_to_top_btn"].click(
+        fn=lambda: None,
+        js="() => window.scrollTo({top: 0, behavior: 'smooth'})"
+    )
+
     # Save group session
     def handle_save_group(filepath):
         if not group_session_data["session_id"]:
@@ -260,21 +337,21 @@ def setup_group_session_events(components):
         outputs=components["save_status"]
     )
     
-    # Download group session
+    # Download group session as PDF
     def prepare_download_group():
         if group_session_data["session_id"]:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            temp_file = f"temp_group_{timestamp}.md"
+            temp_pdf = f"temp_group_{timestamp}.pdf"
             content = f"# Group Session\n**Session ID:** {group_session_data['session_id']}\n"
             for member in group_session_data["members"]:
                 content += member["output"]
-            save_case_file(content, temp_file)
-            return temp_file
+            markdown_to_pdf(content, temp_pdf)
+            return temp_pdf
         return None
-    
-    components["save_as_btn"].click(
+
+    components["download_pdf_btn"].click(
         fn=prepare_download_group,
-        outputs=components["save_as_btn"]
+        outputs=components["download_pdf_btn"]
     )
     
     # Feedback
