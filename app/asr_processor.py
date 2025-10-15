@@ -23,7 +23,7 @@ class SpeechAnalyzer:
     def transcribe_audio(self, audio_path: str) -> Dict[str, any]:
         """
         Transcribe audio file using Whisper.
-        
+
         Returns:
             Dict with transcript, confidence, duration, etc.
         """
@@ -34,7 +34,7 @@ class SpeechAnalyzer:
                 task="transcribe",
                 verbose=False
             )
-            
+
             return {
                 "text": result["text"],
                 "segments": result["segments"],
@@ -42,9 +42,23 @@ class SpeechAnalyzer:
                 "success": True
             }
         except Exception as e:
+            error_msg = str(e).lower()
+
+            # User-friendly error messages
+            if "file not found" in error_msg or "no such file" in error_msg:
+                user_message = "⚠️ **Audio file not found**\n\nThe uploaded audio file could not be accessed.\n\n**To fix this:**\n- Try uploading the file again\n- Make sure the file is not corrupted"
+            elif "permission denied" in error_msg:
+                user_message = "⚠️ **File access issue**\n\nCould not read the audio file due to permission issues.\n\n**To fix this:**\n- Try uploading the file again\n- Check file permissions"
+            elif "unsupported" in error_msg or "format" in error_msg:
+                user_message = "⚠️ **Unsupported audio format**\n\nThe audio file format is not supported.\n\n**Supported formats:**\n- WAV, MP3, M4A, FLAC\n\n**To fix this:**\n- Convert your audio to a supported format\n- Try uploading a different file"
+            elif "memory" in error_msg or "cuda" in error_msg or "out of memory" in error_msg:
+                user_message = "⚠️ **Processing issue**\n\nThe audio file is too large to process.\n\n**To fix this:**\n- Try uploading a shorter audio sample (under 2 minutes recommended)\n- Use a smaller file size"
+            else:
+                user_message = "⚠️ **Transcription failed**\n\nCould not transcribe the audio file.\n\n**To fix this:**\n- Make sure the file is a valid audio file\n- Try uploading a different audio sample\n- Ensure the audio contains clear speech"
+
             return {
                 "text": "",
-                "error": str(e),
+                "error": user_message,
                 "success": False
             }
     
@@ -307,35 +321,56 @@ class SpeechAnalyzer:
         
         text_lower = transcript.lower()
         
-        # Detect articulation issues (common substitutions)
-        articulation_patterns = {
-            r'\bw[aeiouy]': 'Possible /r/ → /w/ substitution (e.g., "wabbit" for "rabbit")',
-            r'\bt[aeiouy]': 'Possible /k/ → /t/ substitution (fronting)',
-            r'\bd[aeiouy]': 'Possible /g/ → /d/ substitution (fronting)',
-            r'\bf[aeiouy]': 'Possible /θ/ (th) → /f/ substitution',
-            r'\bs[aeiouy]': 'Possible /θ/ (th) → /s/ substitution',
+        # Detect articulation issues (common substitutions) - MORE SELECTIVE
+        # Only flag if we see actual error patterns, not just any word starting with these letters
+
+        # Common words to exclude from articulation error detection
+        common_words = {
+            'we', 'was', 'what', 'when', 'where', 'will', 'with', 'want', 'way', 'well', 'went', 'were',
+            'to', 'the', 'that', 'this', 'they', 'then', 'there', 'these', 'those', 'thank', 'think',
+            'do', 'does', 'did', 'don', 'down',
+            'for', 'from', 'first', 'find', 'feel', 'four', 'five',
+            'so', 'see', 'said', 'say', 'some', 'sure', 'still', 'such', 'same'
         }
-        
-        for pattern, description in articulation_patterns.items():
-            matches = re.findall(pattern, text_lower)
-            if matches:
+
+        # Known error words that indicate true articulation issues
+        articulation_error_words = {
+            'wabbit': '/r/ → /w/ substitution',
+            'wed': '/r/ → /w/ (if meaning "red")',
+            'wun': '/r/ → /w/ (if meaning "run")',
+            'tat': '/k/ → /t/ substitution',
+            'tup': '/k/ → /t/ (if meaning "cup")',
+            'dat': '/g/ → /d/ substitution',
+            'dood': '/g/ → /d/ (if meaning "good")',
+            'fink': '/θ/ → /f/ substitution',
+            'fumb': '/θ/ → /f/ (if meaning "thumb")',
+            'sing': '/θ/ → /s/ (if meaning "thing")',
+            'sank': '/θ/ → /s/ (if meaning "thank")'
+        }
+
+        words = text_lower.split()
+        for word in words:
+            # Clean punctuation
+            clean_word = re.sub(r'[^\w]', '', word)
+            if clean_word in articulation_error_words:
                 patterns["articulation_errors"].append(
-                    f"{description} - Found {len(matches)} instance(s)"
+                    f"{articulation_error_words[clean_word]}: '{clean_word}' detected"
                 )
         
-        # Detect phonological patterns
-        # Final consonant deletion
-        if re.search(r'\b\w+[aeiouy]\b(?!\w)', text_lower):
+        # Detect phonological patterns - MORE CONSERVATIVE
+        # Only flag final consonant deletion if we see clear patterns
+        # Don't flag common words that naturally end in vowels
+        common_vowel_endings = {'a', 'i', 'the', 'be', 'he', 'she', 'we', 'me', 'go', 'do', 'to', 'no', 'so'}
+        words_ending_vowels = [w for w in words if w and w[-1] in 'aeiouy' and w not in common_vowel_endings]
+
+        if len(words_ending_vowels) > len(words) * 0.3:  # Only if >30% of non-common words end in vowels
             patterns["phonological_patterns"].append(
-                "Possible final consonant deletion (words ending in vowels)"
+                f"Possible final consonant deletion pattern (multiple words ending in vowels: {', '.join(words_ending_vowels[:3])}...)"
             )
         
-        # Cluster reduction
-        cluster_pattern = r'\b\w*?([bdgkpt][lr]|s[ptk]|[bdgptk]w)\w*\b'
-        if re.search(cluster_pattern, text_lower):
-            patterns["phonological_patterns"].append(
-                "Check for cluster reduction in complex onset words"
-            )
+        # Cluster reduction - REMOVED
+        # This pattern was too broad and flagged normal words
+        # Would need actual error words to detect cluster reduction accurately
         
         # Detect fluency issues - IMPROVED
         fluency_disfluencies = self.detect_fluency_disfluencies(transcript)
@@ -487,26 +522,63 @@ Format your response in a structured, professional manner suitable for clinical 
         try:
             # Use appropriate LLM
             if model_name in FREE_MODELS:
-                llm = ChatOllama(
-                    model=MODEL_MAP.get(model_name, "llama3.2:latest"),
-                    temperature=0.3
-                )
+                try:
+                    llm = ChatOllama(
+                        model=MODEL_MAP.get(model_name, "llama3.2:latest"),
+                        temperature=0.3,
+                        base_url="http://localhost:11434"
+                    )
+                    response = llm.invoke(prompt)
+                except Exception as ollama_error:
+                    # User-friendly message for Ollama connection issues
+                    error_msg = str(ollama_error).lower()
+                    if "connection refused" in error_msg or "connect" in error_msg:
+                        return {
+                            "analysis": "⚠️ **Local AI model is not available**\n\nThe local AI service (Ollama) is not running on your system.\n\n**To fix this:**\n- Please select a **premium model** (GPT-4o, Claude, or Gemini) from the AI Model dropdown\n- These models work via cloud APIs and don't require local setup",
+                            "success": False
+                        }
+                    else:
+                        return {
+                            "analysis": f"⚠️ **Local AI model is not working**\n\nThere was a problem with the local AI service.\n\n**To fix this:**\n- Please select a **premium model** (GPT-4o, Claude, or Gemini) from the AI Model dropdown",
+                            "success": False
+                        }
             else:
-                llm = ChatOpenAI(
-                    model=MODEL_MAP.get(model_name, "gpt-4o"),
-                    temperature=0.3
-                )
-            
-            response = llm.invoke(prompt)
+                # Premium models (OpenAI, Anthropic, Google)
+                try:
+                    llm = ChatOpenAI(
+                        model=MODEL_MAP.get(model_name, "gpt-4o"),
+                        temperature=0.3
+                    )
+                    response = llm.invoke(prompt)
+                except Exception as api_error:
+                    # User-friendly message for API key issues
+                    error_msg = str(api_error).lower()
+                    if "api key" in error_msg or "authentication" in error_msg or "unauthorized" in error_msg:
+                        return {
+                            "analysis": f"⚠️ **API connection issue**\n\nThe {model_name} API key is not configured or is invalid.\n\n**To fix this:**\n- Check that your API key is set in the .env file\n- Make sure the API key has not expired\n- Verify you have API credits available",
+                            "success": False
+                        }
+                    elif "rate limit" in error_msg:
+                        return {
+                            "analysis": f"⚠️ **Rate limit reached**\n\nThe {model_name} API rate limit has been exceeded.\n\n**To fix this:**\n- Wait a few minutes and try again\n- Try a different model from the dropdown",
+                            "success": False
+                        }
+                    else:
+                        return {
+                            "analysis": f"⚠️ **API connection issue**\n\nCould not connect to {model_name} API service.\n\n**To fix this:**\n- Check your internet connection\n- Verify your API key is valid\n- Try a different model from the dropdown",
+                            "success": False
+                        }
+
             analysis = response.content if hasattr(response, 'content') else str(response)
-            
+
             return {
                 "analysis": analysis,
                 "success": True
             }
         except Exception as e:
+            # Generic fallback for any other errors
             return {
-                "analysis": f"Error in AI analysis: {str(e)}",
+                "analysis": f"⚠️ **Analysis could not be completed**\n\nThere was an unexpected issue with the AI analysis.\n\n**To fix this:**\n- Try selecting a different AI model\n- Check your internet connection\n- Make sure your API keys are configured correctly",
                 "success": False
             }
 

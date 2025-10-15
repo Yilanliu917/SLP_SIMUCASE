@@ -10,7 +10,12 @@
       "Bash(docker-compose down:*)",
       "Bash(docker-compose up:*)",
       "Bash(python:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker inspect:*)",
+      "Bash(git log:*)",
+      "Bash(docker-compose logs:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

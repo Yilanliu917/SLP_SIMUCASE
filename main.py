@@ -22,6 +22,10 @@ def create_app():
         .left-panel {padding: 20px; background: #f8f9fa; border-radius: 10px;}
         .right-panel {padding: 20px; background: #f0f0f0; border-radius: 10px;}
         .save-section {padding: 15px; background: #e7f3ff; border-radius: 8px; margin: 15px 0;}
+        .scrollable-textbox textarea {
+            max-height: 500px !important;
+            overflow-y: auto !important;
+        }
     """) as app:
         
         # Global state for generated filename

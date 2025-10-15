@@ -91,6 +91,7 @@ services:
       GRADIO_SERVER_PORT: 7860
       GRADIO_ROOT_PATH: ${GRADIO_ROOT_PATH:-}
     volumes:
+      - ./app:/app/app
       - ./data:/app/data
       - ./generated_case_files:/app/generated_case_files
       - ./prompts:/app/prompts

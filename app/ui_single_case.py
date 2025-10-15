@@ -48,14 +48,20 @@ def create_single_case_ui(back_btn_handler):
                             lines=5,
                             interactive=False
                         )
-                        
+
                         patterns_display = gr.Textbox(
                             label="Detected Patterns",
                             lines=5,
                             interactive=False
                         )
-                        
-                        ai_analysis_display = gr.Markdown()
+
+                        ai_analysis_display = gr.Textbox(
+                            label="AI Clinical Analysis",
+                            lines=20,
+                            interactive=False,
+                            show_copy_button=True,
+                            elem_classes="scrollable-textbox"
+                        )
                 
                 gr.Markdown("---")
                 gr.Markdown("### Manual Parameters")
@@ -268,37 +274,65 @@ def setup_single_case_events(components, generated_filename):
             )
             
             if ai_result["success"]:
-                ai_analysis_md = f"""### 🎯 AI Clinical Analysis
+                ai_analysis_text = f"""🎯 AI CLINICAL ANALYSIS
+{'='*60}
 
 {ai_result['analysis']}
 
----
-*Analysis completed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*
+{'='*60}
+Analysis completed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 """
             else:
-                ai_analysis_md = f"❌ AI analysis failed: {ai_result['analysis']}"
-            
-            # Auto-fill form fields based on analysis
+                ai_analysis_text = f"❌ AI analysis failed: {ai_result['analysis']}"
+
+            # Auto-fill form fields based on analysis - IMPROVED LOGIC
             suggested_disorders = []
-            if "Articulation" in ai_result['analysis']:
-                suggested_disorders.append("Articulation Disorders")
-            if "Phonological" in ai_result['analysis']:
-                suggested_disorders.append("Phonological Disorders")
-            if "Fluency" in ai_result['analysis'] or "Stuttering" in ai_result['analysis']:
+            analysis_lower = ai_result['analysis'].lower()
+
+            # Check for fluency first (prioritize based on detected disfluencies)
+            has_fluency_disfluencies = patterns.get('fluency_metrics', {}).get('core_disfluencies', 0) > 0
+            fluency_mentioned = any(term in analysis_lower for term in ['fluency', 'stuttering', 'stutter', 'disfluenc', 'repetition', 'prolongation', 'block'])
+
+            if has_fluency_disfluencies or fluency_mentioned:
                 suggested_disorders.append("Fluency")
-            if "Language" in ai_result['analysis']:
+
+            # Check for articulation (only if explicitly mentioned as a primary concern)
+            if any(term in analysis_lower for term in ['articulation disorder', 'speech sound disorder', 'articulation error']):
+                if 'no articulation' not in analysis_lower and 'no significant articulation' not in analysis_lower:
+                    suggested_disorders.append("Articulation Disorders")
+
+            # Check for phonological
+            if 'phonological' in analysis_lower:
+                suggested_disorders.append("Phonological Disorders")
+
+            # Check for language
+            if any(term in analysis_lower for term in ['language disorder', 'expressive language', 'receptive language', 'language delay']):
                 suggested_disorders.append("Language Disorders")
-            
+
+            # If no disorders detected, use fluency if we have disfluencies, otherwise default to articulation
             if not suggested_disorders:
-                suggested_disorders = ["Articulation Disorders"]  # Default
+                if has_fluency_disfluencies:
+                    suggested_disorders = ["Fluency"]
+                else:
+                    suggested_disorders = ["Articulation Disorders"]
             
+            # Build population spec from detected patterns
+            pop_spec_parts = []
+            if patterns.get('fluency_metrics', {}).get('stuttering_frequency', 0) > 0:
+                severity = patterns['fluency_metrics']['severity_rating']
+                pop_spec_parts.append(f"{severity} stuttering")
+            if patterns.get('language_patterns'):
+                pop_spec_parts.append(patterns['language_patterns'][0])
+
+            population_spec_text = f"Based on audio analysis: {'; '.join(pop_spec_parts)}" if pop_spec_parts else ""
+
             yield (
                 "✅ Analysis complete! Review results and generate case below.",
                 deidentified,
                 patterns_text,
-                ai_analysis_md,
+                ai_analysis_text,
                 gr.update(value=suggested_disorders),
-                gr.update(value=f"Based on audio analysis: {', '.join(patterns['articulation_errors'][:2])}"),
+                gr.update(value=population_spec_text),
                 gr.update()
             )
             
@@ -325,6 +359,46 @@ def setup_single_case_events(components, generated_filename):
             components["population_spec"],
             components["grade"]
         ]
+    ).then(
+        fn=lambda: None,
+        js="""() => {
+            // Scroll to Manual Parameters section and highlight auto-filled fields
+            setTimeout(() => {
+                // Find and scroll to Manual Parameters section
+                const manualSection = Array.from(document.querySelectorAll('h3')).find(el =>
+                    el.textContent.includes('Manual Parameters')
+                );
+                if (manualSection) {
+                    manualSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // Find the Disorders dropdown and Population Characteristics field
+                    const labels = document.querySelectorAll('label');
+                    const disordersLabel = Array.from(labels).find(el => el.textContent.includes('Disorders'));
+                    const popLabel = Array.from(labels).find(el => el.textContent.includes('Population Characteristics'));
+
+                    // Highlight the auto-filled fields
+                    [disordersLabel, popLabel].forEach(label => {
+                        if (label) {
+                            const container = label.closest('.block');
+                            if (container) {
+                                container.style.transition = 'all 0.3s ease';
+                                container.style.backgroundColor = '#e7f3ff';
+                                container.style.border = '2px solid #4CAF50';
+                                container.style.borderRadius = '8px';
+                                container.style.padding = '8px';
+
+                                // Remove highlight after 3 seconds
+                                setTimeout(() => {
+                                    container.style.backgroundColor = '';
+                                    container.style.border = '';
+                                    container.style.padding = '';
+                                }, 3000);
+                            }
+                        }
+                    });
+                }
+            }, 800);
+        }"""
     )
 
     # Generate single case
